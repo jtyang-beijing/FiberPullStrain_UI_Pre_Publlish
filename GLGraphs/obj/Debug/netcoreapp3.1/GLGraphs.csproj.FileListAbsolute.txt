@@ -1,0 +1,42 @@
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\GLGraphs\bin\Debug\netcoreapp3.1\GLGraphs.deps.json
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\GLGraphs\bin\Debug\netcoreapp3.1\GLGraphs.dll
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\GLGraphs\bin\Debug\netcoreapp3.1\GLGraphs.pdb
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\GLGraphs\obj\Debug\netcoreapp3.1\GLGraphs.csproj.AssemblyReference.cache
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\GLGraphs\obj\Debug\netcoreapp3.1\GLGraphs.GeneratedMSBuildEditorConfig.editorconfig
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\GLGraphs\obj\Debug\netcoreapp3.1\GLGraphs.AssemblyInfoInputs.cache
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\GLGraphs\obj\Debug\netcoreapp3.1\GLGraphs.AssemblyInfo.cs
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\GLGraphs\obj\Debug\netcoreapp3.1\GLGraphs.csproj.CoreCompileInputs.cache
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\GLGraphs\obj\Debug\netcoreapp3.1\GLGraphs.sourcelink.json
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\GLGraphs\obj\Debug\netcoreapp3.1\GLGraphs.dll
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\GLGraphs\obj\Debug\netcoreapp3.1\GLGraphs.pdb
+D:\My Documents\C# projects\GLGraph\src\GLGraphs\bin\Debug\netcoreapp3.1\GLGraphs.deps.json
+D:\My Documents\C# projects\GLGraph\src\GLGraphs\bin\Debug\netcoreapp3.1\GLGraphs.dll
+D:\My Documents\C# projects\GLGraph\src\GLGraphs\bin\Debug\netcoreapp3.1\GLGraphs.pdb
+D:\My Documents\C# projects\GLGraph\src\GLGraphs\obj\Debug\netcoreapp3.1\GLGraphs.csproj.AssemblyReference.cache
+D:\My Documents\C# projects\GLGraph\src\GLGraphs\obj\Debug\netcoreapp3.1\GLGraphs.GeneratedMSBuildEditorConfig.editorconfig
+D:\My Documents\C# projects\GLGraph\src\GLGraphs\obj\Debug\netcoreapp3.1\GLGraphs.AssemblyInfoInputs.cache
+D:\My Documents\C# projects\GLGraph\src\GLGraphs\obj\Debug\netcoreapp3.1\GLGraphs.AssemblyInfo.cs
+D:\My Documents\C# projects\GLGraph\src\GLGraphs\obj\Debug\netcoreapp3.1\GLGraphs.csproj.CoreCompileInputs.cache
+D:\My Documents\C# projects\GLGraph\src\GLGraphs\obj\Debug\netcoreapp3.1\GLGraphs.dll
+D:\My Documents\C# projects\GLGraph\src\GLGraphs\obj\Debug\netcoreapp3.1\GLGraphs.pdb
+D:\My Documents\C# projects\FiberPullStrain\src\GLGraphs\bin\Debug\netcoreapp3.1\GLGraphs.deps.json
+D:\My Documents\C# projects\FiberPullStrain\src\GLGraphs\bin\Debug\netcoreapp3.1\GLGraphs.dll
+D:\My Documents\C# projects\FiberPullStrain\src\GLGraphs\bin\Debug\netcoreapp3.1\GLGraphs.pdb
+D:\My Documents\C# projects\FiberPullStrain\src\GLGraphs\obj\Debug\netcoreapp3.1\GLGraphs.csproj.AssemblyReference.cache
+D:\My Documents\C# projects\FiberPullStrain\src\GLGraphs\obj\Debug\netcoreapp3.1\GLGraphs.GeneratedMSBuildEditorConfig.editorconfig
+D:\My Documents\C# projects\FiberPullStrain\src\GLGraphs\obj\Debug\netcoreapp3.1\GLGraphs.AssemblyInfoInputs.cache
+D:\My Documents\C# projects\FiberPullStrain\src\GLGraphs\obj\Debug\netcoreapp3.1\GLGraphs.AssemblyInfo.cs
+D:\My Documents\C# projects\FiberPullStrain\src\GLGraphs\obj\Debug\netcoreapp3.1\GLGraphs.csproj.CoreCompileInputs.cache
+D:\My Documents\C# projects\FiberPullStrain\src\GLGraphs\obj\Debug\netcoreapp3.1\GLGraphs.sourcelink.json
+D:\My Documents\C# projects\FiberPullStrain\src\GLGraphs\obj\Debug\netcoreapp3.1\GLGraphs.dll
+D:\My Documents\C# projects\FiberPullStrain\src\GLGraphs\obj\Debug\netcoreapp3.1\GLGraphs.pdb
+D:\My Documents\C# projects\InsuitFiberStrain\GLGraphs\bin\Debug\netcoreapp3.1\GLGraphs.deps.json
+D:\My Documents\C# projects\InsuitFiberStrain\GLGraphs\bin\Debug\netcoreapp3.1\GLGraphs.dll
+D:\My Documents\C# projects\InsuitFiberStrain\GLGraphs\bin\Debug\netcoreapp3.1\GLGraphs.pdb
+D:\My Documents\C# projects\InsuitFiberStrain\GLGraphs\obj\Debug\netcoreapp3.1\GLGraphs.csproj.AssemblyReference.cache
+D:\My Documents\C# projects\InsuitFiberStrain\GLGraphs\obj\Debug\netcoreapp3.1\GLGraphs.GeneratedMSBuildEditorConfig.editorconfig
+D:\My Documents\C# projects\InsuitFiberStrain\GLGraphs\obj\Debug\netcoreapp3.1\GLGraphs.AssemblyInfoInputs.cache
+D:\My Documents\C# projects\InsuitFiberStrain\GLGraphs\obj\Debug\netcoreapp3.1\GLGraphs.AssemblyInfo.cs
+D:\My Documents\C# projects\InsuitFiberStrain\GLGraphs\obj\Debug\netcoreapp3.1\GLGraphs.csproj.CoreCompileInputs.cache
+D:\My Documents\C# projects\InsuitFiberStrain\GLGraphs\obj\Debug\netcoreapp3.1\GLGraphs.dll
+D:\My Documents\C# projects\InsuitFiberStrain\GLGraphs\obj\Debug\netcoreapp3.1\GLGraphs.pdb

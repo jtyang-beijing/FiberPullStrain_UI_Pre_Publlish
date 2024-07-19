@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "dgSpecHash": "xVoff5LsFbE=",
+  "success": true,
+  "projectFilePath": "D:\\My Documents\\C# projects\\InsuitFiberStrain\\GLGraphs.Wpf\\GLGraphs.Wpf.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\bjjty\\.nuget\\packages\\jetbrains.annotations\\2019.1.3\\jetbrains.annotations.2019.1.3.nupkg.sha512",
+    "C:\\Users\\bjjty\\.nuget\\packages\\mathnet.numerics\\4.15.0\\mathnet.numerics.4.15.0.nupkg.sha512",
+    "C:\\Users\\bjjty\\.nuget\\packages\\microsoft.netcore.platforms\\6.0.0-preview.1.21102.12\\microsoft.netcore.platforms.6.0.0-preview.1.21102.12.nupkg.sha512",
+    "C:\\Users\\bjjty\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0-preview.1.21102.12\\microsoft.win32.systemevents.6.0.0-preview.1.21102.12.nupkg.sha512",
+    "C:\\Users\\bjjty\\.nuget\\packages\\objecttk\\2.0.0-pre.9\\objecttk.2.0.0-pre.9.nupkg.sha512",
+    "C:\\Users\\bjjty\\.nuget\\packages\\objecttk.2d\\2.0.0-pre.9\\objecttk.2d.2.0.0-pre.9.nupkg.sha512",
+    "C:\\Users\\bjjty\\.nuget\\packages\\objecttk.core\\2.0.0-pre.9\\objecttk.core.2.0.0-pre.9.nupkg.sha512",
+    "C:\\Users\\bjjty\\.nuget\\packages\\opentk\\4.3.0\\opentk.4.3.0.nupkg.sha512",
+    "C:\\Users\\bjjty\\.nuget\\packages\\opentk.compute\\4.3.0\\opentk.compute.4.3.0.nupkg.sha512",
+    "C:\\Users\\bjjty\\.nuget\\packages\\opentk.core\\4.3.0\\opentk.core.4.3.0.nupkg.sha512",
+    "C:\\Users\\bjjty\\.nuget\\packages\\opentk.glwpfcontrol\\4.1.0\\opentk.glwpfcontrol.4.1.0.nupkg.sha512",
+    "C:\\Users\\bjjty\\.nuget\\packages\\opentk.graphics\\4.3.0\\opentk.graphics.4.3.0.nupkg.sha512",
+    "C:\\Users\\bjjty\\.nuget\\packages\\opentk.input\\4.3.0\\opentk.input.4.3.0.nupkg.sha512",
+    "C:\\Users\\bjjty\\.nuget\\packages\\opentk.mathematics\\4.3.0\\opentk.mathematics.4.3.0.nupkg.sha512",
+    "C:\\Users\\bjjty\\.nuget\\packages\\opentk.openal\\4.3.0\\opentk.openal.4.3.0.nupkg.sha512",
+    "C:\\Users\\bjjty\\.nuget\\packages\\opentk.redist.glfw\\3.3.0-pre20200830200122\\opentk.redist.glfw.3.3.0-pre20200830200122.nupkg.sha512",
+    "C:\\Users\\bjjty\\.nuget\\packages\\opentk.windowing.common\\4.3.0\\opentk.windowing.common.4.3.0.nupkg.sha512",
+    "C:\\Users\\bjjty\\.nuget\\packages\\opentk.windowing.desktop\\4.3.0\\opentk.windowing.desktop.4.3.0.nupkg.sha512",
+    "C:\\Users\\bjjty\\.nuget\\packages\\opentk.windowing.graphicslibraryframework\\4.3.0\\opentk.windowing.graphicslibraryframework.4.3.0.nupkg.sha512",
+    "C:\\Users\\bjjty\\.nuget\\packages\\system.drawing.common\\6.0.0-preview.1.21102.12\\system.drawing.common.6.0.0-preview.1.21102.12.nupkg.sha512"
+  ],
+  "logs": []
+}

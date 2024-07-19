@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="MainView\**" />
+    <EmbeddedResource Remove="MainView\**" />
+    <None Remove="MainView\**" />
+    <Page Remove="MainView\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="CustomControl\view\UserControlViewModel.cs" />
+    <Compile Remove="GLNetworkGraphControlString.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="image\wechat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="OpenTK" Version="4.3.0" />
+    <PackageReference Include="OpenTK.GLWpfControl" Version="4.1.0" />
+    <PackageReference Include="System.IO.Ports" Version="8.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GLGraphs.Wpf\GLGraphs.Wpf.csproj" />
+    <ProjectReference Include="..\GLGraphs\GLGraphs.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\wechat.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+</Project>

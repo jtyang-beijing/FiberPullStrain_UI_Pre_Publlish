@@ -1,0 +1,117 @@
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\NetworkGraph.deps.json
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\NetworkGraph.runtimeconfig.json
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\NetworkGraph.runtimeconfig.dev.json
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\NetworkGraph.exe
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\ScatterGraph.deps.json
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\ScatterGraph.runtimeconfig.json
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\ScatterGraph.runtimeconfig.dev.json
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\ScatterGraph.exe
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\WpfExample.exe
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\WpfExample.deps.json
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\WpfExample.runtimeconfig.json
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\WpfExample.runtimeconfig.dev.json
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\WpfExample.dll
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\WpfExample.pdb
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\JetBrains.Annotations.dll
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\MathNet.Numerics.dll
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\Microsoft.Win32.SystemEvents.dll
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\ObjectTK.2D.dll
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\ObjectTK.Core.dll
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\OpenTK.Compute.dll
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\OpenTK.Core.dll
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\GLWpfControl.dll
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\OpenTK.Graphics.dll
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\OpenTK.Input.dll
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\OpenTK.Mathematics.dll
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\OpenTK.OpenAL.dll
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\OpenTK.Windowing.Common.dll
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\OpenTK.Windowing.Desktop.dll
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\OpenTK.Windowing.GraphicsLibraryFramework.dll
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\System.Drawing.Common.dll
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\runtimes\linux-x64\native\libglfw.so.3.3
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\runtimes\osx-x64\native\libglfw.3.dylib
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\runtimes\win-x64\native\glfw3.dll
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\runtimes\win-x86\native\glfw3.dll
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\GLGraphs.dll
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.dll
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\NetworkGraph.dll
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\ScatterGraph.dll
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.pdb
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\GLGraphs.pdb
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\NetworkGraph.pdb
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\ScatterGraph.pdb
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\obj\Debug\netcoreapp3.1-windows\WpfExample.csproj.AssemblyReference.cache
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\obj\Debug\netcoreapp3.1-windows\MainWindow.g.cs
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\obj\Debug\netcoreapp3.1-windows\App.g.cs
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\obj\Debug\netcoreapp3.1-windows\GeneratedInternalTypeHelper.g.cs
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\obj\Debug\netcoreapp3.1-windows\WpfExample_MarkupCompile.cache
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\obj\Debug\netcoreapp3.1-windows\WpfExample_MarkupCompile.lref
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\obj\Debug\netcoreapp3.1-windows\MainWindow.baml
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\obj\Debug\netcoreapp3.1-windows\WpfExample.g.resources
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\obj\Debug\netcoreapp3.1-windows\WpfExample.GeneratedMSBuildEditorConfig.editorconfig
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\obj\Debug\netcoreapp3.1-windows\WpfExample.AssemblyInfoInputs.cache
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\obj\Debug\netcoreapp3.1-windows\WpfExample.AssemblyInfo.cs
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\obj\Debug\netcoreapp3.1-windows\WpfExample.csproj.CoreCompileInputs.cache
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\obj\Debug\netcoreapp3.1-windows\WpfExample.sourcelink.json
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\obj\Debug\netcoreapp3.1-windows\WpfExample.csproj.Up2Date
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\obj\Debug\netcoreapp3.1-windows\WpfExample.dll
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\obj\Debug\netcoreapp3.1-windows\WpfExample.pdb
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\Examples\WpfExample\obj\Debug\netcoreapp3.1-windows\WpfExample.genruntimeconfig.cache
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\ScatterGraph.deps.json
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\ScatterGraph.runtimeconfig.json
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\ScatterGraph.runtimeconfig.dev.json
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\ScatterGraph.exe
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\WpfExample.exe
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\WpfExample.deps.json
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\WpfExample.runtimeconfig.json
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\WpfExample.runtimeconfig.dev.json
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\WpfExample.dll
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\WpfExample.pdb
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\JetBrains.Annotations.dll
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\MathNet.Numerics.dll
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\Microsoft.Win32.SystemEvents.dll
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\ObjectTK.2D.dll
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\ObjectTK.Core.dll
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\OpenTK.Compute.dll
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\OpenTK.Core.dll
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\GLWpfControl.dll
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\OpenTK.Graphics.dll
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\OpenTK.Input.dll
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\OpenTK.Mathematics.dll
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\OpenTK.OpenAL.dll
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\OpenTK.Windowing.Common.dll
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\OpenTK.Windowing.Desktop.dll
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\OpenTK.Windowing.GraphicsLibraryFramework.dll
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\System.Drawing.Common.dll
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\runtimes\linux-x64\native\libglfw.so.3.3
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\runtimes\osx-x64\native\libglfw.3.dylib
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\runtimes\win-x64\native\glfw3.dll
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\runtimes\win-x86\native\glfw3.dll
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\GLGraphs.dll
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.dll
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\ScatterGraph.dll
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.pdb
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\GLGraphs.pdb
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\bin\Debug\netcoreapp3.1-windows\ScatterGraph.pdb
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\obj\Debug\netcoreapp3.1-windows\WpfExample.csproj.AssemblyReference.cache
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\obj\Debug\netcoreapp3.1-windows\MainWindow.g.cs
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\obj\Debug\netcoreapp3.1-windows\App.g.cs
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\obj\Debug\netcoreapp3.1-windows\GeneratedInternalTypeHelper.g.cs
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\obj\Debug\netcoreapp3.1-windows\WpfExample_MarkupCompile.cache
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\obj\Debug\netcoreapp3.1-windows\WpfExample_MarkupCompile.lref
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\obj\Debug\netcoreapp3.1-windows\MainWindow.baml
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\obj\Debug\netcoreapp3.1-windows\WpfExample.g.resources
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\obj\Debug\netcoreapp3.1-windows\WpfExample.GeneratedMSBuildEditorConfig.editorconfig
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\obj\Debug\netcoreapp3.1-windows\WpfExample.AssemblyInfoInputs.cache
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\obj\Debug\netcoreapp3.1-windows\WpfExample.AssemblyInfo.cs
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\obj\Debug\netcoreapp3.1-windows\WpfExample.csproj.CoreCompileInputs.cache
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\obj\Debug\netcoreapp3.1-windows\WpfExample.csproj.Up2Date
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\obj\Debug\netcoreapp3.1-windows\WpfExample.dll
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\obj\Debug\netcoreapp3.1-windows\WpfExample.pdb
+D:\My Documents\C# projects\GLGraph\src\Examples\WpfExample\obj\Debug\netcoreapp3.1-windows\WpfExample.genruntimeconfig.cache

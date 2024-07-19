@@ -1,0 +1,54 @@
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\GLGraphs.Wpf\bin\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.deps.json
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\GLGraphs.Wpf\bin\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.dll
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\GLGraphs.Wpf\bin\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.pdb
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\GLGraphs.Wpf\bin\Debug\netcoreapp3.1-windows\GLGraphs.dll
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\GLGraphs.Wpf\bin\Debug\netcoreapp3.1-windows\GLGraphs.pdb
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.csproj.AssemblyReference.cache
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.GeneratedMSBuildEditorConfig.editorconfig
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.AssemblyInfoInputs.cache
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.AssemblyInfo.cs
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.csproj.CoreCompileInputs.cache
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.sourcelink.json
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.0977EEAF.Up2Date
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.dll
+D:\My Documents\C# projects\WPF Samples\GLGraph\src\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.pdb
+D:\My Documents\C# projects\GLGraph\src\GLGraphs.Wpf\bin\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.deps.json
+D:\My Documents\C# projects\GLGraph\src\GLGraphs.Wpf\bin\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.dll
+D:\My Documents\C# projects\GLGraph\src\GLGraphs.Wpf\bin\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.pdb
+D:\My Documents\C# projects\GLGraph\src\GLGraphs.Wpf\bin\Debug\netcoreapp3.1-windows\GLGraphs.dll
+D:\My Documents\C# projects\GLGraph\src\GLGraphs.Wpf\bin\Debug\netcoreapp3.1-windows\GLGraphs.pdb
+D:\My Documents\C# projects\GLGraph\src\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.csproj.AssemblyReference.cache
+D:\My Documents\C# projects\GLGraph\src\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.GeneratedMSBuildEditorConfig.editorconfig
+D:\My Documents\C# projects\GLGraph\src\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.AssemblyInfoInputs.cache
+D:\My Documents\C# projects\GLGraph\src\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.AssemblyInfo.cs
+D:\My Documents\C# projects\GLGraph\src\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.csproj.CoreCompileInputs.cache
+D:\My Documents\C# projects\GLGraph\src\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.0977EEAF.Up2Date
+D:\My Documents\C# projects\GLGraph\src\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.dll
+D:\My Documents\C# projects\GLGraph\src\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.pdb
+D:\My Documents\C# projects\FiberPullStrain\src\GLGraphs.Wpf\bin\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.deps.json
+D:\My Documents\C# projects\FiberPullStrain\src\GLGraphs.Wpf\bin\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.dll
+D:\My Documents\C# projects\FiberPullStrain\src\GLGraphs.Wpf\bin\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.pdb
+D:\My Documents\C# projects\FiberPullStrain\src\GLGraphs.Wpf\bin\Debug\netcoreapp3.1-windows\GLGraphs.dll
+D:\My Documents\C# projects\FiberPullStrain\src\GLGraphs.Wpf\bin\Debug\netcoreapp3.1-windows\GLGraphs.pdb
+D:\My Documents\C# projects\FiberPullStrain\src\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.csproj.AssemblyReference.cache
+D:\My Documents\C# projects\FiberPullStrain\src\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.GeneratedMSBuildEditorConfig.editorconfig
+D:\My Documents\C# projects\FiberPullStrain\src\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.AssemblyInfoInputs.cache
+D:\My Documents\C# projects\FiberPullStrain\src\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.AssemblyInfo.cs
+D:\My Documents\C# projects\FiberPullStrain\src\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.csproj.CoreCompileInputs.cache
+D:\My Documents\C# projects\FiberPullStrain\src\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.sourcelink.json
+D:\My Documents\C# projects\FiberPullStrain\src\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.0977EEAF.Up2Date
+D:\My Documents\C# projects\FiberPullStrain\src\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.dll
+D:\My Documents\C# projects\FiberPullStrain\src\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.pdb
+D:\My Documents\C# projects\InsuitFiberStrain\GLGraphs.Wpf\bin\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.deps.json
+D:\My Documents\C# projects\InsuitFiberStrain\GLGraphs.Wpf\bin\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.dll
+D:\My Documents\C# projects\InsuitFiberStrain\GLGraphs.Wpf\bin\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.pdb
+D:\My Documents\C# projects\InsuitFiberStrain\GLGraphs.Wpf\bin\Debug\netcoreapp3.1-windows\GLGraphs.dll
+D:\My Documents\C# projects\InsuitFiberStrain\GLGraphs.Wpf\bin\Debug\netcoreapp3.1-windows\GLGraphs.pdb
+D:\My Documents\C# projects\InsuitFiberStrain\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.csproj.AssemblyReference.cache
+D:\My Documents\C# projects\InsuitFiberStrain\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.GeneratedMSBuildEditorConfig.editorconfig
+D:\My Documents\C# projects\InsuitFiberStrain\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.AssemblyInfoInputs.cache
+D:\My Documents\C# projects\InsuitFiberStrain\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.AssemblyInfo.cs
+D:\My Documents\C# projects\InsuitFiberStrain\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.csproj.CoreCompileInputs.cache
+D:\My Documents\C# projects\InsuitFiberStrain\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.0977EEAF.Up2Date
+D:\My Documents\C# projects\InsuitFiberStrain\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.dll
+D:\My Documents\C# projects\InsuitFiberStrain\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.pdb

@@ -1,0 +1,107 @@
+﻿<UserControl x:Class="FiberPullStrain.CustomControl.view.ButtonControls"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FiberPullStrain.CustomControl.view"
+             d:DataContext="{d:DesignInstance Type=local:MainViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="200">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition/>
+            <RowDefinition Height="55"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="btStart" Background="Transparent" Margin="3" BorderBrush="Orange" BorderThickness="1"
+                FontSize="60" Click="btStart_Click">
+            <Button.Style>
+                <Style TargetType="Button" >
+                    <Setter Property="Foreground" Value="Gray"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsRunning}" Value="True">
+                            <Setter Property="Content" Value="Stop"/>
+                            <Setter Property="Foreground" Value="Red"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsRunning}" Value="False">
+                            <Setter Property="Content" Value="Start"/>
+                            <Setter Property="Foreground" Value="LightSeaGreen"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="Exit" Background="Transparent" Grid.Row="3" Margin="3" BorderBrush="Orange" BorderThickness="1"
+                Foreground="Gray"  Content="Exit" FontSize="33"
+                Height="45" VerticalAlignment="Bottom" Click="Exit_Click"/>
+        <Border Grid.Row="1" BorderBrush="Orange" BorderThickness="2"  Margin="3">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/> <!-- 0: Lable Set Items -->
+                    <RowDefinition Height="50"/> <!-- 1: Input Distance -->
+                    <RowDefinition Height="30"/> <!-- 2:  Button Set Origin -->
+                    <RowDefinition Height="50*"/>  <!-- 3: Lable displaying Current Distance-->
+                    <RowDefinition Height="30"/> <!-- 4: Check Box mm and Inch -->
+                    <RowDefinition Height="50"/> <!-- 5: Input Force -->
+                    <RowDefinition Height="30"/>  <!-- 6: Button Set Origin -->
+                    <RowDefinition Height="50*"/>  <!-- 7: Lable displaying Current Force -->
+                    <RowDefinition Height="30"/> <!-- 8: Check Box Grams and Newton -->
+                </Grid.RowDefinitions>
+                <Label Content="Set Items" Foreground="Gray" FontSize="25" HorizontalAlignment="Center"
+                   Height="40" VerticalAlignment="Top"/>
+
+                <local:ClearableTextBox x:Name="inBoxDistance" Grid.Row="1" />
+
+                <!-- 4: Check Box mm and Inch -->
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <CheckBox x:Name="cbmm" Grid.Column="0" Content="mm" Foreground="Gray" FontSize="20"
+                          HorizontalAlignment="Center" VerticalContentAlignment="Center"
+                          IsChecked="True" Click="cbmm_Click"/>
+                    <CheckBox x:Name="cbinch" Grid.Column="1" Content="inch" Foreground="Gray" FontSize="20"
+                          HorizontalAlignment="Center" VerticalContentAlignment="Center"
+                          Click="cbinch_Click"/>
+                </Grid>
+                <!-- 3: Lable displaying Current Distance-->
+                <Border Grid.Row="3" BorderBrush="LightGray" BorderThickness="1">
+                    <Viewbox>
+                        <Label x:Name="lbCurrentDistance" Foreground="Orange"
+                           Content="{Binding lb_Current_Distance, UpdateSourceTrigger=PropertyChanged}"/>
+                    </Viewbox>
+                </Border>
+
+                <Button x:Name="btnDistanceSetOrigin" Grid.Row="4" Content="Set Origin" Background="Transparent" 
+                        Foreground="Gray" FontSize="20" Click="btnDistanceSetOrigin_Click"/>
+                
+                <local:ClearableTextBox x:Name="inBoxForce" Grid.Row="5" />
+
+                <!-- 8: Check Box Grams and Newton -->
+                <Grid Grid.Row="6">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <CheckBox x:Name="cbgrams" Grid.Column="0" Content="grams" Foreground="Gray" FontSize="20"
+                          HorizontalAlignment="Center" VerticalContentAlignment="Center"
+                          IsChecked="true" Click="cbgrams_Click"/>
+                    <CheckBox x:Name="cbnewton" Grid.Column="1" Content="Newton" Foreground="Gray" FontSize="20"
+                        HorizontalAlignment="Center" VerticalContentAlignment="Center" Click="cbnewton_Click" />
+                </Grid>
+                <!-- 7: Lable displaying Current Force -->
+                <Border Grid.Row="7" BorderBrush="LightGray" BorderThickness="1">
+                    <Viewbox>
+                        <Label x:Name="lbCurrentForce" Foreground="Orange"
+                           Content="{Binding lb_Current_Force, UpdateSourceTrigger=PropertyChanged}"/>
+                    </Viewbox>
+                </Border>
+
+
+                <Button x:Name="btnForceSetOrigin" Grid.Row="8" Content="Set Origin" Background="Transparent" 
+                        Foreground="Gray" FontSize="20" Click="btnForceSetOrigin_Click"/>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>
