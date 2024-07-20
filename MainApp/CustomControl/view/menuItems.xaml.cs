@@ -54,9 +54,9 @@ namespace FiberPullStrain.CustomControl.view
             await _mainWindow.serialCommunication.SearchAllCOMports();
         }
 
-        private void mnClearView_Click(object sender, RoutedEventArgs e)
+        private void mnClear_Click(object sender, RoutedEventArgs e)
         {
-            _mainWindow.CartGraph.Graph.State.Series[0].Clear();
+            _mainWindow.CartGraph.Graph.State.Series[_mainWindow.publicVars.CURRENT_CURVE_SERIES].Clear();
             //_mainWindow.CartGraph.Graph.State.Camera.Current.ZoomIn(0);
             _mainWindow.CartGraph.Graph.State.IsCameraAutoControlled = true;
         }

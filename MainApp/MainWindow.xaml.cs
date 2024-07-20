@@ -4,7 +4,6 @@ using GLGraphs.CartesianGraph;
 using OpenTK.Mathematics;
 using System;
 using System.Windows;
-using System.Windows.Controls;
 
 namespace FiberPull
 {
@@ -12,12 +11,13 @@ namespace FiberPull
 
         public SerialCommunication serialCommunication;
         public MainViewModel viewModel;
+        public PublicVars publicVars;
         public MainWindow() {
-            InitializeComponent(); 
+            InitializeComponent();
+            publicVars = new PublicVars();
             myButtonControls._mainwindow = this;
-            myMenuItmes._mainWindow = this;
+            myMenuItmes._mainWindow = this; 
             CartGraph.Graph = GenerateGraph();
-            //CartGraph.Render += AddPoint;
             serialCommunication = new SerialCommunication();
             viewModel = new MainViewModel(serialCommunication);
             this.DataContext = viewModel;
@@ -31,15 +31,15 @@ namespace FiberPull
             float.TryParse(viewModel.lb_Current_Distance, out float x);
             float.TryParse(viewModel.lb_Current_Force, out float y);
             newPoint.X = x; newPoint.Y = y;
-            AddPoint1(newPoint);
+            AddPoint(newPoint);
             float.TryParse(myButtonControls.inBoxDistance.inputBox.Text, out float a);
             if (a == x) viewModel.IsRunning = false;
         }
 
         //private int i = 0;
-        public void AddPoint1(Point point)
+        public void AddPoint(Point point)
         {
-            var series = CartGraph.Graph.State.Series[0];
+            var series = CartGraph.Graph.State.Series[publicVars.CURRENT_CURVE_SERIES];
             var str = point.ToString();
             series.Add(str, (float)point.X, (float)point.Y);
         }

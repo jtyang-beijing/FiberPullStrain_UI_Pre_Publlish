@@ -19,6 +19,7 @@ namespace FiberPullStrain
         public char HOST_CMD_STOP_MOTOR;
         public char HOST_CMD_RESET_MOTOR_POSITION;
         public char HOST_CMD_RESET_LOAD_SENSOR;
+        public int CURRENT_CURVE_SERIES;
 
         public PublicVars()
         {
@@ -29,6 +30,7 @@ namespace FiberPullStrain
             HOST_CMD_STOP_MOTOR = 'e';
             HOST_CMD_RESET_MOTOR_POSITION = 'o';
             HOST_CMD_RESET_LOAD_SENSOR = 't';
+            CURRENT_CURVE_SERIES = 0;
         }
         private string max_value_distance;
 

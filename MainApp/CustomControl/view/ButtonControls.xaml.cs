@@ -9,19 +9,28 @@ namespace FiberPullStrain.CustomControl.view
     {
         public MainWindow _mainwindow { get; set; }
         public int ViewModel_lb_Current_Distance_Content_Changed { get; }
-
-        PublicVars publicVars = new PublicVars();
         public ButtonControls()
         {
             InitializeComponent();
             // initialized max value of input box. 
-            inBoxDistance.MaxValue = publicVars.MAX_VALUE_DISTANCE;
-            inBoxDistance.MinValue = "-" + publicVars.MAX_VALUE_DISTANCE;
-            inBoxForce.MaxValue = publicVars.MAX_VALUE_FORCE;
+            this.Loaded += ButtonControls_Loaded;
 
-            inBoxDistance.tbPlaceHolder.Text = "input distance";
-            inBoxForce.tbPlaceHolder.Text = "input Force";
         }
+
+        private void ButtonControls_Loaded(object sender, RoutedEventArgs e)
+        {
+            _mainwindow = Application.Current.MainWindow as MainWindow;
+            if (_mainwindow != null)
+            {
+                inBoxDistance.MaxValue = _mainwindow.publicVars.MAX_VALUE_DISTANCE;
+                inBoxDistance.MinValue = "-" + _mainwindow.publicVars.MAX_VALUE_DISTANCE;
+                inBoxForce.MaxValue = _mainwindow.publicVars.MAX_VALUE_FORCE;
+
+                inBoxDistance.tbPlaceHolder.Text = "input distance";
+                inBoxForce.tbPlaceHolder.Text = "input Force";
+            }
+        }
+
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             if(_mainwindow.serialCommunication.myPort.IsOpen)
@@ -38,13 +47,15 @@ namespace FiberPullStrain.CustomControl.view
             if(_mainwindow.viewModel.IsRunning) 
             {
                 _mainwindow.serialCommunication.myPort.WriteLine(
-                    publicVars.HOST_CMD_STOP_MOTOR.ToString());
+                    _mainwindow.publicVars.HOST_CMD_STOP_MOTOR.ToString());
                 _mainwindow.viewModel.IsRunning = true;
             }
             else 
             {
+                _mainwindow.publicVars.CURRENT_CURVE_SERIES ++;
+                if (_mainwindow.publicVars.CURRENT_CURVE_SERIES > 49) _mainwindow.publicVars.CURRENT_CURVE_SERIES = 0;
                 string _cmd = "m" + (Decimal.Parse(inBoxDistance.inputBox.Text) *
-                    publicVars.MOTOR_SCALE).ToString();
+                    _mainwindow.publicVars.MOTOR_SCALE).ToString();
                 _mainwindow.serialCommunication.myPort.WriteLine(_cmd);
             }
             _mainwindow.viewModel.IsRunning = !_mainwindow.viewModel.IsRunning;
@@ -63,14 +74,14 @@ namespace FiberPullStrain.CustomControl.view
             {
                 if (cbmm.IsChecked == true)
                 {
-                    inBoxDistance.MaxValue = publicVars.MAX_VALUE_DISTANCE;
-                    inBoxDistance.inputBox.Text = (ss * publicVars.DISTANCE_EXCHANGE_RATE).ToString("F2");
+                    inBoxDistance.MaxValue = _mainwindow.publicVars.MAX_VALUE_DISTANCE;
+                    inBoxDistance.inputBox.Text = (ss * _mainwindow.publicVars.DISTANCE_EXCHANGE_RATE).ToString("F2");
                 }
                 else
                 {
-                    inBoxDistance.MaxValue = (Decimal.Parse(publicVars.MAX_VALUE_DISTANCE) /
-                        publicVars.DISTANCE_EXCHANGE_RATE ).ToString("F2");
-                    inBoxDistance.inputBox.Text = (ss / publicVars.DISTANCE_EXCHANGE_RATE).ToString("F2");
+                    inBoxDistance.MaxValue = (Decimal.Parse(_mainwindow.publicVars.MAX_VALUE_DISTANCE) /
+                        _mainwindow.publicVars.DISTANCE_EXCHANGE_RATE ).ToString("F2");
+                    inBoxDistance.inputBox.Text = (ss / _mainwindow.publicVars.DISTANCE_EXCHANGE_RATE).ToString("F2");
                 }
             }
         }
@@ -83,15 +94,15 @@ namespace FiberPullStrain.CustomControl.view
             {
                 if (cbinch.IsChecked == true)
                 {
-                    inBoxDistance.MaxValue = (Decimal.Parse(publicVars.MAX_VALUE_DISTANCE) /
-                        publicVars.DISTANCE_EXCHANGE_RATE).ToString("F2");
-                    inBoxDistance.inputBox.Text = (ss / publicVars.DISTANCE_EXCHANGE_RATE).ToString("F2");
+                    inBoxDistance.MaxValue = (Decimal.Parse(_mainwindow.publicVars.MAX_VALUE_DISTANCE) /
+                        _mainwindow.publicVars.DISTANCE_EXCHANGE_RATE).ToString("F2");
+                    inBoxDistance.inputBox.Text = (ss / _mainwindow.publicVars.DISTANCE_EXCHANGE_RATE).ToString("F2");
 
                 }
                 else
                 {
-                    inBoxDistance.MaxValue = publicVars.MAX_VALUE_DISTANCE;
-                    inBoxDistance.inputBox.Text = (ss * publicVars.DISTANCE_EXCHANGE_RATE).ToString("F2");
+                    inBoxDistance.MaxValue = _mainwindow.publicVars.MAX_VALUE_DISTANCE;
+                    inBoxDistance.inputBox.Text = (ss * _mainwindow.publicVars.DISTANCE_EXCHANGE_RATE).ToString("F2");
                 }
             }
 
@@ -105,14 +116,14 @@ namespace FiberPullStrain.CustomControl.view
             {
                 if (cbgrams.IsChecked == true)
                 {
-                    inBoxForce.MaxValue = publicVars.MAX_VALUE_FORCE;
-                    inBoxForce.inputBox.Text = (ss * publicVars.FORCE_EXCHANGE_RATE).ToString("F2");
+                    inBoxForce.MaxValue = _mainwindow.publicVars.MAX_VALUE_FORCE;
+                    inBoxForce.inputBox.Text = (ss * _mainwindow.publicVars.FORCE_EXCHANGE_RATE).ToString("F2");
                 }
                 else
                 {
-                    inBoxForce.MaxValue = (Decimal.Parse(publicVars.MAX_VALUE_FORCE) /
-                        publicVars.FORCE_EXCHANGE_RATE).ToString("F2");
-                    inBoxForce.inputBox.Text = (ss / publicVars.FORCE_EXCHANGE_RATE).ToString("F2");
+                    inBoxForce.MaxValue = (Decimal.Parse(_mainwindow.publicVars.MAX_VALUE_FORCE) /
+                        _mainwindow.publicVars.FORCE_EXCHANGE_RATE).ToString("F2");
+                    inBoxForce.inputBox.Text = (ss / _mainwindow.publicVars.FORCE_EXCHANGE_RATE).ToString("F2");
                 }
             }
         }
@@ -125,14 +136,14 @@ namespace FiberPullStrain.CustomControl.view
             {
                 if (cbnewton.IsChecked == true)
                 {
-                    inBoxForce.MaxValue = (Decimal.Parse(publicVars.MAX_VALUE_FORCE) /
-                        publicVars.FORCE_EXCHANGE_RATE).ToString("F2");
-                    inBoxForce.inputBox.Text = (ss / publicVars.FORCE_EXCHANGE_RATE).ToString("F2");
+                    inBoxForce.MaxValue = (Decimal.Parse(_mainwindow.publicVars.MAX_VALUE_FORCE) /
+                        _mainwindow.publicVars.FORCE_EXCHANGE_RATE).ToString("F2");
+                    inBoxForce.inputBox.Text = (ss / _mainwindow.publicVars.FORCE_EXCHANGE_RATE).ToString("F2");
                 }
                 else
                 {
-                    inBoxForce.MaxValue = publicVars.MAX_VALUE_FORCE;
-                    inBoxForce.inputBox.Text = (ss * publicVars.FORCE_EXCHANGE_RATE).ToString("F2");
+                    inBoxForce.MaxValue = _mainwindow.publicVars.MAX_VALUE_FORCE;
+                    inBoxForce.inputBox.Text = (ss * _mainwindow.publicVars.FORCE_EXCHANGE_RATE).ToString("F2");
                 }
             }
         }
@@ -141,13 +152,13 @@ namespace FiberPullStrain.CustomControl.view
         {
             //_mainwindow.viewModel.lb_Current_Distance = "0.00";
             _mainwindow.serialCommunication.myPort.WriteLine(
-                publicVars.HOST_CMD_RESET_MOTOR_POSITION.ToString());
+                _mainwindow.publicVars.HOST_CMD_RESET_MOTOR_POSITION.ToString());
         }
 
         private void btnForceSetOrigin_Click(object sender, RoutedEventArgs e)
         {
             _mainwindow.serialCommunication.myPort.WriteLine(
-                publicVars.HOST_CMD_RESET_LOAD_SENSOR.ToString());
+                _mainwindow.publicVars.HOST_CMD_RESET_LOAD_SENSOR.ToString());
         }
     }
 }

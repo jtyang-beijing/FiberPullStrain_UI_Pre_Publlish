@@ -20,26 +20,32 @@
                           Background="Transparent" Foreground="Black"/>
                 <MenuItem x:Name="mnSaveAs" Header="Save as"  Margin="5"
                           Background="Transparent" Foreground="Black"/>
-                <MenuItem x:Name="mnClearView" Header="Clear View" Margin="5"
-                          Background="Transparent" Foreground="Black"
-                          Click="mnClearView_Click"/>
                 <MenuItem x:Name="mnExit" Header="Exit"  Margin="5" Click="mnExit_Click"
+                          Background="Transparent" Foreground="Black"/>
+            </MenuItem>
+            <MenuItem Header="View" Margin="5">
+                <MenuItem x:Name="mnClear" Header="Clear View" Margin="5"
+                          Background="Transparent" Foreground="Black"
+                          Click="mnClear_Click"/>
+                <MenuItem x:Name="mnZoomIn" Header="Zoom In" Margin="5"
+                          Background="Transparent" Foreground="Black"/>
+                <MenuItem x:Name="mnZoomOut" Header="Zoom Out" Margin="5"
                           Background="Transparent" Foreground="Black"/>
             </MenuItem>
             <MenuItem Header="Setup" Margin="5">
                 <MenuItem x:Name="mnSearch" Header="Search Stage" Margin="5"
-                          Background="Transparent" Foreground="Black"
-                          Click="mnSearch_Click"/>
+                            Background="Transparent" Foreground="Black"
+                            Click="mnSearch_Click"/>
                 <MenuItem x:Name="mnSystemSetup" Header="System Setup" Margin="5"
-                          Background="Transparent" Foreground="Black"/>
+                            Background="Transparent" Foreground="Black"/>
             </MenuItem>
             <MenuItem Header="About" Margin="5">
                 <MenuItem x:Name="mnAboutProduct" Header="Product" Margin="5"
-                          Background="Transparent" Foreground="Black"
-                          Click="mnAboutProduct_Click"/>
+                            Background="Transparent" Foreground="Black"
+                            Click="mnAboutProduct_Click"/>
                 <MenuItem x:Name="mnAboutSupport" Header="Support" Margin="5"
-                          Background="Transparent" Foreground="Black"
-                          Click="mnAboutSupport_Click"/>
+                            Background="Transparent" Foreground="Black"
+                            Click="mnAboutSupport_Click"/>
             </MenuItem>
         </Menu>
 
