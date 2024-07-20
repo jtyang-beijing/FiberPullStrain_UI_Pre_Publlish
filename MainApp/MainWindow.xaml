@@ -60,8 +60,10 @@
                                     <local:GLCartesianGraphControlString.ContextMenu>
                                         <ContextMenu Foreground="LightSlateGray"  FontSize="20">
                                             <MenuItem Header="Data" Name="Data" Margin="5" >
-                                                <MenuItem Header="Save Current Curve To File" Name="SaveToFile"/>
-                                                <MenuItem Header="Delete Current Curve" Name="Delete"/>
+                                                <MenuItem Header="Save Current Curve To File" Name="SaveToFile"
+                                                          Click="SaveToFile_Click"/>
+                                                <MenuItem Header="Delete Current Curve" Name="Delete"
+                                                          Click="Delete_Click"/>
                                             </MenuItem>
                                             <MenuItem Header="View" Name="View" Margin="5">
                                                 <MenuItem Header="Clear all Curves" Name="ClearAll"

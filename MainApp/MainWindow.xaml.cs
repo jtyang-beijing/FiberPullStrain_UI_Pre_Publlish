@@ -33,12 +33,15 @@ namespace FiberPull
         Point newPoint = new Point();
         private void ViewModel_lb_Current_Distance_Content_Changed(object sender, EventArgs e)
         {
-            float.TryParse(viewModel.lb_Current_Distance, out float x);
-            float.TryParse(viewModel.lb_Current_Force, out float y);
-            newPoint.X = x; newPoint.Y = y;
-            AddPoint(newPoint);
-            float.TryParse(myButtonControls.inBoxDistance.inputBox.Text, out float a);
-            if (a == x) viewModel.IsRunning = false;
+            if(viewModel.IsRunning)
+            {
+                float.TryParse(viewModel.lb_Current_Distance, out float x);
+                float.TryParse(viewModel.lb_Current_Force, out float y);
+                newPoint.X = x; newPoint.Y = y;
+                AddPoint(newPoint);
+                float.TryParse(myButtonControls.inBoxDistance.inputBox.Text, out float a);
+                if (a == x) viewModel.IsRunning = false;
+            }
         }
 
         public void AddPoint(Point point)
@@ -99,6 +102,16 @@ namespace FiberPull
         private void AutoZoom_Click(object sender, RoutedEventArgs e)
         {
             CartGraph.Graph.State.IsCameraAutoControlled = true;
+        }
+
+        private void SaveToFile_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            CartGraph.Graph.State.Series[publicVars.LAST_SERIES_ID].Clear();
         }
     }
 }
