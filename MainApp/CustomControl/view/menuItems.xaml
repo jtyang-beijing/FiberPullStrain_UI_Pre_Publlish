@@ -27,6 +27,9 @@
                 <MenuItem x:Name="mnClear" Header="Clear View" Margin="5"
                           Background="Transparent" Foreground="Black"
                           Click="mnClear_Click"/>
+                <MenuItem x:Name="mnClearCurrent" Header="Clear Current Curve" Margin="5"
+                          Background="Transparent" Foreground="Black"
+                          Click="mnClearCurrent_Click"/>
                 <MenuItem x:Name="mnZoomIn" Header="Zoom In" Margin="5"
                           Background="Transparent" Foreground="Black"/>
                 <MenuItem x:Name="mnZoomOut" Header="Zoom Out" Margin="5"

@@ -53,6 +53,7 @@ namespace FiberPullStrain.CustomControl.view
             else 
             {
                 _mainwindow.publicVars.CURRENT_CURVE_SERIES ++;
+                _mainwindow.CartGraph.Graph.State.IsCameraAutoControlled = true;
                 if (_mainwindow.publicVars.CURRENT_CURVE_SERIES > 49) _mainwindow.publicVars.CURRENT_CURVE_SERIES = 0;
                 string _cmd = "m" + (Decimal.Parse(inBoxDistance.inputBox.Text) *
                     _mainwindow.publicVars.MOTOR_SCALE).ToString();

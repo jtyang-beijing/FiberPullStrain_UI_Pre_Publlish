@@ -1,13 +1,16 @@
 ﻿using FiberPullStrain;
 using FiberPullStrain.CustomControl.view;
 using GLGraphs.CartesianGraph;
+using MathNet.Numerics;
 using OpenTK.Mathematics;
 using System;
+using System.Linq;
 using System.Windows;
+using System.Windows.Documents;
 
 namespace FiberPull
 {
-    public partial class MainWindow : Window {
+    public partial class MainWindow : System.Windows.Window {
 
         public SerialCommunication serialCommunication;
         public MainViewModel viewModel;
@@ -22,7 +25,8 @@ namespace FiberPull
             viewModel = new MainViewModel(serialCommunication);
             this.DataContext = viewModel;
             viewModel.lb_Current_Distance_Content_Changed += ViewModel_lb_Current_Distance_Content_Changed;
-            
+
+            CartGraph.Graph.State.ItemSelected += State_ItemSelected;
         }
 
         Point newPoint = new Point();
@@ -36,12 +40,19 @@ namespace FiberPull
             if (a == x) viewModel.IsRunning = false;
         }
 
-        //private int i = 0;
         public void AddPoint(Point point)
         {
             var series = CartGraph.Graph.State.Series[publicVars.CURRENT_CURVE_SERIES];
             var str = point.ToString();
             series.Add(str, (float)point.X, (float)point.Y);
+        }
+
+        private void State_ItemSelected(string obj)
+        {
+            string s = CartGraph.Graph.State.MouseoverTarget.Value.Series.Name;
+            int i = int.Parse(s.Split(" ")[1]);
+            CartGraph.Graph.State.Series[i-1].Color = new Color4(r: 1.0f, g: 0.0f, b: 0.0f, a: 1.0f);
+            //MessageBox.Show(s);
         }
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
