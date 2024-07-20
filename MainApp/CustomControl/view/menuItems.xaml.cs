@@ -54,7 +54,7 @@ namespace FiberPullStrain.CustomControl.view
             await _mainWindow.serialCommunication.SearchAllCOMports();
         }
 
-        private void mnClear_Click(object sender, RoutedEventArgs e)
+        public void mnClear_Click(object sender, RoutedEventArgs e)
         {
             for(int i= 0; i <= _mainWindow.publicVars.CURRENT_CURVE_SERIES; i++)
             {

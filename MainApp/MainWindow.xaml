@@ -56,12 +56,26 @@
                                     Margin="0,5,5,5"
                                     Grid.Column="1" 
                                     BorderBrush="LightGray" 
-                                    BorderThickness="1"
-                                    />
+                                    BorderThickness="1">
+                                    <local:GLCartesianGraphControlString.ContextMenu>
+                                        <ContextMenu Foreground="LightSlateGray"  FontSize="20">
+                                            <MenuItem Header="Data" Name="Data" Margin="5" >
+                                                <MenuItem Header="Save Current Curve To File" Name="SaveToFile"/>
+                                                <MenuItem Header="Delete Current Curve" Name="Delete"/>
+                                            </MenuItem>
+                                            <MenuItem Header="View" Name="View" Margin="5">
+                                                <MenuItem Header="Clear all Curves" Name="ClearAll"
+                                                          Click="ClearAll_Click"/>
+                                                <MenuItem Header="Auto Zoom" Name="AutoZoom"
+                                                          Click="AutoZoom_Click"/>
+                                            </MenuItem>
+                                        </ContextMenu>
+                                    </local:GLCartesianGraphControlString.ContextMenu>
+                                </local:GLCartesianGraphControlString>
                                 <!-- X Axis -->
                                 <TextBlock Grid.Row="1" Text="Pull Distance" Foreground="White"
-                       FontSize="20" FlowDirection="LeftToRight"
-                       VerticalAlignment="Center" HorizontalAlignment="Center" >
+                                    FontSize="20" FlowDirection="LeftToRight"
+                                    VerticalAlignment="Center" HorizontalAlignment="Center" >
                                 </TextBlock>
                             </Grid>
                         </Grid>

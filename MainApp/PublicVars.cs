@@ -1,5 +1,6 @@
 ﻿using FiberPullStrain.CustomControl.view;
 using OpenTK.Graphics.OpenGL;
+using OpenTK.Mathematics;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,9 @@ namespace FiberPullStrain
         public char HOST_CMD_RESET_LOAD_SENSOR;
         public int CURRENT_CURVE_SERIES;
 
+        public int LAST_SERIES_ID;
+        public Color4 LAST_COLOR;
+
         public PublicVars()
         {
             MAX_VALUE_DISTANCE = "50"; 
@@ -31,6 +35,7 @@ namespace FiberPullStrain
             HOST_CMD_RESET_MOTOR_POSITION = 'o';
             HOST_CMD_RESET_LOAD_SENSOR = 't';
             CURRENT_CURVE_SERIES = 0;
+            LAST_SERIES_ID = -1;
         }
         private string max_value_distance;
 

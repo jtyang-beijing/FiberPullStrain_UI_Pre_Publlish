@@ -15,6 +15,7 @@ namespace FiberPull
         public SerialCommunication serialCommunication;
         public MainViewModel viewModel;
         public PublicVars publicVars;
+
         public MainWindow() {
             InitializeComponent();
             publicVars = new PublicVars();
@@ -49,10 +50,15 @@ namespace FiberPull
 
         private void State_ItemSelected(string obj)
         {
+            if (publicVars.LAST_SERIES_ID >= 0)
+            {
+                CartGraph.Graph.State.Series[publicVars.LAST_SERIES_ID].Color = publicVars.LAST_COLOR;
+            }
             string s = CartGraph.Graph.State.MouseoverTarget.Value.Series.Name;
-            int i = int.Parse(s.Split(" ")[1]);
-            CartGraph.Graph.State.Series[i-1].Color = new Color4(r: 1.0f, g: 0.0f, b: 0.0f, a: 1.0f);
-            //MessageBox.Show(s);
+            int i = int.Parse(s.Split(" ")[1]) - 1;
+            publicVars.LAST_SERIES_ID = i;
+            publicVars.LAST_COLOR = CartGraph.Graph.State.Series[i].Color;
+            CartGraph.Graph.State.Series[i].Color = new Color4(r: 1.0f, g: 0.0f, b: 0.0f, a: 1.0f);
         }
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
@@ -83,6 +89,16 @@ namespace FiberPull
             var c = new Color4(r: 1.0f, g: 0.0f, b: 0.0f, a: 0.125f);
             g.State.AddRegion(new Box2(-0.5f, -0.5f, 0.5f, 0.5f), c);
             return g;
+        }
+
+        private void ClearAll_Click(object sender, RoutedEventArgs e)
+        {
+            myMenuItmes.mnClear_Click(sender, e);
+        }
+
+        private void AutoZoom_Click(object sender, RoutedEventArgs e)
+        {
+            CartGraph.Graph.State.IsCameraAutoControlled = true;
         }
     }
 }
