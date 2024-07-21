@@ -1,8 +1,14 @@
 ﻿using FiberPull;
+using Microsoft.Win32;
 using System;
+using System.Collections.Generic;
+using System.Collections.Immutable;
+using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Documents;
 
 namespace FiberPullStrain.CustomControl.view
 {
@@ -68,6 +74,59 @@ namespace FiberPullStrain.CustomControl.view
         {
             _mainWindow.CartGraph.Graph.State.Series[_mainWindow.publicVars.CURRENT_CURVE_SERIES].Clear();
             _mainWindow.publicVars.CURRENT_CURVE_SERIES--;
+        }
+
+        public void mnOpen_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog ofd = new();
+            ofd.Filter = "Curve File | *.cuv";
+            ofd.Title = "Open Curve File";
+            bool? res = ofd.ShowDialog();
+            if (res == true)
+            {
+                try 
+                { 
+                    var dataPoints = File.ReadAllLines(ofd.FileName);
+                    _mainWindow.publicVars.CURRENT_CURVE_SERIES++;
+                    _mainWindow.CartGraph.Graph.State.IsCameraAutoControlled = true;
+                    if (_mainWindow.publicVars.CURRENT_CURVE_SERIES > 49) _mainWindow.publicVars.CURRENT_CURVE_SERIES = 0;
+                    Point newPoint = new();
+                    foreach (var dataPoint in dataPoints)
+                    {
+                        string[] p = dataPoint.Split(',');
+                        newPoint.X = float.Parse(p[0].ToString());
+                        newPoint.Y = float.Parse(p[1].ToString());
+                        _mainWindow.AddPoint(newPoint);
+                    }
+                }
+                catch (Exception err)
+                {
+                    MessageBox.Show(err.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
+
+        private void mnSave_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        public void mnSaveAs_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog savefile = new();
+            savefile.Filter = "Curve File | *.cuv";
+            savefile.Title = "Save file as";
+            bool? res = savefile.ShowDialog();
+            if (res == true) 
+            {
+                int seriesID = _mainWindow.publicVars.LAST_SERIES_ID;
+                if (seriesID < 0) seriesID = _mainWindow.publicVars.CURRENT_CURVE_SERIES;
+                string fn = savefile.FileName;
+                var datapoints = _mainWindow.CartGraph.Graph.State.Series[seriesID].Points.ToList();
+                List<string> myList = new List<string>();
+                foreach (var datapoint in datapoints) { myList.Add(datapoint.Value.ToString()); }
+                File.WriteAllLines(fn, myList);
+            }
         }
     }
 }

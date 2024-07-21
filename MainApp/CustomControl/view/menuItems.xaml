@@ -6,48 +6,38 @@
              xmlns:local="clr-namespace:FiberPullStrain.CustomControl.view"
              mc:Ignorable="d" 
              Height="30" d:DesignWidth="400">
+    <UserControl.Resources>
+        <Style TargetType="MenuItem" BasedOn="{StaticResource MenuItemStyle}"/>
+    </UserControl.Resources>
     <Grid Background="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <Menu Background="Transparent" Foreground="White" FontSize="20">
-            <MenuItem Header="File" Margin="5">
-                <MenuItem x:Name="mnOpen" Header="Open" Margin="5"
-                          Background="Transparent" Foreground="Black"/>
-                <MenuItem x:Name="mnClose" Header="Close" Margin="5"
-                          Background="Transparent" Foreground="Black"/>
-                <MenuItem x:Name="mnSave" Header="Save"  Margin="5"
-                          Background="Transparent" Foreground="Black"/>
-                <MenuItem x:Name="mnSaveAs" Header="Save as"  Margin="5"
-                          Background="Transparent" Foreground="Black"/>
-                <MenuItem x:Name="mnExit" Header="Exit"  Margin="5" Click="mnExit_Click"
-                          Background="Transparent" Foreground="Black"/>
+        <Menu Background="Transparent">
+            <MenuItem Header="_File" Foreground="White">
+                <MenuItem x:Name="mnOpen" Header="Open" Click="mnOpen_Click"/>
+                <MenuItem x:Name="mnClose" Header="Close"/>
+                <MenuItem x:Name="mnSave" Header="Save" Click="mnSave_Click"/>
+                <MenuItem x:Name="mnSaveAs" Header="Save as" Click="mnSaveAs_Click"/>
+                <MenuItem x:Name="mnExit" Header="Exit" Click="mnExit_Click"/>
             </MenuItem>
-            <MenuItem Header="View" Margin="5">
-                <MenuItem x:Name="mnClear" Header="Clear View" Margin="5"
-                          Background="Transparent" Foreground="Black"
+            <MenuItem Header="_View" Foreground="White">
+                <MenuItem x:Name="mnClear" Header="Clear View"
                           Click="mnClear_Click"/>
-                <MenuItem x:Name="mnClearCurrent" Header="Clear Current Curve" Margin="5"
-                          Background="Transparent" Foreground="Black"
+                <MenuItem x:Name="mnClearCurrent" Header="Clear Current Curve"
                           Click="mnClearCurrent_Click"/>
-                <MenuItem x:Name="mnZoomIn" Header="Zoom In" Margin="5"
-                          Background="Transparent" Foreground="Black"/>
-                <MenuItem x:Name="mnZoomOut" Header="Zoom Out" Margin="5"
-                          Background="Transparent" Foreground="Black"/>
+                <MenuItem x:Name="mnZoomIn" Header="Zoom In"/>
+                <MenuItem x:Name="mnZoomOut" Header="Zoom Out"/>
             </MenuItem>
-            <MenuItem Header="Setup" Margin="5">
-                <MenuItem x:Name="mnSearch" Header="Search Stage" Margin="5"
-                            Background="Transparent" Foreground="Black"
+            <MenuItem Header="_Setup" Foreground="White">
+                <MenuItem x:Name="mnSearch" Header="Search Stage"
                             Click="mnSearch_Click"/>
-                <MenuItem x:Name="mnSystemSetup" Header="System Setup" Margin="5"
-                            Background="Transparent" Foreground="Black"/>
+                <MenuItem x:Name="mnSystemSetup" Header="System Setup"/>
             </MenuItem>
-            <MenuItem Header="About" Margin="5">
-                <MenuItem x:Name="mnAboutProduct" Header="Product" Margin="5"
-                            Background="Transparent" Foreground="Black"
+            <MenuItem Header="_About" Foreground="White">
+                <MenuItem x:Name="mnAboutProduct" Header="Product"
                             Click="mnAboutProduct_Click"/>
-                <MenuItem x:Name="mnAboutSupport" Header="Support" Margin="5"
-                            Background="Transparent" Foreground="Black"
+                <MenuItem x:Name="mnAboutSupport" Header="Support" 
                             Click="mnAboutSupport_Click"/>
             </MenuItem>
         </Menu>

@@ -62,6 +62,7 @@ namespace FiberPull
             publicVars.LAST_SERIES_ID = i;
             publicVars.LAST_COLOR = CartGraph.Graph.State.Series[i].Color;
             CartGraph.Graph.State.Series[i].Color = new Color4(r: 1.0f, g: 0.0f, b: 0.0f, a: 1.0f);
+            
         }
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
@@ -106,12 +107,17 @@ namespace FiberPull
 
         private void SaveToFile_Click(object sender, RoutedEventArgs e)
         {
-
+            myMenuItmes.mnSaveAs_Click(sender, e);
         }
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
             CartGraph.Graph.State.Series[publicVars.LAST_SERIES_ID].Clear();
+        }
+
+        private void Open_Click(object sender, RoutedEventArgs e)
+        {
+           myMenuItmes.mnOpen_Click(sender, e);
         }
     }
 }

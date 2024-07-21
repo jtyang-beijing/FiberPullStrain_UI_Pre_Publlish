@@ -62,6 +62,8 @@
                                             <MenuItem Header="Data" Name="Data" Margin="5" >
                                                 <MenuItem Header="Save Current Curve To File" Name="SaveToFile"
                                                           Click="SaveToFile_Click"/>
+                                                <MenuItem Header="Open Curve" Name="Open"
+                                                          Click="Open_Click"/>
                                                 <MenuItem Header="Delete Current Curve" Name="Delete"
                                                           Click="Delete_Click"/>
                                             </MenuItem>
