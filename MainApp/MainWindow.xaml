@@ -8,10 +8,10 @@
         xmlns:CustomControl="clr-namespace:FiberPullStrain.CustomControl.view" 
         mc:Ignorable="d" Background="Transparent" Loaded="Window_Loaded" Closing="Window_Closing"
         Title="Fiber Pull Strain in-suit Test Stage" Height="900" Width="1500"
-        WindowStyle="ThreeDBorderWindow" WindowStartupLocation="CenterScreen">
+        WindowStyle="ThreeDBorderWindow" WindowStartupLocation="CenterScreen" Icon="/blizzard_icon_249823.ico">
     <Window.Resources>
         <Style TargetType="Window">
-            <Setter Property="Icon" Value="./image/icon.ico"/>
+            <Setter Property="Icon" Value="pack://application:,,,/FiberPullStrain;component/image/blizzard_icon_249823.ico"/>
         </Style>
     </Window.Resources>
     <Grid>

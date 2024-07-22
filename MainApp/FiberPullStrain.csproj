@@ -16,6 +16,7 @@
     <Compile Remove="GLNetworkGraphControlString.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="blizzard_icon_249823.ico" />
     <None Remove="image\blizzard_icon_249823.ico" />
     <None Remove="image\icon.ico" />
     <None Remove="image\icon.png" />
@@ -31,6 +32,7 @@
     <ProjectReference Include="..\GLGraphs\GLGraphs.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="blizzard_icon_249823.ico" />
     <Resource Include="image\blizzard_icon_249823.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
