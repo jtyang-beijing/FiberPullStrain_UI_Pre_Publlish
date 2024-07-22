@@ -2,10 +2,12 @@
 using OpenTK.Graphics.OpenGL;
 using OpenTK.Mathematics;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Web;
 
 namespace FiberPullStrain
 {
@@ -33,7 +35,8 @@ namespace FiberPullStrain
 
         public bool HANDSHAKESUCCEED;
 
-        public List<string> IN_BUFFER;
+        //public List<string> IN_BUFFER;
+        public ConcurrentQueue<string> IN_BUFFER { get; private set; }
 
         public PublicVars()
         {
@@ -57,7 +60,7 @@ namespace FiberPullStrain
 
             HANDSHAKESUCCEED = false;
 
-            IN_BUFFER = [];
+            IN_BUFFER = new ConcurrentQueue<string>();
         }
         private string max_value_distance;
 

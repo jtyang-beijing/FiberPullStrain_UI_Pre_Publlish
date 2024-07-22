@@ -29,45 +29,14 @@ namespace FiberPullStrain.CustomControl.view
 
         private void _serialcommunication_DataReceived(object sender, string e)
         {
-            lock (_lock) { _mainWindow.publicVars.IN_BUFFER.Add(e); }
+            _mainWindow.publicVars.IN_BUFFER.Enqueue(e);
         }
-        //public void show_in_data(string e) // to be called in a individial thread in Button Control
-        //{
-        //    string[] str = e.Split(':');
-        //    _dispatcher.Invoke(() =>
-        //    {
-        //        if (str[0] == "f")
-        //        {
-        //            lb_Current_Force = str[1];
-        //        }
-        //        else if (str[0] == "d")
-        //        {
-        //            string dd = (Decimal.Parse(str[1]) / _mainWindow.publicVars.MOTOR_SCALE).ToString("F2");
-        //            lb_Current_Distance = dd;
-        //        }
-        //        else
-        //        {
-        //            Bar_Infor = e;
-        //        }
-        //    });
-        //}
 
         public void show_in_data() // to be called in a individial thread in Button Control
         {
             while (_isRunning)
             {
-                string e = null;
-
-                lock (_lock)
-                {
-                    if (_mainWindow.publicVars.IN_BUFFER.Count > 0)
-                    {
-                        e = _mainWindow.publicVars.IN_BUFFER[0];
-                        _mainWindow.publicVars.IN_BUFFER.RemoveAt(0);
-                    }
-                }
-
-                if (e != null)
+                if (_mainWindow.publicVars.IN_BUFFER.TryDequeue(out string e))
                 {
                     string[] str = e.Split(':');
                     _dispatcher.Invoke(() =>
