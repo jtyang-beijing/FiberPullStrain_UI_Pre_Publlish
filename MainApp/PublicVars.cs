@@ -17,10 +17,16 @@ namespace FiberPullStrain
 
         public string CURRENT_DISTANCE;
         public string CURRENT_FORCE;
+        public int CURRENT_CURVE_SERIES;
+
         public char HOST_CMD_STOP_MOTOR;
         public char HOST_CMD_RESET_MOTOR_POSITION;
         public char HOST_CMD_RESET_LOAD_SENSOR;
-        public int CURRENT_CURVE_SERIES;
+        public char HOST_CMD_CALIBRATE_LOAD_SENSOR;
+        public char HOST_CMD_HANDSHAKE;
+        public char HOST_CMD_GET_CURRENT_MOTOR_POSITION;
+        public char HOST_CMD_SET_LOADSENSOR_CAL_FACTOR;
+        public char HOST_CMD_DRIVE_MOTOR;
 
         public int LAST_SERIES_ID;
         public Color4 LAST_COLOR;
@@ -31,11 +37,16 @@ namespace FiberPullStrain
             MAX_VALUE_FORCE = "5000";
             CURRENT_DISTANCE = "0.00";
             CURRENT_FORCE = "0.00";
+            CURRENT_CURVE_SERIES = 0;
+            LAST_SERIES_ID = -1;
             HOST_CMD_STOP_MOTOR = 'e';
             HOST_CMD_RESET_MOTOR_POSITION = 'o';
             HOST_CMD_RESET_LOAD_SENSOR = 't';
-            CURRENT_CURVE_SERIES = 0;
-            LAST_SERIES_ID = -1;
+            HOST_CMD_CALIBRATE_LOAD_SENSOR = 'c';
+            HOST_CMD_HANDSHAKE = 'h';
+            HOST_CMD_GET_CURRENT_MOTOR_POSITION = 'p';
+            HOST_CMD_SET_LOADSENSOR_CAL_FACTOR = 'r';
+            HOST_CMD_DRIVE_MOTOR = 'm';
         }
         private string max_value_distance;
 

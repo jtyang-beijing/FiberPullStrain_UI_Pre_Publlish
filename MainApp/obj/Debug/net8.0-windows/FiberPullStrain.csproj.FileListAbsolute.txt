@@ -96,6 +96,7 @@ D:\My Documents\C# projects\InsuitFiberStrain\MainApp\bin\Debug\net8.0-windows\G
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\bin\Debug\net8.0-windows\GLGraphs.Wpf.pdb
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\bin\Debug\net8.0-windows\GLGraphs.pdb
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\FiberPullStrain.csproj.AssemblyReference.cache
+D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\Style\MenuStyle.baml
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\About.g.cs
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\CustomControl\view\ButtonControls.g.cs
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\CustomControl\view\ClearableTextBox.g.cs
@@ -105,6 +106,7 @@ D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\A
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\FiberPullStrain_MarkupCompile.cache
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\FiberPullStrain_MarkupCompile.lref
+D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\App.baml
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\About.baml
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\CustomControl\view\ButtonControls.baml
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\CustomControl\view\ClearableTextBox.baml
@@ -115,12 +117,10 @@ D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\F
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\FiberPullStrain.AssemblyInfoInputs.cache
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\FiberPullStrain.AssemblyInfo.cs
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\FiberPullStrain.csproj.CoreCompileInputs.cache
+D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\FiberPullStrain.sourcelink.json
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\FiberPul.D53C90F4.Up2Date
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\FiberPullStrain.dll
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\refint\FiberPullStrain.dll
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\FiberPullStrain.pdb
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\FiberPullStrain.genruntimeconfig.cache
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\ref\FiberPullStrain.dll
-D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\FiberPullStrain.sourcelink.json
-D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\Style\MenuStyle.baml
-D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\App.baml

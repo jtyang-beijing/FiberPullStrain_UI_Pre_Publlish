@@ -108,7 +108,22 @@ namespace FiberPullStrain.CustomControl.view
 
         private void mnSave_Click(object sender, RoutedEventArgs e)
         {
-
+            try 
+            {
+                int seriesID = _mainWindow.publicVars.LAST_SERIES_ID;
+                if (seriesID < 0) seriesID = _mainWindow.publicVars.CURRENT_CURVE_SERIES;
+                string fn = "curve.crv";
+                var datapoints = _mainWindow.CartGraph.Graph.State.Series[seriesID].Points.ToList();
+                List<string> myList = new List<string>();
+                foreach (var datapoint in datapoints) { myList.Add(datapoint.Value.ToString()); }
+                File.WriteAllLines(fn, myList);
+                MessageBox.Show("Current Curve was saved as \n" +
+                    fn + "\n" + "to " + AppContext.BaseDirectory.ToString(),
+                    "Information",
+                    MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch (Exception err)
+            { MessageBox.Show(err.Message,"Error", MessageBoxButton.OK, MessageBoxImage.Error); }
         }
 
         public void mnSaveAs_Click(object sender, RoutedEventArgs e)

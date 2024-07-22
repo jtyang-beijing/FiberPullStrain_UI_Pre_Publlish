@@ -52,3 +52,4 @@ D:\My Documents\C# projects\InsuitFiberStrain\GLGraphs.Wpf\obj\Debug\netcoreapp3
 D:\My Documents\C# projects\InsuitFiberStrain\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.0977EEAF.Up2Date
 D:\My Documents\C# projects\InsuitFiberStrain\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.dll
 D:\My Documents\C# projects\InsuitFiberStrain\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.pdb
+D:\My Documents\C# projects\InsuitFiberStrain\GLGraphs.Wpf\obj\Debug\netcoreapp3.1-windows\GLGraphs.Wpf.sourcelink.json

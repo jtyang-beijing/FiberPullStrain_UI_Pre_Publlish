@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/1QAofHh0zY=",
+  "dgSpecHash": "mLFDmStBnHI=",
   "success": true,
   "projectFilePath": "D:\\My Documents\\C# projects\\InsuitFiberStrain\\GLGraphs\\GLGraphs.csproj",
   "expectedPackageFiles": [
@@ -22,7 +22,10 @@
     "C:\\Users\\bjjty\\.nuget\\packages\\opentk.windowing.common\\4.3.0\\opentk.windowing.common.4.3.0.nupkg.sha512",
     "C:\\Users\\bjjty\\.nuget\\packages\\opentk.windowing.desktop\\4.3.0\\opentk.windowing.desktop.4.3.0.nupkg.sha512",
     "C:\\Users\\bjjty\\.nuget\\packages\\opentk.windowing.graphicslibraryframework\\4.3.0\\opentk.windowing.graphicslibraryframework.4.3.0.nupkg.sha512",
-    "C:\\Users\\bjjty\\.nuget\\packages\\system.drawing.common\\6.0.0-preview.1.21102.12\\system.drawing.common.6.0.0-preview.1.21102.12.nupkg.sha512"
+    "C:\\Users\\bjjty\\.nuget\\packages\\system.drawing.common\\6.0.0-preview.1.21102.12\\system.drawing.common.6.0.0-preview.1.21102.12.nupkg.sha512",
+    "C:\\Users\\bjjty\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\3.1.32\\microsoft.netcore.app.runtime.win-x64.3.1.32.nupkg.sha512",
+    "C:\\Users\\bjjty\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\3.1.32\\microsoft.windowsdesktop.app.runtime.win-x64.3.1.32.nupkg.sha512",
+    "C:\\Users\\bjjty\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\3.1.32\\microsoft.aspnetcore.app.runtime.win-x64.3.1.32.nupkg.sha512"
   ],
   "logs": []
 }

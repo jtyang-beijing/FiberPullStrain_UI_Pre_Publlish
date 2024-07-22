@@ -40,3 +40,4 @@ D:\My Documents\C# projects\InsuitFiberStrain\GLGraphs\obj\Debug\netcoreapp3.1\G
 D:\My Documents\C# projects\InsuitFiberStrain\GLGraphs\obj\Debug\netcoreapp3.1\GLGraphs.csproj.CoreCompileInputs.cache
 D:\My Documents\C# projects\InsuitFiberStrain\GLGraphs\obj\Debug\netcoreapp3.1\GLGraphs.dll
 D:\My Documents\C# projects\InsuitFiberStrain\GLGraphs\obj\Debug\netcoreapp3.1\GLGraphs.pdb
+D:\My Documents\C# projects\InsuitFiberStrain\GLGraphs\obj\Debug\netcoreapp3.1\GLGraphs.sourcelink.json

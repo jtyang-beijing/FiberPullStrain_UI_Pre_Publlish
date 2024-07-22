@@ -8,14 +8,14 @@ namespace FiberPullStrain.CustomControl.view
     public partial class ButtonControls : UserControl
     {
         public MainWindow _mainwindow { get; set; }
-        public int ViewModel_lb_Current_Distance_Content_Changed { get; }
+        private int ViewModel_lb_Current_Distance_Content_Changed { get; }
         public ButtonControls()
         {
             InitializeComponent();
             // initialized max value of input box. 
             this.Loaded += ButtonControls_Loaded;
-
-        }
+            // use this booking event to avoid _mainwindow.publicVars initializing problem.
+        } 
 
         private void ButtonControls_Loaded(object sender, RoutedEventArgs e)
         {
@@ -35,8 +35,8 @@ namespace FiberPullStrain.CustomControl.view
         {
             if(_mainwindow.serialCommunication.myPort.IsOpen)
             {
-                _mainwindow.serialCommunication.myPort.DiscardInBuffer();
-                _mainwindow.serialCommunication.myPort.DiscardOutBuffer();
+                //_mainwindow.serialCommunication.myPort.DiscardInBuffer();
+                //_mainwindow.serialCommunication.myPort.DiscardOutBuffer();
                 _mainwindow.serialCommunication.myPort.Close();
             }
             App.Current.Shutdown();
@@ -55,7 +55,7 @@ namespace FiberPullStrain.CustomControl.view
                 _mainwindow.publicVars.CURRENT_CURVE_SERIES ++;
                 _mainwindow.CartGraph.Graph.State.IsCameraAutoControlled = true;
                 if (_mainwindow.publicVars.CURRENT_CURVE_SERIES > 49) _mainwindow.publicVars.CURRENT_CURVE_SERIES = 0;
-                string _cmd = "m" + (Decimal.Parse(inBoxDistance.inputBox.Text) *
+                string _cmd = _mainwindow.publicVars.HOST_CMD_DRIVE_MOTOR + (Decimal.Parse(inBoxDistance.inputBox.Text) *
                     _mainwindow.publicVars.MOTOR_SCALE).ToString();
                 _mainwindow.serialCommunication.myPort.WriteLine(_cmd);
             }
@@ -63,8 +63,6 @@ namespace FiberPullStrain.CustomControl.view
             float.TryParse(_mainwindow.viewModel.lb_Current_Distance, out float x);
             float.TryParse(inBoxDistance.inputBox.Text, out float a);
             if (a == x) _mainwindow.viewModel.IsRunning = false;
-
-
         }
 
         private void cbmm_Click(object sender, RoutedEventArgs e)

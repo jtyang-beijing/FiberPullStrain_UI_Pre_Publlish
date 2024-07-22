@@ -9,6 +9,6 @@
                 <ResourceDictionary Source="Style\MenuStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
-
     </Application.Resources>
+
 </Application>

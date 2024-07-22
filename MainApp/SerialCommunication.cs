@@ -16,7 +16,7 @@ namespace FiberPullStrain
         public SerialCommunication()
         {
             myPort = new SerialPort();
-            myPort.DataReceived += MyPort_DataReceived;
+            //myPort.DataReceived += MyPort_DataReceived;
         }
 
         public async Task SearchAllCOMports()
@@ -88,6 +88,8 @@ namespace FiberPullStrain
                                 {
                                     handshakesucceed = true;
                                     DataReceived?.Invoke(this, $"Handshaking Succeed with {myPort.PortName}");
+                                    myPort.DiscardInBuffer();
+                                    myPort.DiscardOutBuffer();
                                     myPort.DataReceived += MyPort_DataReceived;
                                     return;
                                 }

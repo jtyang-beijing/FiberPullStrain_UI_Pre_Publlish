@@ -17,7 +17,7 @@ namespace FiberPull
         public PublicVars publicVars;
 
         public MainWindow() {
-            InitializeComponent();
+            InitializeComponent(); 
             publicVars = new PublicVars();
             myButtonControls._mainwindow = this;
             myMenuItmes._mainWindow = this; 
