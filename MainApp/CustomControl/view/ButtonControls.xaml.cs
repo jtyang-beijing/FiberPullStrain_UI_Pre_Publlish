@@ -1,14 +1,16 @@
 ﻿using FiberPull;
 using System;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Threading;
 
 namespace FiberPullStrain.CustomControl.view
 {
     public partial class ButtonControls : UserControl
     {
         public MainWindow _mainwindow { get; set; }
-        private int ViewModel_lb_Current_Distance_Content_Changed { get; }
+        //private int ViewModel_lb_Current_Distance_Content_Changed { get; }
         public ButtonControls()
         {
             InitializeComponent(); 
@@ -54,8 +56,10 @@ namespace FiberPullStrain.CustomControl.view
             {
                 _mainwindow.publicVars.CURRENT_CURVE_SERIES ++;
                 _mainwindow.CartGraph.Graph.State.IsCameraAutoControlled = true;
-                if (_mainwindow.publicVars.CURRENT_CURVE_SERIES > 49) _mainwindow.publicVars.CURRENT_CURVE_SERIES = 0;
-                string _cmd = _mainwindow.publicVars.HOST_CMD_DRIVE_MOTOR + (Decimal.Parse(inBoxDistance.inputBox.Text) *
+                if (_mainwindow.publicVars.CURRENT_CURVE_SERIES > 49) 
+                    _mainwindow.publicVars.CURRENT_CURVE_SERIES = 0;
+                string _cmd = _mainwindow.publicVars.HOST_CMD_DRIVE_MOTOR + 
+                    (Decimal.Parse(inBoxDistance.inputBox.Text) *
                     _mainwindow.publicVars.MOTOR_SCALE).ToString();
                 _mainwindow.serialCommunication.myPort.WriteLine(_cmd);
             }

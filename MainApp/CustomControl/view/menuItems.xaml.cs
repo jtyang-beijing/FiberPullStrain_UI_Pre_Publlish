@@ -8,7 +8,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
 
 namespace FiberPullStrain.CustomControl.view
 {
@@ -56,7 +55,8 @@ namespace FiberPullStrain.CustomControl.view
                     MessageBox.Show(err.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
-            await Task.Delay(300);
+            await Task.Delay(100);
+            while(!_mainWindow.publicVars.HANDSHAKESUCCEED)
             await _mainWindow.serialCommunication.SearchAllCOMports();
         }
 

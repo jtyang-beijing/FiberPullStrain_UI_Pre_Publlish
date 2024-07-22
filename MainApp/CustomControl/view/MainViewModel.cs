@@ -1,6 +1,8 @@
-﻿using System;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
+﻿using FiberPull;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
 
@@ -9,39 +11,92 @@ namespace FiberPullStrain.CustomControl.view
     public class MainViewModel : ViewModelBase
     {
         private protected readonly SerialCommunication _serialcommunication;
+        private  protected MainWindow _mainWindow { get; set; }
         private Dispatcher _dispatcher;
-        private PublicVars _publicVars;
+        private readonly object _lock = new object();
+        private bool _isRunning;
+        int l = 0;
         public MainViewModel(SerialCommunication serialCommunication)
         {
-            _publicVars = new PublicVars();
+            _mainWindow = Application.Current.MainWindow as MainWindow;
             _dispatcher = Dispatcher.CurrentDispatcher;
             _serialcommunication = serialCommunication;
             _serialcommunication.DataReceived += _serialcommunication_DataReceived;
-            //_serialcommunication.SimulateDataReceived("f:0f0f");
-            //_serialcommunication.SimulateDataReceived("d:0d0d");
-            _serialcommunication.SimulateDataReceived("Searching Instrument, Please Wait...");
+            _isRunning = true;
+            Thread uptate_UI = new Thread(show_in_data);
+            uptate_UI.Start();
         }
 
         private void _serialcommunication_DataReceived(object sender, string e)
         {
-            string[] str = e.Split(':');
-            _dispatcher.Invoke(() =>
+            lock (_lock) { _mainWindow.publicVars.IN_BUFFER.Add(e); }
+        }
+        //public void show_in_data(string e) // to be called in a individial thread in Button Control
+        //{
+        //    string[] str = e.Split(':');
+        //    _dispatcher.Invoke(() =>
+        //    {
+        //        if (str[0] == "f")
+        //        {
+        //            lb_Current_Force = str[1];
+        //        }
+        //        else if (str[0] == "d")
+        //        {
+        //            string dd = (Decimal.Parse(str[1]) / _mainWindow.publicVars.MOTOR_SCALE).ToString("F2");
+        //            lb_Current_Distance = dd;
+        //        }
+        //        else
+        //        {
+        //            Bar_Infor = e;
+        //        }
+        //    });
+        //}
+
+        public void show_in_data() // to be called in a individial thread in Button Control
+        {
+            while (_isRunning)
             {
-                if (str[0] == "f")
+                string e = null;
+
+                lock (_lock)
                 {
-                    lb_Current_Force = str[1];
+                    if (_mainWindow.publicVars.IN_BUFFER.Count > 0)
+                    {
+                        e = _mainWindow.publicVars.IN_BUFFER[0];
+                        _mainWindow.publicVars.IN_BUFFER.RemoveAt(0);
+                    }
                 }
-                else if (str[0] == "d")
+
+                if (e != null)
                 {
-                    string dd = (Decimal.Parse(str[1]) / _publicVars.MOTOR_SCALE).ToString("F2");
-                    lb_Current_Distance = dd;
+                    string[] str = e.Split(':');
+                    _dispatcher.Invoke(() =>
+                    {
+                        if (str[0] == "f")
+                        {
+                            lb_Current_Force = str[1];
+                        }
+                        else if (str[0] == "d")
+                        {
+                            string dd = (Decimal.Parse(str[1]) / _mainWindow.publicVars.MOTOR_SCALE).ToString("F2");
+                            lb_Current_Distance = dd;
+                        }
+                        else
+                        {
+                            Bar_Infor = e;
+                        }
+                    });
                 }
                 else
                 {
-                    Bar_Infor = e;
+                    Thread.Sleep(100); // Wait a bit before checking again
                 }
-            });
+            }
+        }
 
+        public void Stop()
+        {
+            _isRunning = false;
         }
 
         private bool isRunning;

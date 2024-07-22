@@ -11,9 +11,9 @@ namespace FiberPullStrain
 {
     public partial class PublicVars: ViewModelBase
     {
-        public Decimal DISTANCE_EXCHANGE_RATE = (Decimal)2.54;
-        public Decimal FORCE_EXCHANGE_RATE = (Decimal)101.971621;
-        public Decimal MOTOR_SCALE = (Decimal)909.09090909;
+        public Decimal DISTANCE_EXCHANGE_RATE;
+        public Decimal FORCE_EXCHANGE_RATE;
+        public Decimal MOTOR_SCALE;
 
         public string CURRENT_DISTANCE;
         public string CURRENT_FORCE;
@@ -31,8 +31,15 @@ namespace FiberPullStrain
         public int LAST_SERIES_ID;
         public Color4 LAST_COLOR;
 
+        public bool HANDSHAKESUCCEED;
+
+        public List<string> IN_BUFFER;
+
         public PublicVars()
         {
+            DISTANCE_EXCHANGE_RATE = (Decimal)2.54;
+            MOTOR_SCALE = (Decimal)909.09090909;
+            FORCE_EXCHANGE_RATE = (Decimal)101.971621;
             MAX_VALUE_DISTANCE = "50"; 
             MAX_VALUE_FORCE = "5000";
             CURRENT_DISTANCE = "0.00";
@@ -47,6 +54,10 @@ namespace FiberPullStrain
             HOST_CMD_GET_CURRENT_MOTOR_POSITION = 'p';
             HOST_CMD_SET_LOADSENSOR_CAL_FACTOR = 'r';
             HOST_CMD_DRIVE_MOTOR = 'm';
+
+            HANDSHAKESUCCEED = false;
+
+            IN_BUFFER = [];
         }
         private string max_value_distance;
 

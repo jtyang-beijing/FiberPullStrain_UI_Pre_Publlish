@@ -1,8 +1,9 @@
-﻿using System;
+﻿using FiberPull;
+using System;
 using System.Collections.Generic;
 using System.IO.Ports;
 using System.Threading.Tasks;
-using System.Windows.Navigation;
+using System.Windows;
 
 namespace FiberPullStrain
 {
@@ -10,13 +11,12 @@ namespace FiberPullStrain
     {
         public event EventHandler<string> DataReceived; 
         public SerialPort myPort;
-
-        public bool handshakesucceed = false;
+        private MainWindow _mainWindow {  get; set; }
 
         public SerialCommunication()
         {
             myPort = new SerialPort();
-            //myPort.DataReceived += MyPort_DataReceived;
+            _mainWindow = Application.Current.MainWindow as MainWindow;
         }
 
         public async Task SearchAllCOMports()
@@ -61,7 +61,7 @@ namespace FiberPullStrain
                     try
                     {
                         int i = 0;
-                        while (!handshakesucceed && i < 3)
+                        while (!_mainWindow.publicVars.HANDSHAKESUCCEED && i < 3)
                         {
                             if(i==2) // reset serial port.
                             {
@@ -75,7 +75,7 @@ namespace FiberPullStrain
                             myPort.DiscardOutBuffer();
                             //myPort.DiscardInBuffer();
                             //await Task.Delay(200);
-                            myPort.WriteLine("h");
+                            myPort.WriteLine(_mainWindow.publicVars.HOST_CMD_HANDSHAKE.ToString());
                             var stattime = DateTime.UtcNow;
                             while (myPort.BytesToRead <= 0) // every try wait 1 second...
                             {
@@ -86,7 +86,7 @@ namespace FiberPullStrain
                                 string ss = myPort.ReadExisting();
                                 if (ss.Contains("FiberPull"))
                                 {
-                                    handshakesucceed = true;
+                                    _mainWindow.publicVars.HANDSHAKESUCCEED = true;
                                     DataReceived?.Invoke(this, $"Handshaking Succeed with {myPort.PortName}");
                                     myPort.DiscardInBuffer();
                                     myPort.DiscardOutBuffer();
@@ -105,7 +105,7 @@ namespace FiberPullStrain
                             i++;
                             DataReceived?.Invoke(this, $"Trying Hand shaking with {myPort.PortName} ... {i.ToString()}");
                         }
-                        if (!handshakesucceed)
+                        if (!_mainWindow.publicVars.HANDSHAKESUCCEED)
                         {
                             myPort.Close();
                             DataReceived?.Invoke(this, $"No instrument found on {myPort.PortName}."); 
@@ -126,16 +126,16 @@ namespace FiberPullStrain
             DataReceived?.Invoke(this, $"Data incoming...{data}");
             if (data.Length > 0)
             {
-                if (!handshakesucceed)
+                if (!_mainWindow.publicVars.HANDSHAKESUCCEED)
                 {
                     if (data.Contains("FiberPull")) // invoke UI information update function
                     {
                         DataReceived?.Invoke(this, $"{myPort.PortName} -- Hand Shaking succeed.");
-                        handshakesucceed = true;
+                        _mainWindow.publicVars.HANDSHAKESUCCEED = true;
                     }
                     else
                     {
-                        handshakesucceed = false;
+                        _mainWindow.publicVars.HANDSHAKESUCCEED = false;
                         myPort.Close();
                         DataReceived?.Invoke(this, $"{myPort.PortName} -- Hand Shaking failed.");
                     }
@@ -143,7 +143,7 @@ namespace FiberPullStrain
 
                 else
                 {
-                    DataReceived?.Invoke(this, data);//????????????????????????????????
+                    DataReceived?.Invoke(this, data);
                 }
             }
         }

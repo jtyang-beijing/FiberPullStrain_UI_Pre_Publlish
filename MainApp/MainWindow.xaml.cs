@@ -68,12 +68,21 @@ namespace FiberPull
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
             await serialCommunication.SearchAllCOMports();
+            InitializeDistance_Force_Box();
+        }
+
+        private void InitializeDistance_Force_Box()
+        {
+            viewModel.lb_Current_Distance = "-.--";
+            viewModel.lb_Current_Force = "-.--";
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             if (serialCommunication.myPort.IsOpen) 
                 serialCommunication.myPort.Close();
+            viewModel.Stop();
+            base.OnClosed(e);
         }
 
         public static CartesianGraph<string> GenerateGraph()
