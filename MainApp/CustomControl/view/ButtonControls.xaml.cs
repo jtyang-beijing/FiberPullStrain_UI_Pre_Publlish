@@ -11,7 +11,7 @@ namespace FiberPullStrain.CustomControl.view
         private int ViewModel_lb_Current_Distance_Content_Changed { get; }
         public ButtonControls()
         {
-            InitializeComponent();
+            InitializeComponent(); 
             // initialized max value of input box. 
             this.Loaded += ButtonControls_Loaded;
             // use this booking event to avoid _mainwindow.publicVars initializing problem.
