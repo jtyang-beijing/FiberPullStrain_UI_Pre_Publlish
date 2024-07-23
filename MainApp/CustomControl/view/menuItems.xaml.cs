@@ -16,7 +16,7 @@ namespace FiberPullStrain.CustomControl.view
         public MainWindow _mainWindow { get; set; }
         public menuItems()
         {
-            InitializeComponent(); 
+            InitializeComponent();
             
         }
 
@@ -79,29 +79,33 @@ namespace FiberPullStrain.CustomControl.view
         public void mnOpen_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog ofd = new();
-            ofd.Filter = "Curve File | *.cuv";
+            ofd.Filter = "Curve File | *.cuv|All Files | *.*";
+            ofd.Multiselect = true;
             ofd.Title = "Open Curve File";
             bool? res = ofd.ShowDialog();
             if (res == true)
             {
-                try 
-                { 
-                    var dataPoints = File.ReadAllLines(ofd.FileName);
-                    _mainWindow.publicVars.CURRENT_CURVE_SERIES++;
-                    _mainWindow.CartGraph.Graph.State.IsCameraAutoControlled = true;
-                    if (_mainWindow.publicVars.CURRENT_CURVE_SERIES > 49) _mainWindow.publicVars.CURRENT_CURVE_SERIES = 0;
-                    Point newPoint = new();
-                    foreach (var dataPoint in dataPoints)
-                    {
-                        string[] p = dataPoint.Split(',');
-                        newPoint.X = float.Parse(p[0].ToString());
-                        newPoint.Y = float.Parse(p[1].ToString());
-                        _mainWindow.AddPoint(newPoint);
-                    }
-                }
-                catch (Exception err)
+                foreach (string filename in ofd.FileNames) 
                 {
-                    MessageBox.Show(err.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    try
+                    {
+                        var dataPoints = File.ReadAllLines(filename);
+                        _mainWindow.publicVars.CURRENT_CURVE_SERIES++;
+                        _mainWindow.CartGraph.Graph.State.IsCameraAutoControlled = true;
+                        if (_mainWindow.publicVars.CURRENT_CURVE_SERIES > 49) _mainWindow.publicVars.CURRENT_CURVE_SERIES = 0;
+                        Point newPoint = new();
+                        foreach (var dataPoint in dataPoints)
+                        {
+                            string[] p = dataPoint.Split(',');
+                            newPoint.X = float.Parse(p[0].ToString());
+                            newPoint.Y = float.Parse(p[1].ToString());
+                            _mainWindow.AddPoint(newPoint);
+                        }
+                    }
+                    catch (Exception err)
+                    {
+                        MessageBox.Show(err.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 }
             }
         }

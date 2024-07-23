@@ -79,8 +79,7 @@ namespace FiberPull
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (serialCommunication.myPort.IsOpen) 
-                serialCommunication.myPort.Close();
+            serialCommunication.ClosePort();
             viewModel.Stop();
             base.OnClosed(e);
         }
