@@ -110,6 +110,7 @@ namespace FiberPullStrain
                                 // Attach the event handler if not already attached
                                 myPort.DataReceived -= MyPort_DataReceived; // Ensure it's detached first
                                 myPort.DataReceived += MyPort_DataReceived;
+                                myPort.WriteLine(_mainWindow.publicVars.HOST_CMD_HANDSHAKE_CONFIRM.ToString());
                                 return;
                             }
                             else

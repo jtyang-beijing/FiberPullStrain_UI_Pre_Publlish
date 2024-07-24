@@ -29,6 +29,7 @@ namespace FiberPullStrain
         public char HOST_CMD_GET_CURRENT_MOTOR_POSITION;
         public char HOST_CMD_SET_LOADSENSOR_CAL_FACTOR;
         public char HOST_CMD_DRIVE_MOTOR;
+        public char HOST_CMD_HANDSHAKE_CONFIRM;
 
         public int LAST_SERIES_ID;
         public Color4 LAST_COLOR;
@@ -57,6 +58,7 @@ namespace FiberPullStrain
             HOST_CMD_GET_CURRENT_MOTOR_POSITION = 'p';
             HOST_CMD_SET_LOADSENSOR_CAL_FACTOR = 'r';
             HOST_CMD_DRIVE_MOTOR = 'm';
+            HOST_CMD_HANDSHAKE_CONFIRM = 'g';
 
             HANDSHAKESUCCEED = false;
 
