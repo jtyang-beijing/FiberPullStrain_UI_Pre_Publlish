@@ -30,6 +30,7 @@ namespace FiberPullStrain
         public char HOST_CMD_SET_LOADSENSOR_CAL_FACTOR;
         public char HOST_CMD_DRIVE_MOTOR;
         public char HOST_CMD_HANDSHAKE_CONFIRM;
+        public char HOST_CMD_EXIT_FIRMWARE;
 
         public int LAST_SERIES_ID;
         public Color4 LAST_COLOR;
@@ -59,6 +60,7 @@ namespace FiberPullStrain
             HOST_CMD_SET_LOADSENSOR_CAL_FACTOR = 'r';
             HOST_CMD_DRIVE_MOTOR = 'm';
             HOST_CMD_HANDSHAKE_CONFIRM = 'g';
+            HOST_CMD_EXIT_FIRMWARE = 'x';
 
             HANDSHAKESUCCEED = false;
 

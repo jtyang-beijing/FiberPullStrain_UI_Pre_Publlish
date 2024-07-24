@@ -5,6 +5,8 @@ VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FiberPullStrain", "FiberPullStrain.csproj", "{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "FiberPullStrain", "..\FiberPullStrain\FiberPullStrainSetup.vdproj", "{5C339DFA-599B-42BF-B800-E392F487E24D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C339DFA-599B-42BF-B800-E392F487E24D}.Debug|Any CPU.ActiveCfg = Debug
+		{5C339DFA-599B-42BF-B800-E392F487E24D}.Debug|Any CPU.Build.0 = Debug
+		{5C339DFA-599B-42BF-B800-E392F487E24D}.Release|Any CPU.ActiveCfg = Release
+		{5C339DFA-599B-42BF-B800-E392F487E24D}.Release|Any CPU.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

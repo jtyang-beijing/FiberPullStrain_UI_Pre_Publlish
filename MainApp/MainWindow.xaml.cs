@@ -17,10 +17,10 @@ namespace FiberPull
         public PublicVars publicVars;
 
         public MainWindow() {
-            InitializeComponent(); 
+            InitializeComponent();
             publicVars = new PublicVars();
             myButtonControls._mainwindow = this;
-            myMenuItmes._mainWindow = this; 
+            myMenuItmes._mainWindow = this;
             CartGraph.Graph = GenerateGraph();
             serialCommunication = new SerialCommunication();
             viewModel = new MainViewModel(serialCommunication);
@@ -33,7 +33,7 @@ namespace FiberPull
         Point newPoint = new Point();
         private void ViewModel_lb_Current_Distance_Content_Changed(object sender, EventArgs e)
         {
-            if(viewModel.IsRunning)
+            if (viewModel.IsRunning)
             {
                 float.TryParse(viewModel.lb_Current_Distance, out float x);
                 float.TryParse(viewModel.lb_Current_Force, out float y);
@@ -62,13 +62,23 @@ namespace FiberPull
             publicVars.LAST_SERIES_ID = i;
             publicVars.LAST_COLOR = CartGraph.Graph.State.Series[i].Color;
             CartGraph.Graph.State.Series[i].Color = new Color4(r: 1.0f, g: 0.0f, b: 0.0f, a: 1.0f);
-            
+
         }
 
-        private async void Window_Loaded(object sender, RoutedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            await serialCommunication.SearchAllCOMports();
-            InitializeDistance_Force_Box();
+            this.Dispatcher.BeginInvoke(new Action(async () =>
+            {
+                try
+                {
+                    await serialCommunication.SearchAllCOMports();
+                    InitializeDistance_Force_Box();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error during initialization: {ex.Message}");
+                }
+            }), System.Windows.Threading.DispatcherPriority.Background);
         }
 
         private void InitializeDistance_Force_Box()
@@ -79,9 +89,18 @@ namespace FiberPull
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            Exit_FimeWare();
             serialCommunication.ClosePort();
             viewModel.Stop();
             base.OnClosed(e);
+        }
+
+        private void Exit_FimeWare()
+        {
+            if (serialCommunication.myPort.IsOpen) 
+            {
+                serialCommunication.myPort.WriteLine(publicVars.HOST_CMD_EXIT_FIRMWARE.ToString());
+            }
         }
 
         public static CartesianGraph<string> GenerateGraph()

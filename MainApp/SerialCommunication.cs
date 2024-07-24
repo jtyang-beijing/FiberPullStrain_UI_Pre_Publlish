@@ -88,7 +88,7 @@ namespace FiberPullStrain
                         var startTime = DateTime.UtcNow;
                         while (myPort.BytesToRead <= 0)
                         {
-                            if ((DateTime.UtcNow - startTime).TotalMilliseconds > 2000)
+                            if ((DateTime.UtcNow - startTime).TotalMilliseconds > 1000)
                             {
                                 break;
                             }
