@@ -147,5 +147,12 @@ namespace FiberPullStrain.CustomControl.view
                 File.WriteAllLines(fn, myList);
             }
         }
+
+        private void mnSystemSetup_Click(object sender, RoutedEventArgs e)
+        {
+            SystemSetup systemSetup = new SystemSetup();
+            systemSetup.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            systemSetup.ShowDialog();
+        }
     }
 }

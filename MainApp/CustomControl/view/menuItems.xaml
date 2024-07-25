@@ -32,7 +32,8 @@
             <MenuItem Header="_Setup" Foreground="White">
                 <MenuItem x:Name="mnSearch" Header="Search Stage"
                             Click="mnSearch_Click"/>
-                <MenuItem x:Name="mnSystemSetup" Header="System Setup"/>
+                <MenuItem x:Name="mnSystemSetup" Header="System Setup"
+                          Click="mnSystemSetup_Click"/>
             </MenuItem>
             <MenuItem Header="_About" Foreground="White">
                 <MenuItem x:Name="mnAboutProduct" Header="Product"

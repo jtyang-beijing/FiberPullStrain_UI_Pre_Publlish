@@ -13,6 +13,9 @@
     <Compile Update="CustomControl\view\ClearableTextBox.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="SystemSetup.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="About.xaml">
@@ -31,6 +34,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Style\MenuStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SystemSetup.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

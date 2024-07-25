@@ -3,16 +3,48 @@
   "WorkspaceRootPath": "D:\\My Documents\\C# projects\\InsuitFiberStrain\\MainApp\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}|FiberPullStrain.csproj|d:\\my documents\\c# projects\\insuitfiberstrain\\mainapp\\systemsetup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}|FiberPullStrain.csproj|solutionrelative:systemsetup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}|FiberPullStrain.csproj|d:\\my documents\\c# projects\\insuitfiberstrain\\mainapp\\systemsetup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}|FiberPullStrain.csproj|solutionrelative:systemsetup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}|FiberPullStrain.csproj|d:\\my documents\\c# projects\\insuitfiberstrain\\mainapp\\serialcommunication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}|FiberPullStrain.csproj|solutionrelative:serialcommunication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}|FiberPullStrain.csproj|d:\\my documents\\c# projects\\insuitfiberstrain\\mainapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}|FiberPullStrain.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}|FiberPullStrain.csproj|d:\\my documents\\c# projects\\insuitfiberstrain\\mainapp\\customcontrol\\view\\menuitems.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}|FiberPullStrain.csproj|solutionrelative:customcontrol\\view\\menuitems.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}|FiberPullStrain.csproj|d:\\my documents\\c# projects\\insuitfiberstrain\\mainapp\\publicvars.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}|FiberPullStrain.csproj|solutionrelative:publicvars.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}|FiberPullStrain.csproj|d:\\my documents\\c# projects\\insuitfiberstrain\\mainapp\\customcontrol\\view\\menuitems.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}|FiberPullStrain.csproj|solutionrelative:customcontrol\\view\\menuitems.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}|FiberPullStrain.csproj|d:\\my documents\\c# projects\\insuitfiberstrain\\mainapp\\about.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}|FiberPullStrain.csproj|solutionrelative:about.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}|FiberPullStrain.csproj|d:\\my documents\\c# projects\\insuitfiberstrain\\mainapp\\about.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}|FiberPullStrain.csproj|solutionrelative:about.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}|FiberPullStrain.csproj|d:\\my documents\\c# projects\\insuitfiberstrain\\mainapp\\fiberpullstrain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}|FiberPullStrain.csproj|solutionrelative:fiberpullstrain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}|FiberPullStrain.csproj|d:\\my documents\\c# projects\\insuitfiberstrain\\mainapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}|FiberPullStrain.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}|FiberPullStrain.csproj|d:\\my documents\\c# projects\\insuitfiberstrain\\mainapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}|FiberPullStrain.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}|FiberPullStrain.csproj|d:\\my documents\\c# projects\\insuitfiberstrain\\mainapp\\customcontrol\\view\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,24 +62,8 @@
       "RelativeMoniker": "D:0:0:{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}|FiberPullStrain.csproj|solutionrelative:customcontrol\\view\\buttoncontrols.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}|FiberPullStrain.csproj|d:\\my documents\\c# projects\\insuitfiberstrain\\mainapp\\customcontrol\\view\\menuitems.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}|FiberPullStrain.csproj|solutionrelative:customcontrol\\view\\menuitems.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}|FiberPullStrain.csproj|d:\\my documents\\c# projects\\insuitfiberstrain\\mainapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}|FiberPullStrain.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}|FiberPullStrain.csproj|d:\\my documents\\c# projects\\insuitfiberstrain\\mainapp\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}|FiberPullStrain.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}|FiberPullStrain.csproj|d:\\my documents\\c# projects\\insuitfiberstrain\\mainapp\\fiberpullstrain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}|FiberPullStrain.csproj|solutionrelative:fiberpullstrain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}|FiberPullStrain.csproj|d:\\my documents\\c# projects\\insuitfiberstrain\\mainapp\\customcontrol\\view\\menuitems.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{6941A6D3-E7EF-4B57-815B-AC41BA2A4787}|FiberPullStrain.csproj|solutionrelative:customcontrol\\view\\menuitems.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -57,7 +73,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -81,43 +97,95 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Task.cs",
-              "DocumentMoniker": "D:\\Users\\bjjty\\AppData\\Local\\Temp\\.vsdbgsrc\\dd5d40fe187b715c64e703711fcc92a464a0d08f9fd5d91c58f877eb2794e170\\Task.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\Users\\bjjty\\AppData\\Local\\Temp\\.vsdbgsrc\\dd5d40fe187b715c64e703711fcc92a464a0d08f9fd5d91c58f877eb2794e170\\Task.cs",
-              "ToolTip": "D:\\Users\\bjjty\\AppData\\Local\\Temp\\.vsdbgsrc\\dd5d40fe187b715c64e703711fcc92a464a0d08f9fd5d91c58f877eb2794e170\\Task.cs [Read Only]",
-              "RelativeToolTip": "..\\..\\..\\..\\Users\\bjjty\\AppData\\Local\\Temp\\.vsdbgsrc\\dd5d40fe187b715c64e703711fcc92a464a0d08f9fd5d91c58f877eb2794e170\\Task.cs [Read Only]",
-              "ViewState": "AQIAAPUFAAAAAAAAAAAnwAoGAAADAAAA",
+              "DocumentIndex": 1,
+              "Title": "SystemSetup.xaml.cs",
+              "DocumentMoniker": "D:\\My Documents\\C# projects\\InsuitFiberStrain\\MainApp\\SystemSetup.xaml.cs",
+              "RelativeDocumentMoniker": "SystemSetup.xaml.cs",
+              "ToolTip": "D:\\My Documents\\C# projects\\InsuitFiberStrain\\MainApp\\SystemSetup.xaml.cs",
+              "RelativeToolTip": "SystemSetup.xaml.cs",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAYwGsAAABGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-24T09:59:35.603Z",
-              "EditorCaption": " [Read Only]"
+              "WhenOpened": "2024-07-25T06:53:53.758Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "SystemSetup.xaml",
+              "DocumentMoniker": "D:\\My Documents\\C# projects\\InsuitFiberStrain\\MainApp\\SystemSetup.xaml",
+              "RelativeDocumentMoniker": "SystemSetup.xaml",
+              "ToolTip": "D:\\My Documents\\C# projects\\InsuitFiberStrain\\MainApp\\SystemSetup.xaml",
+              "RelativeToolTip": "SystemSetup.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-25T05:49:10.506Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "About.xaml.cs",
+              "DocumentMoniker": "D:\\My Documents\\C# projects\\InsuitFiberStrain\\MainApp\\About.xaml.cs",
+              "RelativeDocumentMoniker": "About.xaml.cs",
+              "ToolTip": "D:\\My Documents\\C# projects\\InsuitFiberStrain\\MainApp\\About.xaml.cs",
+              "RelativeToolTip": "About.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T05:47:17.695Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "About.xaml",
+              "DocumentMoniker": "D:\\My Documents\\C# projects\\InsuitFiberStrain\\MainApp\\About.xaml",
+              "RelativeDocumentMoniker": "About.xaml",
+              "ToolTip": "D:\\My Documents\\C# projects\\InsuitFiberStrain\\MainApp\\About.xaml",
+              "RelativeToolTip": "About.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-25T05:45:07.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Task.cs",
+              "DocumentMoniker": "D:\\Users\\bjjty\\AppData\\Local\\Temp\\.vsdbgsrc\\dd5d40fe187b715c64e703711fcc92a464a0d08f9fd5d91c58f877eb2794e170\\Task.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Users\\bjjty\\AppData\\Local\\Temp\\.vsdbgsrc\\dd5d40fe187b715c64e703711fcc92a464a0d08f9fd5d91c58f877eb2794e170\\Task.cs",
+              "ToolTip": "D:\\Users\\bjjty\\AppData\\Local\\Temp\\.vsdbgsrc\\dd5d40fe187b715c64e703711fcc92a464a0d08f9fd5d91c58f877eb2794e170\\Task.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Users\\bjjty\\AppData\\Local\\Temp\\.vsdbgsrc\\dd5d40fe187b715c64e703711fcc92a464a0d08f9fd5d91c58f877eb2794e170\\Task.cs",
+              "ViewState": "AQIAAPUFAAAAAAAAAAAnwAoGAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T09:59:35.603Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "MainViewModel.cs",
               "DocumentMoniker": "D:\\My Documents\\C# projects\\InsuitFiberStrain\\MainApp\\CustomControl\\view\\MainViewModel.cs",
               "RelativeDocumentMoniker": "CustomControl\\view\\MainViewModel.cs",
               "ToolTip": "D:\\My Documents\\C# projects\\InsuitFiberStrain\\MainApp\\CustomControl\\view\\MainViewModel.cs",
               "RelativeToolTip": "CustomControl\\view\\MainViewModel.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAABUAAAAJAAAA",
+              "ViewState": "AQIAAA0AAAAAAAAAAABBwBUAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-24T09:46:58.555Z"
+              "WhenOpened": "2024-07-24T09:46:58.555Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 13,
               "Title": "App.xaml",
               "DocumentMoniker": "D:\\My Documents\\C# projects\\InsuitFiberStrain\\MainApp\\App.xaml",
               "RelativeDocumentMoniker": "App.xaml",
               "ToolTip": "D:\\My Documents\\C# projects\\InsuitFiberStrain\\MainApp\\App.xaml",
               "RelativeToolTip": "App.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-07-22T13:03:36.309Z"
+              "WhenOpened": "2024-07-22T13:03:36.309Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 15,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "D:\\My Documents\\C# projects\\InsuitFiberStrain\\MainApp\\App.xaml.cs",
               "RelativeDocumentMoniker": "App.xaml.cs",
@@ -125,34 +193,37 @@
               "RelativeToolTip": "App.xaml.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T13:03:34.746Z"
+              "WhenOpened": "2024-07-22T13:03:34.746Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "menuItems.xaml.cs",
               "DocumentMoniker": "D:\\My Documents\\C# projects\\InsuitFiberStrain\\MainApp\\CustomControl\\view\\menuItems.xaml.cs",
               "RelativeDocumentMoniker": "CustomControl\\view\\menuItems.xaml.cs",
               "ToolTip": "D:\\My Documents\\C# projects\\InsuitFiberStrain\\MainApp\\CustomControl\\view\\menuItems.xaml.cs",
               "RelativeToolTip": "CustomControl\\view\\menuItems.xaml.cs",
-              "ViewState": "AQIAADwAAAAAAAAAAAAAAGcAAAAVAAAA",
+              "ViewState": "AQIAAH0AAAAAAAAAAAAtwJgAAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T07:18:34.696Z"
+              "WhenOpened": "2024-07-22T07:18:34.696Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 5,
               "Title": "menuItems.xaml",
               "DocumentMoniker": "D:\\My Documents\\C# projects\\InsuitFiberStrain\\MainApp\\CustomControl\\view\\menuItems.xaml",
               "RelativeDocumentMoniker": "CustomControl\\view\\menuItems.xaml",
               "ToolTip": "D:\\My Documents\\C# projects\\InsuitFiberStrain\\MainApp\\CustomControl\\view\\menuItems.xaml",
               "RelativeToolTip": "CustomControl\\view\\menuItems.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-07-22T07:16:10.531Z"
+              "WhenOpened": "2024-07-22T07:16:10.531Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 10,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "D:\\My Documents\\C# projects\\InsuitFiberStrain\\MainApp\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
@@ -165,43 +236,45 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "D:\\My Documents\\C# projects\\InsuitFiberStrain\\MainApp\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
               "ToolTip": "D:\\My Documents\\C# projects\\InsuitFiberStrain\\MainApp\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-07-22T06:56:57.914Z"
+              "WhenOpened": "2024-07-22T06:56:57.914Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "PublicVars.cs",
               "DocumentMoniker": "D:\\My Documents\\C# projects\\InsuitFiberStrain\\MainApp\\PublicVars.cs",
               "RelativeDocumentMoniker": "PublicVars.cs",
               "ToolTip": "D:\\My Documents\\C# projects\\InsuitFiberStrain\\MainApp\\PublicVars.cs",
               "RelativeToolTip": "PublicVars.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAYwCAAAAArAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAYwBoAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T05:47:18.409Z"
+              "WhenOpened": "2024-07-22T05:47:18.409Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "SerialCommunication.cs",
               "DocumentMoniker": "D:\\My Documents\\C# projects\\InsuitFiberStrain\\MainApp\\SerialCommunication.cs",
               "RelativeDocumentMoniker": "SerialCommunication.cs",
               "ToolTip": "D:\\My Documents\\C# projects\\InsuitFiberStrain\\MainApp\\SerialCommunication.cs",
               "RelativeToolTip": "SerialCommunication.cs",
-              "ViewState": "AQIAADAAAAAAAAAAAAAYwFoAAABUAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-22T04:29:42.686Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 8,
               "Title": "FiberPullStrain.csproj",
               "DocumentMoniker": "D:\\My Documents\\C# projects\\InsuitFiberStrain\\MainApp\\FiberPullStrain.csproj",
               "RelativeDocumentMoniker": "FiberPullStrain.csproj",
@@ -209,11 +282,12 @@
               "RelativeToolTip": "FiberPullStrain.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-07-22T13:03:24.652Z"
+              "WhenOpened": "2024-07-22T13:03:24.652Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 14,
               "Title": "ButtonControls.xaml.cs",
               "DocumentMoniker": "D:\\My Documents\\C# projects\\InsuitFiberStrain\\MainApp\\CustomControl\\view\\ButtonControls.xaml.cs",
               "RelativeDocumentMoniker": "CustomControl\\view\\ButtonControls.xaml.cs",
@@ -221,7 +295,8 @@
               "RelativeToolTip": "CustomControl\\view\\ButtonControls.xaml.cs",
               "ViewState": "AQIAACsAAAAAAAAAAAAmwD8AAABDAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T03:50:03.062Z"
+              "WhenOpened": "2024-07-22T03:50:03.062Z",
+              "EditorCaption": ""
             }
           ]
         }

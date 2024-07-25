@@ -124,3 +124,5 @@ D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\r
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\FiberPullStrain.pdb
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\FiberPullStrain.genruntimeconfig.cache
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\ref\FiberPullStrain.dll
+D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\SystemSetup.g.cs
+D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\SystemSetup.baml

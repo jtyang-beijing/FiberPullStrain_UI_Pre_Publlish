@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:FiberPullStrain" Title="About" 
         mc:Ignorable="d" 
         d:DesignHeight="233" d:DesignWidth="333"
-        WindowStartupLocation="CenterScreen" >
+        WindowStartupLocation="CenterScreen" Icon="/blizzard_icon_249823.ico" >
     
     <Grid Background="Transparent">
         <Grid.RowDefinitions>

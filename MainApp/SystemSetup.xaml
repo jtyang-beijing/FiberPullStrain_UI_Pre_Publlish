@@ -1,0 +1,51 @@
+﻿<Window x:Class="FiberPullStrain.SystemSetup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FiberPullStrain"
+        mc:Ignorable="d"
+        Title="System Setup" Height="450" Width="800" Icon="/blizzard_icon_249823.ico">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="70*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Margin="5" Text="Force Sensor Setup"
+                       FontSize="16" Background="Black"  Foreground="AntiqueWhite"/>
+            <Border Grid.Row="1" Margin="5" 
+                    BorderThickness="3" BorderBrush="DarkGray" Background="LightGray">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="50*"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="50*"/>
+                        <RowDefinition Height="50*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Press Start Button to Run sensor Calibration" 
+                           HorizontalAlignment="Center" VerticalAlignment="Center"
+                               FontSize="16" Foreground="Red"/>
+                    <Button Grid.Row="1" x:Name="calibrate" Content="Start" HorizontalAlignment="Center"
+                            VerticalAlignment="Center" Height="53" Width="133" FontSize="33"
+                            Foreground="Black"  Click="calibrate_Click"/>
+                    <TextBlock Grid.Row="2"  Text="Input and confirm the Real Load" 
+                           HorizontalAlignment="Center" VerticalAlignment="Center"
+                               FontSize="16" Foreground="Red"/>
+                    <TextBox x:Name="real_weight" Grid.Row="3" Text="1000" Margin="5" VerticalAlignment="Center"
+                             HorizontalAlignment="Center" FontSize="33" Foreground="Black"
+                              IsEnabled="False" />
+                    <Button Grid.Row="4" x:Name="finish" Content="Finish" HorizontalAlignment="Center"
+                            VerticalAlignment="Center" Height="53" Width="133" FontSize="33"
+                            Foreground="Black"  IsEnabled="False" Click="finish_Click"/>
+                </Grid>
+            </Border>
+        </Grid>
+
+    </Grid>
+</Window>
