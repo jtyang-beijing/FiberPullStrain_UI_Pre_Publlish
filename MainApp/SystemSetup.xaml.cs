@@ -1,6 +1,7 @@
 ﻿using FiberPull;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -21,6 +22,8 @@ namespace FiberPullStrain
     /// </summary>
     public partial class SystemSetup : Window
     {
+        private float start_p, end_p, _distance;
+
         private MainWindow _mainWindow { get; set; }
         public SystemSetup()
         {
@@ -42,6 +45,8 @@ namespace FiberPullStrain
             {
                 calibrate_load_cell();
                 real_weight.IsEnabled = true; 
+                real_weight.Focus();
+                real_weight.SelectAll();
                 finish.IsEnabled = true;
             }
             else { }
@@ -115,6 +120,57 @@ namespace FiberPullStrain
                     MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             this.Close();
+        }
+
+        private void end_position_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            float.TryParse(end_position.Text, out end_p);
+            if (end_p>start_p) save_cal.IsEnabled = true;
+        }
+
+        private void save_cal_Click(object sender, RoutedEventArgs e)
+        {
+            if (float.TryParse(end_position.Text, out end_p))
+            {
+                _distance = end_p - start_p;
+                if (_distance > 0)
+                {// change motor scale
+                    _mainWindow.publicVars.MOTOR_SCALE = (Decimal)(10000 / _distance);
+                    MessageBox.Show("Motor Calibration data saved.");
+                }
+                else
+                {
+                    MessageBox.Show("End positin must be bigger than start potition.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Invalid end potition.");
+            }
+        }
+
+        private void run_motor_Click(object sender, RoutedEventArgs e)
+        {
+            if (float.TryParse(start_position.Text, out start_p))
+            {
+                if(_mainWindow.serialCommunication.myPort.IsOpen)
+                {
+                    float.TryParse(_mainWindow.publicVars.CURRENT_DISTANCE, out float current_motor_position);
+                    current_motor_position = current_motor_position * (float)_mainWindow.publicVars.MOTOR_SCALE;
+                    string cmd = "m" + (current_motor_position+10000).ToString("F0");
+                    _mainWindow.serialCommunication.myPort.WriteLine(cmd); // drive motor 10000 steps
+
+                    MessageBox.Show("Driving Motor to New position...\n\n" +
+                        "When Motor Stops, Measure and input Current \n" +
+                        "Motor position.", "Information",
+                        MessageBoxButton.OK, MessageBoxImage.Information);
+                    end_position.IsEnabled = true;
+                    end_position.Focus();
+                    end_position.SelectAll();
+                }
+            }
+            else { MessageBox.Show("Invalid start potition."); }
+              
         }
     }
 }

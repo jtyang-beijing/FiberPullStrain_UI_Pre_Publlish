@@ -17,7 +17,7 @@ namespace FiberPull
         public PublicVars publicVars;
 
         public MainWindow() {
-            InitializeComponent();
+            InitializeComponent(); 
             publicVars = new PublicVars();
             myButtonControls._mainwindow = this;
             myMenuItmes._mainWindow = this;
@@ -139,7 +139,17 @@ namespace FiberPull
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-            CartGraph.Graph.State.Series[publicVars.LAST_SERIES_ID].Clear();
+            if(publicVars.LAST_SERIES_ID >0)
+            {
+                CartGraph.Graph.State.Series[publicVars.LAST_SERIES_ID].Clear();
+                publicVars.LAST_SERIES_ID = -1;
+            }
+            else
+            {
+                MessageBox.Show("No Curve Selected.\nPlease select one Curve.",
+                    "Warnning",MessageBoxButton.OK,MessageBoxImage.Warning);
+            }
+            
         }
 
         private void Open_Click(object sender, RoutedEventArgs e)

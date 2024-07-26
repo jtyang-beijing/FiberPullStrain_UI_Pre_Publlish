@@ -69,7 +69,7 @@
                                                           Click="SaveToFile_Click"/>
                                                 <MenuItem Header="Open Curve" Name="Open"
                                                           Click="Open_Click"/>
-                                                <MenuItem Header="Delete Current Curve" Name="Delete"
+                                                <MenuItem Header="Delete Selected Curve" Name="Delete"
                                                           Click="Delete_Click"/>
                                             </MenuItem>
                                             <MenuItem Header="View" Name="View" Margin="5">

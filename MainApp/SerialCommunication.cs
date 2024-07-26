@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO.Ports;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -103,11 +104,12 @@ namespace FiberPullStrain
                                 _mainWindow.publicVars.HANDSHAKESUCCEED = true;
                                 DataReceived?.Invoke(this, $"Handshaking succeeded with {myPort.PortName}");
 
-                                // Clear buffers and attach the event handler
+                                // Clear buffers and attach the event handler. this action causing serial problem
                                 myPort.DiscardInBuffer();
-                                myPort.DiscardOutBuffer();
+                                myPort.DiscardOutBuffer(); 
 
                                 // Attach the event handler if not already attached
+                                Thread.Sleep(1000);
                                 myPort.DataReceived -= MyPort_DataReceived; // Ensure it's detached first
                                 myPort.DataReceived += MyPort_DataReceived;
                                 myPort.WriteLine(_mainWindow.publicVars.HOST_CMD_HANDSHAKE_CONFIRM.ToString());

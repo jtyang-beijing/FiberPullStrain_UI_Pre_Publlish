@@ -17,9 +17,10 @@
                 <RowDefinition Height="70*"/>
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" Margin="5" Text="Force Sensor Setup"
-                       FontSize="16" Background="Black"  Foreground="AntiqueWhite"/>
+                       FontSize="16" Background="Transparent"  Foreground="Black"
+                       HorizontalAlignment="Center"/>
             <Border Grid.Row="1" Margin="5" 
-                    BorderThickness="3" BorderBrush="DarkGray" Background="LightGray">
+                    BorderThickness="1" BorderBrush="OrangeRed"  Background="DarkGray">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="25"/>
@@ -30,19 +31,109 @@
                     </Grid.RowDefinitions>
                     <TextBlock Text="Press Start Button to Run sensor Calibration" 
                            HorizontalAlignment="Center" VerticalAlignment="Center"
-                               FontSize="16" Foreground="Red"/>
+                               FontSize="16" Foreground="Black"/>
                     <Button Grid.Row="1" x:Name="calibrate" Content="Start" HorizontalAlignment="Center"
                             VerticalAlignment="Center" Height="53" Width="133" FontSize="33"
-                            Foreground="Black"  Click="calibrate_Click"/>
+                            Foreground="OrangeRed"  Click="calibrate_Click"/>
                     <TextBlock Grid.Row="2"  Text="Input and confirm the Real Load" 
                            HorizontalAlignment="Center" VerticalAlignment="Center"
-                               FontSize="16" Foreground="Red"/>
+                               FontSize="16" Foreground="Black"/>
                     <TextBox x:Name="real_weight" Grid.Row="3" Text="1000" Margin="5" VerticalAlignment="Center"
-                             HorizontalAlignment="Center" FontSize="33" Foreground="Black"
-                              IsEnabled="False" />
+                             HorizontalAlignment="Center" FontSize="33" Foreground="OrangeRed"  Width="133"
+                              IsEnabled="False" Background="Transparent"  BorderBrush="AntiqueWhite"
+                             BorderThickness="2" TextAlignment="Center"/>
                     <Button Grid.Row="4" x:Name="finish" Content="Finish" HorizontalAlignment="Center"
                             VerticalAlignment="Center" Height="53" Width="133" FontSize="33"
-                            Foreground="Black"  IsEnabled="False" Click="finish_Click"/>
+                            Foreground="OrangeRed"  IsEnabled="False" Click="finish_Click"/>
+                </Grid>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="70*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Margin="5" Text="Motor Setup"
+                       FontSize="16" Background="Transparent"  Foreground="Black"
+                       HorizontalAlignment="Center"/>
+            <Border Grid.Row="1" Margin="5" 
+                    BorderThickness="1" BorderBrush="OrangeRed"  Background="DarkGray">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Calibrate Motor" Margin="5" FontSize="16"/>
+                    <Border Grid.Row="1" BorderBrush="LightGray"  BorderThickness="1"
+                            Margin="5">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="Start Position:"
+                                       FontSize="20" HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+                            <TextBox x:Name="start_position" Grid.Row="0" Grid.Column="1" Text="0"
+                                     FontSize="23" TextAlignment="Center"
+                                     Margin="5" Background="Transparent" BorderBrush="AntiqueWhite"
+                                     BorderThickness="1"/>
+                            <Button x:Name="run_motor" Content="Run Motor to new position" Grid.Row="1"
+                                    Grid.ColumnSpan="2" Margin="5" FontSize="20" Foreground="OrangeRed"
+                                    Click="run_motor_Click"/>
+                            <TextBlock Grid.Row="2" Grid.Column="0" Text="End Position:"
+                                       FontSize="20" HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+                            <TextBox x:Name="end_position" Grid.Row="2" Grid.Column="1" FontSize="23" 
+                                     TextAlignment="Center" Text="0"
+                                     Margin="5" Background="Transparent" BorderBrush="AntiqueWhite"
+                                     BorderThickness="1" IsEnabled="False"
+                                     TextChanged="end_position_TextChanged"/>
+                            <Button x:Name="save_cal" Content="Save Calibration Data" Grid.Row="3"
+                                    Grid.ColumnSpan="2" Margin="5" FontSize="20" Foreground="OrangeRed"
+                                    IsEnabled="False" Click="save_cal_Click"/>
+                        </Grid>
+                        
+                    </Border>
+                    <Border Grid.Row="2" BorderBrush="AntiqueWhite" BorderThickness="1" Margin="5">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="Set Max Distance"
+                                       FontSize="20" HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+                            <TextBox x:Name="max_distance" Grid.Row="0" Grid.Column="1"
+                                     Margin="5" Background="Transparent" BorderBrush="AntiqueWhite"
+                                     BorderThickness="1" Text="25" FontSize="33" Foreground="OrangeRed"
+                                     TextAlignment="Center"/>
+                            <TextBlock Grid.Row="1" Grid.Column="0" Text="Set Max Force"
+                                       FontSize="20" HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+                            <TextBox x:Name="max_force" Grid.Row="1" Grid.Column="1"
+                                     Margin="5" Background="Transparent" BorderBrush="AntiqueWhite"
+                                     BorderThickness="1" Text="5000" FontSize="33" Foreground="OrangeRed"
+                                     TextAlignment="Center"/>
+                            <Button x:Name="save_max" Content="Save Maximum Data" Grid.Row="3"
+                                    Grid.ColumnSpan="2" Margin="5" FontSize="20" Foreground="OrangeRed"
+                                    IsEnabled="False"/>
+                        </Grid>
+                    </Border>
+
                 </Grid>
             </Border>
         </Grid>

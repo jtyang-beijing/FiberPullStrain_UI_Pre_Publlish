@@ -43,10 +43,12 @@ namespace FiberPullStrain
         public PublicVars()
         {
             DISTANCE_EXCHANGE_RATE = (Decimal)2.54;
-            MOTOR_SCALE = (Decimal)909.09090909;
             FORCE_EXCHANGE_RATE = (Decimal)101.971621;
-            MAX_VALUE_DISTANCE = "50"; 
+            // Custermizable public varialbles
+            MOTOR_SCALE = (Decimal)909.09090909; //steps per mm
+            MAX_VALUE_DISTANCE = "26"; 
             MAX_VALUE_FORCE = "5000";
+            //----------------------------------------
             CURRENT_DISTANCE = "0.00";
             CURRENT_FORCE = "0.00";
             CURRENT_CURVE_SERIES = 0;
