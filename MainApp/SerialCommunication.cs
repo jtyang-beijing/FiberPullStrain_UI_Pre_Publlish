@@ -44,106 +44,87 @@ namespace FiberPullStrain
                     DataReceived?.Invoke(this, err.Message);
                 }
             }
-            else
+            try
             {
-                try
-                {
-                    myPort.PortName = portname;
-                    myPort.BaudRate = 115200;
-                    myPort.Parity = Parity.None;
-                    myPort.Open();
-                    myPort.DataReceived -= MyPort_DataReceived;
-                }
-                catch (Exception err)
-                {
-                    DataReceived?.Invoke(this, err.Message);
-                }
-            }
+                myPort.PortName = portname;
+                myPort.BaudRate = 115200;
+                myPort.Parity = Parity.None;
+                myPort.StopBits = StopBits.One; // Ensure stop bits match your Arduino settings
+                myPort.DataBits = 8; // Ensure data bits match your Arduino settings
+                myPort.Handshake = Handshake.None; // Ensure handshake settings match your Arduino settings
+                myPort.ReadTimeout = 1000; // Set read timeout
+                myPort.WriteTimeout = 1000; // Set write timeout
+                myPort.Open();
+                myPort.DataReceived -= MyPort_DataReceived;
+                int attempts = 0;
+                _mainWindow.publicVars.HANDSHAKESUCCEED = false;
 
-            if (myPort.IsOpen)
-            {
-                try
+                while (!_mainWindow.publicVars.HANDSHAKESUCCEED && attempts < 3)
                 {
-                    myPort.DiscardInBuffer();
-                    myPort.DiscardOutBuffer();
-                    int attempts = 0;
-                    _mainWindow.publicVars.HANDSHAKESUCCEED = false;
+                    //if (attempts == 2)
+                    //{
+                    //    // Reset the serial port
+                    //    myPort.DtrEnable = true;
+                    //    DataReceived?.Invoke(this, $"Trying to reset {myPort.PortName}, please wait...");
+                    //    await Task.Delay(100);
+                    //    myPort.DtrEnable = false;
+                    //    DataReceived?.Invoke(this, $"Reset {myPort.PortName} in process, please wait...");
+                    //    await Task.Delay(100);
+                    //}
 
-                    while (!_mainWindow.publicVars.HANDSHAKESUCCEED && attempts < 3)
+                    // Send handshake command
+                    myPort.Write(_mainWindow.publicVars.HOST_CMD_HANDSHAKE.ToString());
+                        
+                    // Wait for a response with a timeout
+                    var startTime = DateTime.UtcNow;
+                    while (myPort.BytesToRead <= 0)
+                    {// wait 2s. 1s is not enough to get responding...
+                        if ((DateTime.UtcNow - startTime).TotalMilliseconds > 2000)
+                        {
+                            break;
+                        }
+                        await Task.Delay(10);
+                    }
+
+                    // Check if we received a response
+                    if (myPort.BytesToRead > 0)
                     {
-                        if (attempts == 2)
+                        string response = myPort.ReadExisting();
+                        if (response.Contains("Fiber"))
                         {
-                            // Reset the serial port
-                            myPort.DtrEnable = true;
-                            DataReceived?.Invoke(this, $"Trying to reset {myPort.PortName}, please wait...");
-                            await Task.Delay(100);
-                            myPort.DtrEnable = false;
-                            DataReceived?.Invoke(this, $"Reset {myPort.PortName} in process, please wait...");
-                            await Task.Delay(100);
-                        }
-
-                        // Send handshake command
-                        myPort.WriteLine(_mainWindow.publicVars.HOST_CMD_HANDSHAKE.ToString());
-
-                        // Wait for a response with a timeout
-                        var startTime = DateTime.UtcNow;
-                        while (myPort.BytesToRead <= 0)
-                        {
-                            if ((DateTime.UtcNow - startTime).TotalMilliseconds > 1000)
-                            {
-                                break;
-                            }
-                        }
-
-                        // Check if we received a response
-                        if (myPort.BytesToRead > 0)
-                        {
-                            string response = myPort.ReadExisting();
-                            if (response.Contains("Fiber"))
-                            {
-                                _mainWindow.publicVars.HANDSHAKESUCCEED = true;
-                                DataReceived?.Invoke(this, $"Handshaking succeeded with {myPort.PortName}");
-
-                                // Clear buffers and attach the event handler. this action causing serial problem
-                                myPort.DiscardInBuffer();
-                                myPort.DiscardOutBuffer(); 
-
-                                // Attach the event handler if not already attached
-                                Thread.Sleep(1000);
-                                myPort.DataReceived -= MyPort_DataReceived; // Ensure it's detached first
-                                myPort.DataReceived += MyPort_DataReceived;
-                                myPort.WriteLine(_mainWindow.publicVars.HOST_CMD_HANDSHAKE_CONFIRM.ToString());
-                                return;
-                            }
-                            else
-                            {
-                                DataReceived?.Invoke(this, $"Handshake with {myPort.PortName} failed...");
-                            }
+                            _mainWindow.publicVars.HANDSHAKESUCCEED = true;
+                            DataReceived?.Invoke(this, $"Handshaking succeeded with {myPort.PortName}");
+                            // Attach the event handler if not already attached
+                            myPort.DataReceived -= MyPort_DataReceived; // Ensure it's detached first
+                            myPort.DataReceived += MyPort_DataReceived;
+                            myPort.Write(_mainWindow.publicVars.HOST_CMD_HANDSHAKE_CONFIRM.ToString());
+                            return;
                         }
                         else
                         {
-                            DataReceived?.Invoke(this, $"No response on {myPort.PortName}...");
+                            DataReceived?.Invoke(this, $"Handshake with {myPort.PortName} failed...");
                         }
-
-                        attempts++;
-                        DataReceived?.Invoke(this, $"Attempting handshake with {myPort.PortName}... Attempt {attempts}");
                     }
-
-                    // If handshake failed after 3 attempts
-                    if (!_mainWindow.publicVars.HANDSHAKESUCCEED)
+                    else
                     {
-                        myPort.Close();
-                        DataReceived?.Invoke(this, $"No instrument found on {myPort.PortName}.");
+                        DataReceived?.Invoke(this, $"No response on {myPort.PortName}...");
                     }
-                }
-                catch (Exception err)
-                {
-                    MessageBox.Show(err.Message, "Error",
-                        MessageBoxButton.OK, MessageBoxImage.Error);
+
+                    attempts++;
+                    DataReceived?.Invoke(this, $"Attempting handshake with {myPort.PortName}... Attempt {attempts}");
                 }
 
+                // If handshake failed after 3 attempts
+                if (!_mainWindow.publicVars.HANDSHAKESUCCEED)
+                {
+                    myPort.Close();
+                    DataReceived?.Invoke(this, $"No instrument found on {myPort.PortName}.");
+                }
             }
-            else MessageBox.Show("COM Port " + portname + " is not opened when try HandShaking. ");
+            catch (Exception err)
+            {
+                DataReceived?.Invoke(this, err.Message);
+            }
         }
 
         public void ClosePort()
