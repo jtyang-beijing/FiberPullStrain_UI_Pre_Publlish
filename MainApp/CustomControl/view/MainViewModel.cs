@@ -108,7 +108,14 @@ namespace FiberPullStrain.CustomControl.view
             {
                 lb_current_force = value;
                 OnPropertyChanged();
+                Onlb_Current_Force_Changed();
             }
+        }
+        public event EventHandler lb_Current_Force_Content_Changed;
+        private void Onlb_Current_Force_Changed()
+        {
+            lb_Current_Force_Content_Changed?.Invoke(this, EventArgs.Empty);
+            _mainWindow.publicVars.CURRENT_FORCE = lb_Current_Force;
         }
 
         private string bar_infor;

@@ -4,7 +4,9 @@ using GLGraphs.CartesianGraph;
 using MathNet.Numerics;
 using OpenTK.Mathematics;
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Documents;
 
@@ -15,6 +17,7 @@ namespace FiberPull
         public SerialCommunication serialCommunication;
         public MainViewModel viewModel;
         public PublicVars publicVars;
+        //List<Point> datapoints = new List<Point>();
 
         public MainWindow() {
             InitializeComponent(); 
@@ -26,19 +29,41 @@ namespace FiberPull
             viewModel = new MainViewModel(serialCommunication);
             this.DataContext = viewModel;
             viewModel.lb_Current_Distance_Content_Changed += ViewModel_lb_Current_Distance_Content_Changed;
+            //viewModel.lb_Current_Force_Content_Changed += ViewModel_lb_Current_Force_Content_Changed;
 
             CartGraph.Graph.State.ItemSelected += State_ItemSelected;
         }
 
-        Point newPoint = new Point();
+        //private bool delayed_once = false;
+        //private async void ViewModel_lb_Current_Force_Content_Changed(object sender, EventArgs e)
+        //{
+        //    if (datapoints.Count > 0)
+        //    {
+        //        if (!delayed_once)
+        //        {
+        //            await Task.Delay(2500);
+        //            delayed_once = true;
+        //        }
+        //        float.TryParse(viewModel.lb_Current_Force, out float y);
+        //        datapoints[0] = new Point(datapoints[0].X, y);
+        //        AddPoint(datapoints[0]);
+        //        datapoints.Remove(datapoints[0]);
+        //    }
+        //    else
+        //    {
+        //        delayed_once = false;
+        //    }
+        //}
+
+
         private void ViewModel_lb_Current_Distance_Content_Changed(object sender, EventArgs e)
         {
             if (viewModel.IsRunning)
             {
                 float.TryParse(viewModel.lb_Current_Distance, out float x);
                 float.TryParse(viewModel.lb_Current_Force, out float y);
-                newPoint.X = x; newPoint.Y = y;
-                AddPoint(newPoint);
+                //datapoints.Add(new Point(x,0));
+                AddPoint(new Point(x,y));
                 float.TryParse(myButtonControls.inBoxDistance.inputBox.Text, out float a);
                 if (a == x) viewModel.IsRunning = false;
             }

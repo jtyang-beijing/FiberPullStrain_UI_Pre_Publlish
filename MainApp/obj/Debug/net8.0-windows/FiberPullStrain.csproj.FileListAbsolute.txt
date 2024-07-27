@@ -102,6 +102,7 @@ D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\C
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\CustomControl\view\ClearableTextBox.g.cs
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\CustomControl\view\menuItems.g.cs
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\MainWindow.g.cs
+D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\SystemSetup.g.cs
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\App.g.cs
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\FiberPullStrain_MarkupCompile.cache
@@ -112,6 +113,7 @@ D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\C
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\CustomControl\view\ClearableTextBox.baml
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\CustomControl\view\menuItems.baml
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\MainWindow.baml
+D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\SystemSetup.baml
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\FiberPullStrain.g.resources
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\FiberPullStrain.GeneratedMSBuildEditorConfig.editorconfig
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\FiberPullStrain.AssemblyInfoInputs.cache
@@ -124,5 +126,3 @@ D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\r
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\FiberPullStrain.pdb
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\FiberPullStrain.genruntimeconfig.cache
 D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\ref\FiberPullStrain.dll
-D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\SystemSetup.g.cs
-D:\My Documents\C# projects\InsuitFiberStrain\MainApp\obj\Debug\net8.0-windows\SystemSetup.baml
