@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO.Ports;
+using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
@@ -136,31 +137,37 @@ namespace FiberPullStrain
 
         public void MyPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            
-            string data = myPort.ReadLine().TrimEnd();
-            DataReceived?.Invoke(this, $"Data incoming...{data}");
-            if (data.Length > 0)
-            {
-                if (!_mainWindow.publicVars.HANDSHAKESUCCEED)
+            try 
+            { 
+                string data = myPort.ReadLine().TrimEnd();
+                DataReceived?.Invoke(this, $"Data incoming...{data}");
+                if (data.Length > 0)
                 {
-                    if (data.Contains("FiberPull")) // invoke UI information update function
+                    if (!_mainWindow.publicVars.HANDSHAKESUCCEED)
                     {
-                        DataReceived?.Invoke(this, $"{myPort.PortName} -- Hand Shaking succeed.");
-                        _mainWindow.publicVars.HANDSHAKESUCCEED = true;
+                        if (data.Contains("FiberPull")) // invoke UI information update function
+                        {
+                            DataReceived?.Invoke(this, $"{myPort.PortName} -- Hand Shaking succeed.");
+                            _mainWindow.publicVars.HANDSHAKESUCCEED = true;
+                        }
+                        else
+                        {
+                            _mainWindow.publicVars.HANDSHAKESUCCEED = false;
+                            myPort.Close();
+                            DataReceived?.Invoke(this, $"{myPort.PortName} -- Hand Shaking failed.");
+                        }
                     }
+
                     else
                     {
-                        _mainWindow.publicVars.HANDSHAKESUCCEED = false;
-                        myPort.Close();
-                        DataReceived?.Invoke(this, $"{myPort.PortName} -- Hand Shaking failed.");
+                        DataReceived?.Invoke(this, data);
                     }
                 }
-
-                else
-                {
-                    DataReceived?.Invoke(this, data);
-                }
             }
+            catch (Exception exp)
+            { DataReceived?.Invoke(this, exp.Message); }
+            
+
         }
         public void SimulateDataReceived(string data)
         {

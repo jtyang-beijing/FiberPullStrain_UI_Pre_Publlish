@@ -36,9 +36,10 @@ namespace FiberPull
             myButtonControls.generate_Curve_Series += MyButtonControls_generate_Curve_Series;
         }
 
-        private void MyButtonControls_generate_Curve_Series(object sender, EventArgs e)
+        public void MyButtonControls_generate_Curve_Series(object sender, EventArgs e)
         {
             CartGraph.Graph.State.IsCameraAutoControlled = true;
+            publicVars.CURRENT_CURVE_SERIES++;
             if (publicVars.CURRENT_CURVE_SERIES > 49)
                 publicVars.CURRENT_CURVE_SERIES = 0;
             //Create Series, type is Line  ------------------------------
@@ -53,7 +54,6 @@ namespace FiberPull
                     $"Series {publicVars.CURRENT_CURVE_SERIES}");
                 publicVars.SERIES.PointShape = (SeriesPointShape)r.Next((int)SeriesPointShape.InvertedTriangleOutline);
             }
-            publicVars.CURRENT_CURVE_SERIES++;
         }
 
 
@@ -177,7 +177,7 @@ namespace FiberPull
 
         private void ClearAll_Click(object sender, RoutedEventArgs e)
         {
-            myMenuItmes.mnClear_Click(sender, e);
+            myMenuItmes.mnClearView_Click(sender, e);
         }
 
         private void AutoZoom_Click(object sender, RoutedEventArgs e)
@@ -190,24 +190,27 @@ namespace FiberPull
             myMenuItmes.mnSaveAs_Click(sender, e);
         }
 
-        private void Delete_Click(object sender, RoutedEventArgs e)
+        private void Delete_Selected_Curve_Click(object sender, RoutedEventArgs e)
         {
-            if(publicVars.LAST_SERIES_ID >=0)
-            {
-                CartGraph.Graph.State.Series[publicVars.LAST_SERIES_ID].Clear();
-                publicVars.LAST_SERIES_ID = -1;
-            }
-            else
-            {
-                MessageBox.Show("No Curve Selected.\nPlease select one Curve.",
-                    "Warnning",MessageBoxButton.OK,MessageBoxImage.Warning);
-            }
+            myMenuItmes.mnDeleteSelectedCurve_Click(sender,e);
             
         }
 
         private void Open_Click(object sender, RoutedEventArgs e)
         {
            myMenuItmes.mnOpen_Click(sender, e);
+        }
+
+        private void systemSetup_Click(object sender, RoutedEventArgs e)
+        {
+            myMenuItmes.mnSystemSetup_Click(sender, e);
+        }
+
+        private void SetCurveStyle_Click(object sender, RoutedEventArgs e)
+        {
+            myMenuItmes.mnView.IsSubmenuOpen = true;
+            myMenuItmes.mnSetCurveStyle.IsSubmenuOpen = true;
+            myMenuItmes.checkboxlineCuvre.Focus();
         }
     }
 }

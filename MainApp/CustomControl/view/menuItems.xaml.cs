@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Documents;
 
 namespace FiberPullStrain.CustomControl.view
 {
@@ -60,19 +61,28 @@ namespace FiberPullStrain.CustomControl.view
             await _mainWindow.serialCommunication.SearchAllCOMports();
         }
 
-        public void mnClear_Click(object sender, RoutedEventArgs e)
+        public void mnDeleteSelectedCurve_Click(object sender, RoutedEventArgs e)
         {
-            for(int i= 0; i < _mainWindow.publicVars.CURRENT_CURVE_SERIES; i++)
+            if (_mainWindow.publicVars.LAST_SERIES_ID >= 0)
+            {
+                _mainWindow.CartGraph.Graph.State.Series[_mainWindow.publicVars.LAST_SERIES_ID].Clear();
+                _mainWindow.publicVars.LAST_SERIES_ID = -1;
+                _mainWindow.CartGraph.Graph.State.IsCameraAutoControlled = true;
+            }
+            else
+            {
+                MessageBox.Show("No Curve Selected.\nPlease select one Curve.",
+                    "Warnning", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+
+        public void mnClearView_Click(object sender, RoutedEventArgs e)
+        {
+            for (int i = 0; i <= _mainWindow.publicVars.CURRENT_CURVE_SERIES; i++)
             {
                 _mainWindow.CartGraph.Graph.State.Series[i].Clear();
             }
             _mainWindow.CartGraph.Graph.State.IsCameraAutoControlled = true;
-        }
-
-        private void mnClearCurrent_Click(object sender, RoutedEventArgs e)
-        {
-            _mainWindow.CartGraph.Graph.State.Series[_mainWindow.publicVars.CURRENT_CURVE_SERIES].Clear();
-            _mainWindow.publicVars.CURRENT_CURVE_SERIES--;
         }
 
         public void mnOpen_Click(object sender, RoutedEventArgs e)
@@ -88,10 +98,11 @@ namespace FiberPullStrain.CustomControl.view
                 {
                     try
                     {
+                        _mainWindow.MyButtonControls_generate_Curve_Series(sender, e);
                         var dataPoints = File.ReadAllLines(filename);
-                        _mainWindow.publicVars.CURRENT_CURVE_SERIES++;
+                        //_mainWindow.publicVars.CURRENT_CURVE_SERIES++;
                         _mainWindow.CartGraph.Graph.State.IsCameraAutoControlled = true;
-                        if (_mainWindow.publicVars.CURRENT_CURVE_SERIES > 49) _mainWindow.publicVars.CURRENT_CURVE_SERIES = 0;
+                        //if (_mainWindow.publicVars.CURRENT_CURVE_SERIES > 49) _mainWindow.publicVars.CURRENT_CURVE_SERIES = 0;
                         Point newPoint = new();
                         foreach (var dataPoint in dataPoints)
                         {
@@ -147,11 +158,38 @@ namespace FiberPullStrain.CustomControl.view
             }
         }
 
-        private void mnSystemSetup_Click(object sender, RoutedEventArgs e)
+        public void mnSystemSetup_Click(object sender, RoutedEventArgs e)
         {
             SystemSetup systemSetup = new SystemSetup();
             systemSetup.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             systemSetup.ShowDialog();
+        }
+
+        public void checkboxlineCuvre_Click(object sender, RoutedEventArgs e)
+        {
+            checkboxdotsCuvre.IsChecked = !checkboxdotsCuvre.IsChecked;
+            if (checkboxlineCuvre.IsChecked == true)
+            {
+                _mainWindow.publicVars.LINE_SERIES = true;
+            }
+            else
+            {
+                _mainWindow.publicVars.LINE_SERIES = false;
+
+            }
+        }
+
+        public void checkboxdotsCuvre_Click(object sender, RoutedEventArgs e)
+        {
+            checkboxlineCuvre.IsChecked = !checkboxlineCuvre.IsChecked;
+            if (checkboxdotsCuvre.IsChecked == true)
+            {
+                _mainWindow.publicVars.LINE_SERIES = false;
+            }
+            else 
+            { 
+                _mainWindow.publicVars.LINE_SERIES = true;
+            }
         }
     }
 }

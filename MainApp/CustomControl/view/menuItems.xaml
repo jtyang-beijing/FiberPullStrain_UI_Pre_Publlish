@@ -21,13 +21,17 @@
                 <MenuItem x:Name="mnSaveAs" Header="Save as" Click="mnSaveAs_Click"/>
                 <MenuItem x:Name="mnExit" Header="Exit" Click="mnExit_Click"/>
             </MenuItem>
-            <MenuItem Header="_View" Foreground="White">
-                <MenuItem x:Name="mnClear" Header="Clear View"
-                          Click="mnClear_Click"/>
-                <MenuItem x:Name="mnClearCurrent" Header="Clear Current Curve"
-                          Click="mnClearCurrent_Click"/>
-                <MenuItem x:Name="mnZoomIn" Header="Zoom In"/>
-                <MenuItem x:Name="mnZoomOut" Header="Zoom Out"/>
+            <MenuItem Header="_View" Foreground="White" Name="mnView">
+                <MenuItem x:Name="mnClearView" Header="Clear View" 
+                          Click="mnClearView_Click"/>
+                <MenuItem x:Name="mnDeleteSelectedCurve" Header="Delete Selected Curve"
+                          Click="mnDeleteSelectedCurve_Click"/>
+                <MenuItem x:Name="mnSetCurveStyle" Header="Set Curve Style">
+                    <CheckBox x:Name="checkboxlineCuvre" Margin="5" Content="Line Curve" VerticalAlignment="Center"
+                              IsChecked="True" Click="checkboxlineCuvre_Click"/>
+                    <CheckBox x:Name="checkboxdotsCuvre" Margin="5" Content="Dots Curve" VerticalAlignment="Center"
+                              IsChecked="False" Click="checkboxdotsCuvre_Click"/>
+                </MenuItem>
             </MenuItem>
             <MenuItem Header="_Setup" Foreground="White">
                 <MenuItem x:Name="mnSearch" Header="Search Stage"

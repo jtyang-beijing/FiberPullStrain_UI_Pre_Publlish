@@ -66,18 +66,26 @@
                                         <ContextMenu Foreground="LightSlateGray"  FontSize="20">
                                             <MenuItem Header="Data" Name="Data" Margin="5" >
                                                 <MenuItem Header="Save Current Curve To File" Name="SaveToFile"
+                                                          Margin="5"
                                                           Click="SaveToFile_Click"/>
-                                                <MenuItem Header="Open Curve" Name="Open"
+                                                <MenuItem Header="Open Curve" Name="Open" Margin="5"
                                                           Click="Open_Click"/>
-                                                <MenuItem Header="Delete Selected Curve" Name="Delete"
-                                                          Click="Delete_Click"/>
+                                                <MenuItem Header="Delete Selected Curve" Name="Delete_Selected_Curve"
+                                                          Margin="5"
+                                                          Click="Delete_Selected_Curve_Click"/>
                                             </MenuItem>
                                             <MenuItem Header="View" Name="View" Margin="5">
                                                 <MenuItem Header="Clear all Curves" Name="ClearAll"
+                                                          Margin="5"
                                                           Click="ClearAll_Click"/>
                                                 <MenuItem Header="Auto Zoom" Name="AutoZoom"
+                                                          Margin="5"
                                                           Click="AutoZoom_Click"/>
-                                            </MenuItem>
+                                                <MenuItem Header="Set Curve Style" Margin="5" Name="SetCurveStyle"
+                                                          Click="SetCurveStyle_Click"/>
+                                            </MenuItem >
+                                            <MenuItem Header="System Setup" Name="systemSetup" Margin="5"
+                                                      Click="systemSetup_Click"/>
                                         </ContextMenu>
                                     </local:GLCartesianGraphControlString.ContextMenu>
                                 </local:GLCartesianGraphControlString>

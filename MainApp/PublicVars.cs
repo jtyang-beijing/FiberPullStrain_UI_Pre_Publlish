@@ -57,7 +57,7 @@ namespace FiberPullStrain
             //----------------------------------------
             CURRENT_DISTANCE = "0.00";
             CURRENT_FORCE = "0.00";
-            CURRENT_CURVE_SERIES = 0;
+            CURRENT_CURVE_SERIES = -1;
             LAST_SERIES_ID = -1;
             HOST_CMD_STOP_MOTOR = 'e';
             HOST_CMD_RESET_MOTOR_POSITION = 'o';
@@ -74,7 +74,7 @@ namespace FiberPullStrain
 
             IN_BUFFER = new ConcurrentQueue<string>();
             SERIES = null;
-            LINE_SERIES = false;
+            LINE_SERIES = true;
         }
         private string max_value_distance;
 
