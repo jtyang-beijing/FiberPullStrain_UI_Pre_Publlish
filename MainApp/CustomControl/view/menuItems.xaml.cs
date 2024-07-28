@@ -62,11 +62,10 @@ namespace FiberPullStrain.CustomControl.view
 
         public void mnClear_Click(object sender, RoutedEventArgs e)
         {
-            for(int i= 0; i <= _mainWindow.publicVars.CURRENT_CURVE_SERIES; i++)
+            for(int i= 0; i < _mainWindow.publicVars.CURRENT_CURVE_SERIES; i++)
             {
                 _mainWindow.CartGraph.Graph.State.Series[i].Clear();
             }
-            //_mainWindow.CartGraph.Graph.State.Camera.Current.ZoomIn(0);
             _mainWindow.CartGraph.Graph.State.IsCameraAutoControlled = true;
         }
 

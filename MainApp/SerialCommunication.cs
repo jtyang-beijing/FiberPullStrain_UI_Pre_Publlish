@@ -56,6 +56,8 @@ namespace FiberPullStrain
                 myPort.WriteTimeout = 1000; // Set write timeout
                 myPort.Open();
                 myPort.DataReceived -= MyPort_DataReceived;
+                myPort.DiscardInBuffer();
+                myPort.DiscardOutBuffer();
                 int attempts = 0;
                 _mainWindow.publicVars.HANDSHAKESUCCEED = false;
 
@@ -73,7 +75,7 @@ namespace FiberPullStrain
                     //}
 
                     // Send handshake command
-                    myPort.Write(_mainWindow.publicVars.HOST_CMD_HANDSHAKE.ToString());
+                    myPort.Write(_mainWindow.publicVars.HOST_CMD_HANDSHAKE.ToString() + '\n');
                         
                     // Wait for a response with a timeout
                     var startTime = DateTime.UtcNow;
@@ -97,7 +99,7 @@ namespace FiberPullStrain
                             // Attach the event handler if not already attached
                             myPort.DataReceived -= MyPort_DataReceived; // Ensure it's detached first
                             myPort.DataReceived += MyPort_DataReceived;
-                            myPort.Write(_mainWindow.publicVars.HOST_CMD_HANDSHAKE_CONFIRM.ToString());
+                            myPort.Write(_mainWindow.publicVars.HOST_CMD_HANDSHAKE_CONFIRM.ToString() + '\n');
                             return;
                         }
                         else

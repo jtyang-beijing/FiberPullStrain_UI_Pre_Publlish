@@ -1,4 +1,5 @@
 ﻿using FiberPullStrain.CustomControl.view;
+using GLGraphs.CartesianGraph;
 using OpenTK.Graphics.OpenGL;
 using OpenTK.Mathematics;
 using System;
@@ -19,6 +20,7 @@ namespace FiberPullStrain
 
         public string CURRENT_DISTANCE;
         public string CURRENT_FORCE;
+        public string DESTINATION;
         public int CURRENT_CURVE_SERIES;
 
         public char HOST_CMD_STOP_MOTOR;
@@ -37,6 +39,9 @@ namespace FiberPullStrain
 
         public bool HANDSHAKESUCCEED;
 
+        public GraphSeries<string> SERIES;
+        public bool LINE_SERIES;
+
         //public List<string> IN_BUFFER;
         public ConcurrentQueue<string> IN_BUFFER { get; private set; }
 
@@ -48,6 +53,7 @@ namespace FiberPullStrain
             MOTOR_SCALE = (Decimal)909.09090909; //steps per mm
             MAX_VALUE_DISTANCE = "26"; 
             MAX_VALUE_FORCE = "5000";
+            DESTINATION = "0.00";
             //----------------------------------------
             CURRENT_DISTANCE = "0.00";
             CURRENT_FORCE = "0.00";
@@ -67,6 +73,8 @@ namespace FiberPullStrain
             HANDSHAKESUCCEED = false;
 
             IN_BUFFER = new ConcurrentQueue<string>();
+            SERIES = null;
+            LINE_SERIES = false;
         }
         private string max_value_distance;
 

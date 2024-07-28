@@ -1,8 +1,10 @@
 ﻿using FiberPull;
+using GLGraphs.CartesianGraph;
 using System;
 using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Documents;
 using System.Windows.Threading;
 
 namespace FiberPullStrain.CustomControl.view
@@ -17,6 +19,7 @@ namespace FiberPullStrain.CustomControl.view
             // initialized max value of input box. 
             this.Loaded += ButtonControls_Loaded;
             // use this booking event to avoid _mainwindow.publicVars initializing problem.
+         
         } 
 
         private void ButtonControls_Loaded(object sender, RoutedEventArgs e)
@@ -43,7 +46,7 @@ namespace FiberPullStrain.CustomControl.view
             }
             App.Current.Shutdown();
         }
-
+        public event EventHandler generate_Curve_Series;
         private void btStart_Click(object sender, RoutedEventArgs e)
         {
             if(_mainwindow.viewModel.IsRunning) 
@@ -54,14 +57,20 @@ namespace FiberPullStrain.CustomControl.view
             }
             else 
             {
-                _mainwindow.publicVars.CURRENT_CURVE_SERIES ++;
-                _mainwindow.CartGraph.Graph.State.IsCameraAutoControlled = true;
-                if (_mainwindow.publicVars.CURRENT_CURVE_SERIES > 49) 
-                    _mainwindow.publicVars.CURRENT_CURVE_SERIES = 0;
+                // store destination to public varialble.
+                _mainwindow.publicVars.DESTINATION = inBoxDistance.inputBox.Text;
+                
+                if (float.Parse(_mainwindow.publicVars.DESTINATION) > 
+                    float.Parse(_mainwindow.publicVars.CURRENT_DISTANCE) )
+                {
+                    generate_Curve_Series?.Invoke(this, EventArgs.Empty);
+                }
+                    
+                // send command to Arduino, drive motor to destinaton.
                 string _cmd = _mainwindow.publicVars.HOST_CMD_DRIVE_MOTOR + 
                     (Decimal.Parse(inBoxDistance.inputBox.Text) *
-                    _mainwindow.publicVars.MOTOR_SCALE).ToString();
-                _mainwindow.serialCommunication.myPort.WriteLine(_cmd);
+                    _mainwindow.publicVars.MOTOR_SCALE).ToString()+'\n';
+                _mainwindow.serialCommunication.myPort.Write(_cmd);
             }
             _mainwindow.viewModel.IsRunning = !_mainwindow.viewModel.IsRunning;
             float.TryParse(_mainwindow.viewModel.lb_Current_Distance, out float x);
