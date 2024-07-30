@@ -105,9 +105,11 @@ namespace FiberPullStrain.CustomControl.view
         {
             if (_mainWindow.publicVars.LAST_SERIES_ID >= 0)
             {
+                string curveName = _mainWindow.CartGraph.Graph.State.Series[_mainWindow.publicVars.LAST_SERIES_ID].Name;
                 _mainWindow.CartGraph.Graph.State.Series[_mainWindow.publicVars.LAST_SERIES_ID].Clear();
                 _mainWindow.publicVars.LAST_SERIES_ID = -1;
                 _mainWindow.CartGraph.Graph.State.IsCameraAutoControlled = true;
+                _mainWindow.publicVars.CURVE_SERIES.Remove(curveName);
             }
             else
             {
@@ -123,6 +125,7 @@ namespace FiberPullStrain.CustomControl.view
                 _mainWindow.CartGraph.Graph.State.Series[item].Clear();
             }
             _mainWindow.CartGraph.Graph.State.IsCameraAutoControlled = true;
+            _mainWindow.publicVars.CURVE_SERIES.Clear();// clear Dictionary.
         }
 
         public void mnOpen_Click(object sender, RoutedEventArgs e)

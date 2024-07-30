@@ -26,6 +26,7 @@ namespace FiberPullStrain
             foreach (var port in ports)
             {
                await HandShakeWithPort(port);
+                if (_mainWindow.publicVars.HANDSHAKESUCCEED) return;
             }
         }
 
