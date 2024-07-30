@@ -30,78 +30,90 @@ namespace FiberPull
             viewModel = new MainViewModel(serialCommunication);
             this.DataContext = viewModel;
             viewModel.lb_Current_Distance_Content_Changed += ViewModel_lb_Current_Distance_Content_Changed;
-            //viewModel.lb_Current_Force_Content_Changed += ViewModel_lb_Current_Force_Content_Changed;
+            viewModel.lb_Current_Force_Content_Changed += ViewModel_lb_Current_Force_Content_Changed;
 
             CartGraph.Graph.State.ItemSelected += State_ItemSelected;
             myButtonControls.generate_Curve_Series += MyButtonControls_generate_Curve_Series;
         }
 
+        //public void ViewModel_lb_Current_Force_Content_Changed(object sender, EventArgs e)
+        //{
+        //    publicVars.CURRENT_FORCE = viewModel.lb_Current_Force;
+        //    if (viewModel.IsRunning)
+        //    {
+        //        float.TryParse(viewModel.lb_Current_Force, out float current_force);
+        //        float.TryParse(myButtonControls.inBoxForce.inputBox.Text, out float target_force);
+        //        float.TryParse(publicVars.CURRENT_DISTANCE, out float current_distance);
+        //        //float.TryParse(publicVars.DESTINATION, out float destination);
+        //        if (current_force >= target_force && publicVars.MOVE_FORWARD && !string.IsNullOrEmpty(myButtonControls.inBoxForce.inputBox.Text))
+        //        {
+        //            serialCommunication.myPort.Write(publicVars.HOST_CMD_STOP_MOTOR.ToString() + '\n');
+        //            viewModel.IsRunning = false;
+        //        }
+        //        AddPoint(new Point(current_distance, current_force));
+        //        if(current_force >= target_force) viewModel.IsRunning = false;
+        //    }
+        //}
+
+        public void ViewModel_lb_Current_Force_Content_Changed(object sender, EventArgs e)
+        {
+            publicVars.CURRENT_FORCE = viewModel.lb_Current_Force;
+            if (viewModel.IsRunning)
+            {
+                float.TryParse(publicVars.CURRENT_FORCE, out float current_force);
+                float.TryParse(publicVars.TARGET_FORCE, out float target_force);
+                //float.TryParse(publicVars.CURRENT_DISTANCE, out float current_distance);
+                //float.TryParse(publicVars.DESTINATION, out float destination);
+                if (current_force >= target_force && publicVars.MOVE_FORWARD && !string.IsNullOrEmpty(myButtonControls.inBoxForce.inputBox.Text))
+                {
+                    serialCommunication.myPort.Write(publicVars.HOST_CMD_STOP_MOTOR.ToString() + '\n');
+                    viewModel.IsRunning = false;
+                }
+                //AddPoint(new Point(current_distance, current_force));
+                //if (current_force >= target_force) viewModel.IsRunning = false;
+            }
+        }
         public void MyButtonControls_generate_Curve_Series(object sender, EventArgs e)
         {
             CartGraph.Graph.State.IsCameraAutoControlled = true;
-            publicVars.CURRENT_CURVE_SERIES++;
-            if (publicVars.CURRENT_CURVE_SERIES > 49)
-                publicVars.CURRENT_CURVE_SERIES = 0;
+            string name =$"Series {publicVars.CURRENT_CURVE_SERIES}";
+            Generate_Curve_Series(name);
+        }
+
+        public void Generate_Curve_Series(string name)
+        {
+            publicVars.CURRENT_CURVE_SERIES++; // initial value is -1
             //Create Series, type is Line  ------------------------------
             if (publicVars.LINE_SERIES)
-                publicVars.SERIES = CartGraph.Graph.State.AddSeries(SeriesType.Line,
-                    $"Series {publicVars.CURRENT_CURVE_SERIES}");
+                publicVars.SERIES = CartGraph.Graph.State.AddSeries(SeriesType.Line,name);
             //Create Series, type is Point.............................
             else
             {
                 var r = new Random(50);
-                publicVars.SERIES = CartGraph.Graph.State.AddSeries(SeriesType.Point,
-                    $"Series {publicVars.CURRENT_CURVE_SERIES}");
+                publicVars.SERIES = CartGraph.Graph.State.AddSeries(SeriesType.Point,name);
                 publicVars.SERIES.PointShape = (SeriesPointShape)r.Next((int)SeriesPointShape.InvertedTriangleOutline);
             }
+            publicVars.CURVE_SERIES.Add(name, publicVars.CURRENT_CURVE_SERIES); //store curve info into Dictionary.
         }
 
-
-        //private bool delayed_once = false;
-        //private async void ViewModel_lb_Current_Force_Content_Changed(object sender, EventArgs e)
-        //{
-        //    if (datapoints.Count > 0)
-        //    {
-        //        if (!delayed_once)
-        //        {
-        //            await Task.Delay(2500);
-        //            delayed_once = true;
-        //        }
-        //        float.TryParse(viewModel.lb_Current_Force, out float y);
-        //        datapoints[0] = new Point(datapoints[0].X, y);
-        //        AddPoint(datapoints[0]);
-        //        datapoints.Remove(datapoints[0]);
-        //    }
-        //    else
-        //    {
-        //        delayed_once = false;
-        //    }
-        //}
-        private void ViewModel_lb_Current_Distance_Content_Changed(object sender, EventArgs e)
+        public void ViewModel_lb_Current_Distance_Content_Changed(object sender, EventArgs e)
         {
+            publicVars.CURRENT_DISTANCE = viewModel.lb_Current_Distance;
             if (viewModel.IsRunning)
             {
-                float.TryParse(viewModel.lb_Current_Distance, out float x);
-                float.TryParse(viewModel.lb_Current_Force, out float y);
-                //datapoints.Add(new Point(x,0));
-                if(x < float.Parse(publicVars.DESTINATION)) // ignore data when motor returning to zero.
-                AddPoint(new Point(x,y));
-                float.TryParse(myButtonControls.inBoxDistance.inputBox.Text, out float a);
-                if (a == x) viewModel.IsRunning = false;
+                float.TryParse(publicVars.CURRENT_DISTANCE, out float current_distance);
+                float.TryParse(publicVars.CURRENT_FORCE, out float current_force);
+                float.TryParse(publicVars.DESTINATION, out float destination);
+                if (publicVars.MOVE_FORWARD) // ignore data when motor returning to zero.
+                    AddPoint(new Point(current_distance, current_force));
+                if (current_distance == destination) viewModel.IsRunning = false;
             }
         }
 
         public void AddPoint(Point point)
         {
-            //var series = CartGraph.Graph.State.AddSeries(SeriesType.Line, 
-            //    CartGraph.Graph.State.Series[publicVars.CURRENT_CURVE_SERIES].Name);
-            //var series = CartGraph.Graph.State.Series[publicVars.CURRENT_CURVE_SERIES];
-            //CartGraph.Graph.State.AddSeries(SeriesType.Line, series.Name);
             var str = point.ToString();
-            
             publicVars.SERIES.Add(str, (float)point.X, (float)point.Y);
-            //publicVars.SERIES.Add(str, (float)point.X, (float)point.Y);
-
         }
 
         public void State_ItemSelected(string obj)
@@ -111,11 +123,9 @@ namespace FiberPull
                 CartGraph.Graph.State.Series[publicVars.LAST_SERIES_ID].Color = publicVars.LAST_COLOR;
             }
             string s = CartGraph.Graph.State.MouseoverTarget.Value.Series.Name;
-            int i = int.Parse(s.Split(" ")[1]) ;
-            publicVars.LAST_SERIES_ID = i;
-            publicVars.LAST_COLOR = CartGraph.Graph.State.Series[i].Color;
-            CartGraph.Graph.State.Series[i].Color = new Color4(r: 1.0f, g: 0.0f, b: 0.0f, a: 1.0f);
-
+            publicVars.LAST_SERIES_ID = publicVars.CURVE_SERIES[s];//get series ID from Dictionary.
+            publicVars.LAST_COLOR = CartGraph.Graph.State.Series[publicVars.LAST_SERIES_ID].Color;
+            CartGraph.Graph.State.Series[publicVars.LAST_SERIES_ID].Color = new Color4(r: 1.0f, g: 0.0f, b: 0.0f, a: 1.0f);
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)

@@ -61,6 +61,46 @@ namespace FiberPullStrain.CustomControl.view
             await _mainWindow.serialCommunication.SearchAllCOMports();
         }
 
+        public void mnSystemSetup_Click(object sender, RoutedEventArgs e)
+        {
+            SystemSetup systemSetup = new SystemSetup();
+            systemSetup.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            systemSetup.ShowDialog();
+        }
+
+        private void openCurveFile(string filename)
+        {
+            try
+            {
+                _mainWindow.Generate_Curve_Series(filename);
+                var dataPoints = File.ReadAllLines(filename);
+                _mainWindow.CartGraph.Graph.State.IsCameraAutoControlled = true;
+                Point newPoint = new();
+                foreach (var dataPoint in dataPoints)
+                {
+                    string[] p = dataPoint.Split(',');
+                    newPoint.X = float.Parse(p[0].ToString());
+                    newPoint.Y = float.Parse(p[1].ToString());
+                    _mainWindow.AddPoint(newPoint);
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private string saveCurveFile(string filename)
+        {
+            int seriesID = _mainWindow.publicVars.LAST_SERIES_ID;
+            if (seriesID < 0) seriesID = _mainWindow.publicVars.CURRENT_CURVE_SERIES;
+            if (string.IsNullOrEmpty(filename)) filename = _mainWindow.CartGraph.Graph.State.Series[seriesID].Name;
+            var datapoints = _mainWindow.CartGraph.Graph.State.Series[seriesID].Points.ToList();
+            List<string> myList = new List<string>();
+            foreach (var datapoint in datapoints) { myList.Add(datapoint.Value.ToString()); }
+            File.WriteAllLines(filename, myList);
+            return filename;
+        }
         public void mnDeleteSelectedCurve_Click(object sender, RoutedEventArgs e)
         {
             if (_mainWindow.publicVars.LAST_SERIES_ID >= 0)
@@ -78,9 +118,9 @@ namespace FiberPullStrain.CustomControl.view
 
         public void mnClearView_Click(object sender, RoutedEventArgs e)
         {
-            for (int i = 0; i <= _mainWindow.publicVars.CURRENT_CURVE_SERIES; i++)
+            foreach(var item in _mainWindow.publicVars.CURVE_SERIES.Values)
             {
-                _mainWindow.CartGraph.Graph.State.Series[i].Clear();
+                _mainWindow.CartGraph.Graph.State.Series[item].Clear();
             }
             _mainWindow.CartGraph.Graph.State.IsCameraAutoControlled = true;
         }
@@ -96,48 +136,24 @@ namespace FiberPullStrain.CustomControl.view
             {
                 foreach (string filename in ofd.FileNames) 
                 {
-                    try
-                    {
-                        _mainWindow.MyButtonControls_generate_Curve_Series(sender, e);
-                        var dataPoints = File.ReadAllLines(filename);
-                        //_mainWindow.publicVars.CURRENT_CURVE_SERIES++;
-                        _mainWindow.CartGraph.Graph.State.IsCameraAutoControlled = true;
-                        //if (_mainWindow.publicVars.CURRENT_CURVE_SERIES > 49) _mainWindow.publicVars.CURRENT_CURVE_SERIES = 0;
-                        Point newPoint = new();
-                        foreach (var dataPoint in dataPoints)
-                        {
-                            string[] p = dataPoint.Split(',');
-                            newPoint.X = float.Parse(p[0].ToString());
-                            newPoint.Y = float.Parse(p[1].ToString());
-                            _mainWindow.AddPoint(newPoint);
-                        }
-                    }
-                    catch (Exception err)
-                    {
-                        MessageBox.Show(err.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                    }
+                    openCurveFile(filename);
                 }
             }
         }
 
         private void mnSave_Click(object sender, RoutedEventArgs e)
         {
-            try 
-            {
-                int seriesID = _mainWindow.publicVars.LAST_SERIES_ID;
-                if (seriesID < 0) seriesID = _mainWindow.publicVars.CURRENT_CURVE_SERIES;
-                string fn = "curve.crv";
-                var datapoints = _mainWindow.CartGraph.Graph.State.Series[seriesID].Points.ToList();
-                List<string> myList = new List<string>();
-                foreach (var datapoint in datapoints) { myList.Add(datapoint.Value.ToString()); }
-                File.WriteAllLines(fn, myList);
-                MessageBox.Show("Current Curve was saved as \n" +
-                    fn + "\n" + "to " + AppContext.BaseDirectory.ToString(),
-                    "Information",
-                    MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-            catch (Exception err)
-            { MessageBox.Show(err.Message,"Error", MessageBoxButton.OK, MessageBoxImage.Error); }
+            //try 
+            //{
+            //    string filename = saveCurveFile(null);
+            //    MessageBox.Show($"Current Curve {filename} was saved to\n" +
+            //        AppContext.BaseDirectory.ToString(),
+            //        "Information",
+            //        MessageBoxButton.OK, MessageBoxImage.Information);
+            //}
+            //catch (Exception err)
+            //{ MessageBox.Show(err.Message,"Error", MessageBoxButton.OK, MessageBoxImage.Error); }
+            mnSaveAs_Click(sender,e);
         }
 
         public void mnSaveAs_Click(object sender, RoutedEventArgs e)
@@ -148,21 +164,15 @@ namespace FiberPullStrain.CustomControl.view
             bool? res = savefile.ShowDialog();
             if (res == true) 
             {
+                saveCurveFile(savefile.FileName);
+                //update CURVE_SERIERS dictionary and display
                 int seriesID = _mainWindow.publicVars.LAST_SERIES_ID;
                 if (seriesID < 0) seriesID = _mainWindow.publicVars.CURRENT_CURVE_SERIES;
-                string fn = savefile.FileName;
-                var datapoints = _mainWindow.CartGraph.Graph.State.Series[seriesID].Points.ToList();
-                List<string> myList = new List<string>();
-                foreach (var datapoint in datapoints) { myList.Add(datapoint.Value.ToString()); }
-                File.WriteAllLines(fn, myList);
+                string keyName = _mainWindow.CartGraph.Graph.State.Series[seriesID].Name;
+                _mainWindow.publicVars.CURVE_SERIES.Remove(keyName);
+                _mainWindow.CartGraph.Graph.State.Series[seriesID].Clear();
+                openCurveFile(savefile.FileName); // dictionary will be update when openning file.
             }
-        }
-
-        public void mnSystemSetup_Click(object sender, RoutedEventArgs e)
-        {
-            SystemSetup systemSetup = new SystemSetup();
-            systemSetup.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            systemSetup.ShowDialog();
         }
 
         public void checkboxlineCuvre_Click(object sender, RoutedEventArgs e)

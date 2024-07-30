@@ -49,33 +49,53 @@ namespace FiberPullStrain.CustomControl.view
         public event EventHandler generate_Curve_Series;
         private void btStart_Click(object sender, RoutedEventArgs e)
         {
-            if(_mainwindow.viewModel.IsRunning) 
+
+            //_mainwindow.viewModel.lb_Current_Distance_Content_Changed -= _mainwindow.ViewModel_lb_Current_Distance_Content_Changed;
+            //_mainwindow.viewModel.lb_Current_Force_Content_Changed -= _mainwindow.ViewModel_lb_Current_Force_Content_Changed;
+            if (_mainwindow.viewModel.IsRunning) 
             {
-                _mainwindow.serialCommunication.myPort.WriteLine(
-                    _mainwindow.publicVars.HOST_CMD_STOP_MOTOR.ToString());
-                _mainwindow.viewModel.IsRunning = true;
+                _mainwindow.serialCommunication.myPort.Write(
+                    _mainwindow.publicVars.HOST_CMD_STOP_MOTOR.ToString() + '\n');
+                _mainwindow.viewModel.IsRunning = false;
             }
             else 
             {
                 // store destination to public varialble.
                 _mainwindow.publicVars.DESTINATION = inBoxDistance.inputBox.Text;
-                
-                if (float.Parse(_mainwindow.publicVars.DESTINATION) > 
-                    float.Parse(_mainwindow.publicVars.CURRENT_DISTANCE) )
+                _mainwindow.publicVars.TARGET_FORCE = inBoxForce.inputBox.Text;
+                float.TryParse(_mainwindow.publicVars.CURRENT_DISTANCE, out float current_distance);
+                float.TryParse(_mainwindow.publicVars.DESTINATION, out float destination);
+                float.TryParse(inBoxForce.inputBox.Text, out float target_force);
+                float.TryParse(_mainwindow.publicVars.CURRENT_FORCE, out float current_force);
+
+                if (destination > current_distance)
                 {
                     generate_Curve_Series?.Invoke(this, EventArgs.Empty);
+                    _mainwindow.publicVars.MOVE_FORWARD = true;
+                    //_mainwindow.viewModel.lb_Current_Distance_Content_Changed += _mainwindow.ViewModel_lb_Current_Distance_Content_Changed;
                 }
-                    
+                else _mainwindow.publicVars.MOVE_FORWARD = false;
+                
+                //if (target_force > current_force && string.IsNullOrEmpty(inBoxDistance.inputBox.Text))
+                //{
+                //    destination = float.Parse(_mainwindow.publicVars.MAX_VALUE_DISTANCE);
+                //    generate_Curve_Series?.Invoke(this, EventArgs.Empty);
+                //    _mainwindow.publicVars.MOVE_FORWARD = true;
+                //    _mainwindow.viewModel.lb_Current_Force_Content_Changed += _mainwindow.ViewModel_lb_Current_Force_Content_Changed;
+                //}
+                //else if(target_force < current_force && !string.IsNullOrEmpty(inBoxForce.inputBox.Text))
+                //{
+                //    destination = 0;
+                //    _mainwindow.publicVars.MOVE_FORWARD = false;
+                //}
+
                 // send command to Arduino, drive motor to destinaton.
                 string _cmd = _mainwindow.publicVars.HOST_CMD_DRIVE_MOTOR + 
-                    (Decimal.Parse(inBoxDistance.inputBox.Text) *
-                    _mainwindow.publicVars.MOTOR_SCALE).ToString()+'\n';
+                    ((Decimal)destination * _mainwindow.publicVars.MOTOR_SCALE).ToString()+'\n';
                 _mainwindow.serialCommunication.myPort.Write(_cmd);
+                _mainwindow.viewModel.IsRunning = !_mainwindow.viewModel.IsRunning;
+                if (destination == current_distance) _mainwindow.viewModel.IsRunning = false;
             }
-            _mainwindow.viewModel.IsRunning = !_mainwindow.viewModel.IsRunning;
-            float.TryParse(_mainwindow.viewModel.lb_Current_Distance, out float x);
-            float.TryParse(inBoxDistance.inputBox.Text, out float a);
-            if (a == x) _mainwindow.viewModel.IsRunning = false;
         }
 
         private void cbmm_Click(object sender, RoutedEventArgs e)

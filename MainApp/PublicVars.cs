@@ -21,6 +21,7 @@ namespace FiberPullStrain
         public string CURRENT_DISTANCE;
         public string CURRENT_FORCE;
         public string DESTINATION;
+        public string TARGET_FORCE;
         public int CURRENT_CURVE_SERIES;
 
         public char HOST_CMD_STOP_MOTOR;
@@ -38,8 +39,10 @@ namespace FiberPullStrain
         public Color4 LAST_COLOR;
 
         public bool HANDSHAKESUCCEED;
+        public bool MOVE_FORWARD;
 
         public GraphSeries<string> SERIES;
+        public Dictionary<string, int> CURVE_SERIES;
         public bool LINE_SERIES;
 
         //public List<string> IN_BUFFER;
@@ -54,6 +57,7 @@ namespace FiberPullStrain
             MAX_VALUE_DISTANCE = "26"; 
             MAX_VALUE_FORCE = "5000";
             DESTINATION = "0.00";
+            TARGET_FORCE = "0.00";
             //----------------------------------------
             CURRENT_DISTANCE = "0.00";
             CURRENT_FORCE = "0.00";
@@ -71,9 +75,11 @@ namespace FiberPullStrain
             HOST_CMD_EXIT_FIRMWARE = 'x';
 
             HANDSHAKESUCCEED = false;
+            MOVE_FORWARD = true;
 
             IN_BUFFER = new ConcurrentQueue<string>();
             SERIES = null;
+            CURVE_SERIES = new Dictionary<string, int>();
             LINE_SERIES = true;
         }
         private string max_value_distance;
