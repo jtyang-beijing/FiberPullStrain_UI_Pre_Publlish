@@ -129,7 +129,7 @@
                                      BorderThickness="1" Foreground="OrangeRed" FontWeight="Light"/>
                             <Button x:Name="saveMotorProperty" Content="Save Motor Properties" Grid.Row="3"
                                     Grid.ColumnSpan="2" Margin="5" FontSize="20" Foreground="LightSlateGray"
-                                    Grid.Column="2"  IsEnabled="False"/>
+                                    Grid.Column="2"  Click="saveMotorProperty_Click"/>
                         </Grid>
                         
                     </Border>

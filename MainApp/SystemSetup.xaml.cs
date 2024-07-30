@@ -128,6 +128,29 @@ namespace FiberPullStrain
             if (end_p>start_p) save_cal.IsEnabled = true;
         }
 
+        private void saveMotorProperty_Click(object sender, RoutedEventArgs e)
+        {
+            try 
+            { 
+                if(_mainWindow.serialCommunication.myPort.IsOpen)
+                {
+                    _mainWindow.serialCommunication.myPort.Write
+                        (_mainWindow.publicVars.HOST_CMD_SET_MOTOR_SPEED.ToString() + 
+                        setMotorSpeed.Text + '\n');
+                    Task.Delay(300);
+                    _mainWindow.serialCommunication.myPort.Write
+                        (_mainWindow.publicVars.HOST_CMD_SET_MOTOR_ACCELORATION.ToString() +
+                        setAcceloration.Text + '\n');
+                    MessageBox.Show("Motor moving properties changed.", "Warnning",
+                        MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+            }
+            catch(Exception exp)
+            {
+                MessageBox.Show(exp.Message);
+            }
+        }
+
         private void save_cal_Click(object sender, RoutedEventArgs e)
         {
             if (float.TryParse(end_position.Text, out end_p))
@@ -172,5 +195,14 @@ namespace FiberPullStrain
             else { MessageBox.Show("Invalid start potition."); }
               
         }
-    }
+
+        public string read_from_registry(string name, string value)
+        {
+            return "";
+        }
+
+        public bool write_to_registry(string name, string value)
+        {
+            return true;
+        }
 }

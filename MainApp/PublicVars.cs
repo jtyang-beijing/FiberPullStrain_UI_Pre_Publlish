@@ -34,6 +34,8 @@ namespace FiberPullStrain
         public char HOST_CMD_DRIVE_MOTOR;
         public char HOST_CMD_HANDSHAKE_CONFIRM;
         public char HOST_CMD_EXIT_FIRMWARE;
+        public char HOST_CMD_SET_MOTOR_SPEED;
+        public char HOST_CMD_SET_MOTOR_ACCELORATION;
 
         public int LAST_SERIES_ID;
         public Color4 LAST_COLOR;
@@ -73,6 +75,8 @@ namespace FiberPullStrain
             HOST_CMD_DRIVE_MOTOR = 'm';
             HOST_CMD_HANDSHAKE_CONFIRM = 'g';
             HOST_CMD_EXIT_FIRMWARE = 'x';
+            HOST_CMD_SET_MOTOR_SPEED = 's';
+            HOST_CMD_SET_MOTOR_ACCELORATION = 'a';
 
             HANDSHAKESUCCEED = false;
             MOVE_FORWARD = true;
