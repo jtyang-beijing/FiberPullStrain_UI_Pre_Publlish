@@ -201,5 +201,11 @@ namespace FiberPullStrain.CustomControl.view
                 _mainWindow.publicVars.LINE_SERIES = true;
             }
         }
+
+        public void mnNew_Click(object sender, RoutedEventArgs e)
+        {
+            _mainWindow.jog_button_runonce = false;
+            _mainWindow.jogright.Focus();
+        }
     }
 }

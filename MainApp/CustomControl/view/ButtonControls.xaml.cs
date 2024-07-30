@@ -60,13 +60,14 @@ namespace FiberPullStrain.CustomControl.view
             }
             else 
             {
+                _mainwindow.myMenuItmes.mnNew_Click(sender,e); // re-create Curve Series
                 // store destination to public varialble.
                 _mainwindow.publicVars.DESTINATION = inBoxDistance.inputBox.Text;
                 _mainwindow.publicVars.TARGET_FORCE = inBoxForce.inputBox.Text;
                 float.TryParse(_mainwindow.publicVars.CURRENT_DISTANCE, out float current_distance);
                 float.TryParse(_mainwindow.publicVars.DESTINATION, out float destination);
-                float.TryParse(inBoxForce.inputBox.Text, out float target_force);
-                float.TryParse(_mainwindow.publicVars.CURRENT_FORCE, out float current_force);
+                //float.TryParse(inBoxForce.inputBox.Text, out float target_force);
+                //float.TryParse(_mainwindow.publicVars.CURRENT_FORCE, out float current_force);
 
                 if (destination > current_distance)
                 {
@@ -75,7 +76,7 @@ namespace FiberPullStrain.CustomControl.view
                     //_mainwindow.viewModel.lb_Current_Distance_Content_Changed += _mainwindow.ViewModel_lb_Current_Distance_Content_Changed;
                 }
                 else _mainwindow.publicVars.MOVE_FORWARD = false;
-                
+
                 //if (target_force > current_force && string.IsNullOrEmpty(inBoxDistance.inputBox.Text))
                 //{
                 //    destination = float.Parse(_mainwindow.publicVars.MAX_VALUE_DISTANCE);
@@ -90,9 +91,7 @@ namespace FiberPullStrain.CustomControl.view
                 //}
 
                 // send command to Arduino, drive motor to destinaton.
-                string _cmd = _mainwindow.publicVars.HOST_CMD_DRIVE_MOTOR + 
-                    ((Decimal)destination * _mainwindow.publicVars.MOTOR_SCALE).ToString()+'\n';
-                _mainwindow.serialCommunication.myPort.Write(_cmd);
+                _mainwindow.run_motor(_mainwindow.publicVars.DESTINATION);
                 _mainwindow.viewModel.IsRunning = !_mainwindow.viewModel.IsRunning;
                 if (destination == current_distance) _mainwindow.viewModel.IsRunning = false;
             }

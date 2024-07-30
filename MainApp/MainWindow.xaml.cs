@@ -1,15 +1,9 @@
 ﻿using FiberPullStrain;
 using FiberPullStrain.CustomControl.view;
 using GLGraphs.CartesianGraph;
-using MathNet.Numerics;
 using OpenTK.Mathematics;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Documents;
-using System.Windows.Shapes;
 
 namespace FiberPull
 {
@@ -66,7 +60,7 @@ namespace FiberPull
                 //float.TryParse(publicVars.DESTINATION, out float destination);
                 if (current_force >= target_force && publicVars.MOVE_FORWARD && !string.IsNullOrEmpty(myButtonControls.inBoxForce.inputBox.Text))
                 {
-                    serialCommunication.myPort.Write(publicVars.HOST_CMD_STOP_MOTOR.ToString() + '\n');
+                    stop_motor();
                     viewModel.IsRunning = false;
                 }
                 //AddPoint(new Point(current_distance, current_force));
@@ -166,6 +160,33 @@ namespace FiberPull
             }
         }
 
+        public void run_motor(string destination)
+        {
+            try
+            {
+                string _cmd = publicVars.HOST_CMD_DRIVE_MOTOR +
+                        (decimal.Parse(destination) * publicVars.MOTOR_SCALE).ToString() + '\n';
+                serialCommunication.myPort.Write(_cmd);
+
+            }
+            catch(Exception exp)
+            {
+                MessageBox.Show($"Error try running motor: {exp.Message}");
+            }
+        }
+
+        public void stop_motor()
+        {
+            try
+            {
+                serialCommunication.myPort.Write(publicVars.HOST_CMD_STOP_MOTOR.ToString() + '\n');
+            }
+            catch(Exception exp)
+            {
+                MessageBox.Show($"Error try stopping motor: {exp.Message}");
+            }
+        }
+
         public static CartesianGraph<string> GenerateGraph()
         {
             //const int seriesCount = 50;
@@ -221,6 +242,35 @@ namespace FiberPull
             myMenuItmes.mnView.IsSubmenuOpen = true;
             myMenuItmes.mnSetCurveStyle.IsSubmenuOpen = true;
             myMenuItmes.checkboxlineCuvre.Focus();
+        }
+
+        private void jogleft_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            publicVars.MOVE_FORWARD = false;
+            run_motor("0.00");
+        }
+
+        private void jogleft_PreviewMouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            stop_motor();
+        }
+        public bool jog_button_runonce = false;
+        private void jogright_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (!jog_button_runonce) 
+            {
+                MyButtonControls_generate_Curve_Series(sender,e);
+                jog_button_runonce=true;
+            }
+            viewModel.IsRunning = true;
+            publicVars.MOVE_FORWARD = true;
+            run_motor(publicVars.MAX_VALUE_DISTANCE);
+        }
+
+        private void jogright_PreviewMouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            viewModel.IsRunning = false;
+            stop_motor();
         }
     }
 }
