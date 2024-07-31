@@ -1,5 +1,7 @@
-﻿using FiberPullStrain.CustomControl.view;
+﻿using FiberPull;
+using FiberPullStrain.CustomControl.view;
 using GLGraphs.CartesianGraph;
+using Microsoft.Win32;
 using OpenTK.Graphics.OpenGL;
 using OpenTK.Mathematics;
 using System;
@@ -9,6 +11,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Web;
+using System.Windows;
 
 namespace FiberPullStrain
 {
@@ -22,6 +25,8 @@ namespace FiberPullStrain
         public string CURRENT_FORCE;
         public string DESTINATION;
         public string TARGET_FORCE;
+        public string MOTOR_SPEED;
+        public string MOTOR_ACCELORATION;
         public int CURRENT_CURVE_SERIES;
 
         public char HOST_CMD_STOP_MOTOR;
@@ -50,8 +55,10 @@ namespace FiberPullStrain
         //public List<string> IN_BUFFER;
         public ConcurrentQueue<string> IN_BUFFER { get; private set; }
 
+        private MainWindow _mainWindow { set;get; }
         public PublicVars()
         {
+            _mainWindow = Application.Current.MainWindow as MainWindow;
             DISTANCE_EXCHANGE_RATE = (Decimal)2.54;
             FORCE_EXCHANGE_RATE = (Decimal)101.971621;
             // Custermizable public varialbles
@@ -60,7 +67,9 @@ namespace FiberPullStrain
             MAX_VALUE_FORCE = "5000";
             DESTINATION = "0.00";
             TARGET_FORCE = "0.00";
-            //----------------------------------------
+            MOTOR_SPEED = "100";
+            MOTOR_ACCELORATION = "100";
+        //----------------------------------------
             CURRENT_DISTANCE = "0.00";
             CURRENT_FORCE = "0.00";
             CURRENT_CURVE_SERIES = -1;
@@ -109,5 +118,83 @@ namespace FiberPullStrain
                 OnPropertyChanged();
             }
         }
+        //-------------------------
+        public void set_motor_acceloration(string acceloration)
+        {
+            try
+            {
+                if (_mainWindow.serialCommunication.myPort.IsOpen)
+                {
+                    _mainWindow.serialCommunication.myPort.Write
+                        (_mainWindow.publicVars.HOST_CMD_SET_MOTOR_ACCELORATION.ToString() +
+                        acceloration + '\n');
+                    //MessageBox.Show("Motor Acceloration changed.", "Warnning",
+                    //    MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show(exp.Message);
+            }
+        }
+
+        public void set_motor_speed(string speed)
+        {
+            try
+            {
+                if (_mainWindow.serialCommunication.myPort.IsOpen)
+                {
+                    _mainWindow.serialCommunication.myPort.Write
+                        (_mainWindow.publicVars.HOST_CMD_SET_MOTOR_SPEED.ToString() +
+                        speed + '\n');
+                    //MessageBox.Show("Motor moving speed changed.", "Warnning",
+                    //    MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show(exp.Message);
+            }
+        }
+        public void set_motor_scale(string scale)
+        {
+            MOTOR_SCALE = Decimal.Parse(scale);
+        }
+        public void set_MaxValues(string maxDistance, string maxForce)
+        {
+            _mainWindow.myButtonControls.inBoxDistance.MaxValue = maxDistance;
+            _mainWindow.myButtonControls.inBoxDistance.MinValue = "-" + maxDistance;
+            _mainWindow.myButtonControls.inBoxForce.MaxValue = maxForce;
+        }
+
+        public string read_from_registry(string keyName, string itemName, string defaultValue)
+        {
+            try
+            {
+                RegistryKey _key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\QuantumTech\FiberPull\" + keyName);
+                return _key.GetValue(itemName, defaultValue).ToString();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public bool write_to_registry(string keyName, string itemName, string keyValue)
+        {
+            try
+            {
+                RegistryKey _key = Registry.CurrentUser.CreateSubKey(@"SOFTWARE\QuantumTech\FiberPull\" + keyName);
+                _key.SetValue(itemName, keyValue);
+                return true;
+            }
+            catch (Exception exp)
+            {
+
+                return false;
+            }
+
+        }
+        //-----------------------------
     }
 }

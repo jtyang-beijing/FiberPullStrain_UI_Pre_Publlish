@@ -14,6 +14,7 @@ namespace FiberPullStrain
         public event EventHandler<string> DataReceived; 
         public SerialPort myPort;
         private MainWindow _mainWindow {  get; set; }
+        private SystemSetup systemSetup { get; set; }
 
         public SerialCommunication()
         {
@@ -102,6 +103,7 @@ namespace FiberPullStrain
                             myPort.DataReceived -= MyPort_DataReceived; // Ensure it's detached first
                             myPort.DataReceived += MyPort_DataReceived;
                             myPort.Write(_mainWindow.publicVars.HOST_CMD_HANDSHAKE_CONFIRM.ToString() + '\n');
+                            _mainWindow.publicVars.write_to_registry("COM Port", "Port", myPort.PortName);
                             return;
                         }
                         else

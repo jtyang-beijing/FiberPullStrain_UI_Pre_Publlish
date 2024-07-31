@@ -12,7 +12,6 @@ namespace FiberPull
         public SerialCommunication serialCommunication;
         public MainViewModel viewModel;
         public PublicVars publicVars;
-        //List<Point> datapoints = new List<Point>();
 
         public MainWindow() {
             InitializeComponent(); 
@@ -126,16 +125,38 @@ namespace FiberPull
         {
             this.Dispatcher.BeginInvoke(new Action(async () =>
             {
+                InitializeDistance_Force_Box();
+
                 try
                 {
+                    string portName = publicVars.read_from_registry("COM Port", "Port", "COM1");
+                    await serialCommunication.HandShakeWithPort(portName);
+                    if(!publicVars.HANDSHAKESUCCEED)
                     await serialCommunication.SearchAllCOMports();
-                    InitializeDistance_Force_Box();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show($"Error during initialization: {ex.Message}");
                 }
+                if (publicVars.HANDSHAKESUCCEED) 
+                {
+                    InitKeyVars();
+                
+                }
             }), System.Windows.Threading.DispatcherPriority.Background);
+        }
+
+        private void InitKeyVars()
+        {
+            string speed = publicVars.read_from_registry("Motor", "Speed", "100");
+            string acc = publicVars.read_from_registry("Motor", "Acceloration", "100");
+            string max_distance = publicVars.read_from_registry("Motor", "Max Distance", "26");
+            string max_load = publicVars.read_from_registry("Sensor", "Max Load", "1000");
+            string scale = publicVars.read_from_registry("Motor", "Scale", "909.09090909");
+            publicVars.set_MaxValues(max_distance, max_load);
+            publicVars.set_motor_acceloration(acc);
+            publicVars.set_motor_scale(scale);
+            publicVars.set_motor_speed(speed);
         }
 
         private void InitializeDistance_Force_Box()

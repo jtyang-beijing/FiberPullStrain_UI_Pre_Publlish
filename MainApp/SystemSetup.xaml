@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FiberPullStrain"
         mc:Ignorable="d"
-        Title="System Setup" Height="450" Width="800" Icon="/blizzard_icon_249823.ico">
+        Title="System Setup" Height="450" Width="800" Icon="/blizzard_icon_249823.ico"
+        Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="25*"/>
@@ -160,7 +161,7 @@
                                      TextAlignment="Center" FontWeight="Light"/>
                             <Button x:Name="save_max" Content="Save Maximum Data" Grid.Row="3"
                                     Grid.ColumnSpan="2" Margin="5" FontSize="20" Foreground="LightSlateGray"
-                                    IsEnabled="False"/>
+                                    Click="save_max_Click"/>
                         </Grid>
                     </Border>
 

@@ -1,4 +1,5 @@
 ﻿using FiberPull;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -33,7 +34,7 @@ namespace FiberPullStrain
 
         private void calibrate_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult res = 
+            MessageBoxResult res =
             MessageBox.Show("Following these steps to Run Force Sensor Calibration:\n\n" +
                 "1. Attach a Known load onto the stage sensor\n" +
                 "2. Input real load in Grams into text box\n" +
@@ -41,10 +42,10 @@ namespace FiberPullStrain
                 "Please check informations from Bottom of Main Winodw\n" +
                 "during operation.", "Information", MessageBoxButton.OKCancel,
                 MessageBoxImage.Information);
-            if (res == MessageBoxResult.OK) 
+            if (res == MessageBoxResult.OK)
             {
                 calibrate_load_cell();
-                real_weight.IsEnabled = true; 
+                real_weight.IsEnabled = true;
                 real_weight.Focus();
                 real_weight.SelectAll();
                 finish.IsEnabled = true;
@@ -53,17 +54,17 @@ namespace FiberPullStrain
         }
         private void calibrate_load_cell()
         {
-            if(_mainWindow.serialCommunication.myPort.IsOpen)
+            if (_mainWindow.serialCommunication.myPort.IsOpen)
             {
-                try 
+                try
                 {
                     _mainWindow.serialCommunication.myPort.WriteLine
                         (_mainWindow.publicVars.HOST_CMD_CALIBRATE_LOAD_SENSOR.ToString());
-                    MessageBox.Show("Now attach load onto stage sensor and then continue...\n\n" + 
+                    MessageBox.Show("Now attach load onto stage sensor and then continue...\n\n" +
                         "DO NOT REMOVE LOAD Until input real load and press Finish Button.",
                         "Attention", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
-                catch(Exception err)
+                catch (Exception err)
                 {
                     MessageBox.Show($"Error: {err.Message}");
                 }
@@ -105,7 +106,7 @@ namespace FiberPullStrain
         private void finish_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult res =
-            MessageBox.Show("Are you Sure to save the calibration?", 
+            MessageBox.Show("Are you Sure to save the calibration?",
             "Information", MessageBoxButton.OKCancel, MessageBoxImage.Information);
             if (res == MessageBoxResult.OK)
             {
@@ -113,10 +114,10 @@ namespace FiberPullStrain
                 MessageBox.Show("Calibration Succeed.", "Information",
                     MessageBoxButton.OK, MessageBoxImage.Information);
             }
-            else 
-            { 
+            else
+            {
                 cancle_calibrate();
-                MessageBox.Show("Calibration was not stored.","Warning",
+                MessageBox.Show("Calibration was not stored.", "Warning",
                     MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             this.Close();
@@ -125,30 +126,25 @@ namespace FiberPullStrain
         private void end_position_TextChanged(object sender, TextChangedEventArgs e)
         {
             float.TryParse(end_position.Text, out end_p);
-            if (end_p>start_p) save_cal.IsEnabled = true;
+            if (end_p > start_p) save_cal.IsEnabled = true;
         }
 
         private void saveMotorProperty_Click(object sender, RoutedEventArgs e)
         {
-            try 
-            { 
-                if(_mainWindow.serialCommunication.myPort.IsOpen)
-                {
-                    _mainWindow.serialCommunication.myPort.Write
-                        (_mainWindow.publicVars.HOST_CMD_SET_MOTOR_SPEED.ToString() + 
-                        setMotorSpeed.Text + '\n');
-                    Task.Delay(300);
-                    _mainWindow.serialCommunication.myPort.Write
-                        (_mainWindow.publicVars.HOST_CMD_SET_MOTOR_ACCELORATION.ToString() +
-                        setAcceloration.Text + '\n');
-                    MessageBox.Show("Motor moving properties changed.", "Warnning",
-                        MessageBoxButton.OK, MessageBoxImage.Warning);
-                }
-            }
-            catch(Exception exp)
+            float.TryParse(setMotorSpeed.Text, out float _speed);
+            float.TryParse(setAcceloration.Text, out float _acc);
+            if (_speed > 0 && _speed <= 100 && _acc > 0 && _acc <= 100)
             {
-                MessageBox.Show(exp.Message);
+                _mainWindow.publicVars.set_motor_speed(setMotorSpeed.Text);
+                Thread.Sleep(300);
+                _mainWindow.publicVars.set_motor_acceloration(setAcceloration.Text);
+                _mainWindow.publicVars.write_to_registry("Motor", "Speed", setMotorSpeed.Text);
+                _mainWindow.publicVars.write_to_registry("Motor", "Acceloration", setAcceloration.Text);
+                MessageBox.Show("Motor Speed and Acceloration are set to New Values.",
+                "Warnning", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
+            else MessageBox.Show("Please input numbers between 0 to 100.", 
+                "Warnning", MessageBoxButton.OK, MessageBoxImage.Warning);
         }
 
         private void save_cal_Click(object sender, RoutedEventArgs e)
@@ -158,7 +154,8 @@ namespace FiberPullStrain
                 _distance = end_p - start_p;
                 if (_distance > 0)
                 {// change motor scale
-                    _mainWindow.publicVars.MOTOR_SCALE = (Decimal)(10000 / _distance);
+                    _mainWindow.publicVars.set_motor_scale(((Decimal)(10000 / _distance)).ToString());
+                    _mainWindow.publicVars.write_to_registry("Motor", "Scale", _mainWindow.publicVars.MOTOR_SCALE.ToString());
                     MessageBox.Show("Motor Calibration data saved.");
                 }
                 else
@@ -176,11 +173,11 @@ namespace FiberPullStrain
         {
             if (float.TryParse(start_position.Text, out start_p))
             {
-                if(_mainWindow.serialCommunication.myPort.IsOpen)
+                if (_mainWindow.serialCommunication.myPort.IsOpen)
                 {
                     float.TryParse(_mainWindow.publicVars.CURRENT_DISTANCE, out float current_motor_position);
                     current_motor_position = current_motor_position * (float)_mainWindow.publicVars.MOTOR_SCALE;
-                    string cmd = "m" + (current_motor_position+10000).ToString("F0");
+                    string cmd = "m" + (current_motor_position + 10000).ToString("F0");
                     _mainWindow.serialCommunication.myPort.WriteLine(cmd); // drive motor 10000 steps
 
                     MessageBox.Show("Driving Motor to New position...\n\n" +
@@ -193,16 +190,28 @@ namespace FiberPullStrain
                 }
             }
             else { MessageBox.Show("Invalid start potition."); }
-              
+
         }
 
-        public string read_from_registry(string name, string value)
+        private void save_max_Click(object sender, RoutedEventArgs e)
         {
-            return "";
+            try
+            {
+                _mainWindow.publicVars.set_MaxValues(max_distance.Text, max_force.Text);
+                _mainWindow.publicVars.write_to_registry("Motor", "Max Distance", max_distance.Text);
+                _mainWindow.publicVars.write_to_registry("Sensor", "Max Load", max_force.Text);
+                MessageBox.Show("Motor Maximum running distance\nand Maximum load are set to new Values.",
+                "Warnning", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            catch (Exception ex) { }
         }
 
-        public bool write_to_registry(string name, string value)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            return true;
+            setMotorSpeed.Text = _mainWindow.publicVars.read_from_registry("Motor", "Speed","100");
+            setAcceloration.Text = _mainWindow.publicVars.read_from_registry("Motor", "Acceloration", "100");
+            max_distance.Text = _mainWindow.publicVars.read_from_registry("Motor", "Max Distance", "26");
+            max_force.Text = _mainWindow.publicVars.read_from_registry("Sensor", "Max Load", "1000");
         }
+    }
 }
