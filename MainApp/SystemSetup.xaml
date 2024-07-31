@@ -139,29 +139,32 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
+                                <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                                <RowDefinition/>
+                                <RowDefinition Height="25*"/>
+                                <RowDefinition Height="25*"/>
+                                <RowDefinition Height="50*"/>
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Row="0" Grid.Column="0" Text="Set Max Distance"
                                        FontSize="20" HorizontalAlignment="Center"
                                        VerticalAlignment="Center"/>
                             <TextBox x:Name="max_distance" Grid.Row="0" Grid.Column="1"
                                      Margin="5" Background="Transparent" BorderBrush="AntiqueWhite"
-                                     BorderThickness="1" Text="25" FontSize="33" Foreground="OrangeRed"
+                                     BorderThickness="1" Text="25" FontSize="23" Foreground="OrangeRed"
                                      TextAlignment="Center" FontWeight="Light"/>
                             <TextBlock Grid.Row="1" Grid.Column="0" Text="Set Max Force"
                                        FontSize="20" HorizontalAlignment="Center"
                                        VerticalAlignment="Center"/>
                             <TextBox x:Name="max_force" Grid.Row="1" Grid.Column="1"
                                      Margin="5" Background="Transparent" BorderBrush="AntiqueWhite"
-                                     BorderThickness="1" Text="5000" FontSize="33" Foreground="OrangeRed"
+                                     BorderThickness="1" Text="5000" FontSize="23" Foreground="OrangeRed"
                                      TextAlignment="Center" FontWeight="Light"/>
                             <Button x:Name="save_max" Content="Save Maximum Data" Grid.Row="3"
                                     Grid.ColumnSpan="2" Margin="5" FontSize="20" Foreground="LightSlateGray"
                                     Click="save_max_Click"/>
+                            <Button x:Name="exit" Grid.Column="2" Grid.RowSpan="3" Content="Exit" FontSize="50"
+                                    Foreground="LightSlateGray"  Margin="5" Click="exit_Click"/>
                         </Grid>
                     </Border>
 

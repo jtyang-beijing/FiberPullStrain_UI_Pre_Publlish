@@ -60,7 +60,7 @@ namespace FiberPullStrain.CustomControl.view
             }
             else 
             {
-                _mainwindow.myMenuItmes.mnNew_Click(sender,e); // re-create Curve Series
+                _mainwindow.myMenuItmes.mnNewJog_Click(sender,e); // re-create Curve Series
                 // store destination to public varialble.
                 _mainwindow.publicVars.DESTINATION = inBoxDistance.inputBox.Text;
                 _mainwindow.publicVars.TARGET_FORCE = inBoxForce.inputBox.Text;

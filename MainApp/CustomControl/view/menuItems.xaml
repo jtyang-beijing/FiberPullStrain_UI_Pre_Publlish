@@ -15,7 +15,7 @@
         </Grid.RowDefinitions>
         <Menu Background="Transparent">
             <MenuItem Header="_File" Foreground="White">
-                <MenuItem x:Name="mnNew" Header="New Jog" Click="mnNew_Click"/>
+                <MenuItem x:Name="mnNewJog" Header="New Jog" Click="mnNewJog_Click"/>
                 <MenuItem x:Name="mnOpen" Header="Open" Click="mnOpen_Click"/>
                 <MenuItem x:Name="mnClose" Header="Close"/>
                 <MenuItem x:Name="mnSave" Header="Save" Click="mnSave_Click"/>

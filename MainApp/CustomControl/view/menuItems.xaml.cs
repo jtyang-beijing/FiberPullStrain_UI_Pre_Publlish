@@ -205,7 +205,7 @@ namespace FiberPullStrain.CustomControl.view
             }
         }
 
-        public void mnNew_Click(object sender, RoutedEventArgs e)
+        public void mnNewJog_Click(object sender, RoutedEventArgs e)
         {
             _mainWindow.jog_button_runonce = false;
             _mainWindow.jogright.Focus();

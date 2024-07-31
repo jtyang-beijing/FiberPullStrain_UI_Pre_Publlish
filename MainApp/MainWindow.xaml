@@ -65,6 +65,8 @@
                                     <local:GLCartesianGraphControlString.ContextMenu>
                                         <ContextMenu Foreground="LightSlateGray"  FontSize="20">
                                             <MenuItem Header="Data" Name="Data" Margin="5" >
+                                                <MenuItem Header="New Jog Curve" Name="NewJog"
+                                                          Margin="5" Click="NewJog_Click"/>
                                                 <MenuItem Header="Save Current Curve To File" Name="SaveToFile"
                                                           Margin="5"
                                                           Click="SaveToFile_Click"/>
@@ -101,7 +103,8 @@
                                                 Background="Transparent"  Content="&lt;&lt;&lt;" Foreground="OrangeRed"
                                                 FontSize="20" BorderThickness="0" ClickMode="Press"
                                                 PreviewMouseLeftButtonDown="jogleft_PreviewMouseLeftButtonDown"
-                                                PreviewMouseLeftButtonUp="jogleft_PreviewMouseLeftButtonUp"/>
+                                                PreviewMouseLeftButtonUp="jogleft_PreviewMouseLeftButtonUp" 
+                                                MouseLeave="jogleft_MouseLeave"/>
                                         <TextBlock Grid.Row="1" Grid.Column="1" Text="Pull Distance" Foreground="White"
                                                     FontSize="20" FlowDirection="LeftToRight" Width="155"
                                                     VerticalAlignment="Center" HorizontalAlignment="Center" 
@@ -111,7 +114,8 @@
                                                 Background="Transparent" Content="&gt;&gt;&gt;" Foreground="OrangeRed"
                                                 FontSize="20" BorderThickness="0" ClickMode="Press"
                                                 PreviewMouseLeftButtonDown="jogright_PreviewMouseLeftButtonDown"
-                                                PreviewMouseLeftButtonUp="jogright_PreviewMouseLeftButtonUp"/>
+                                                PreviewMouseLeftButtonUp="jogright_PreviewMouseLeftButtonUp"
+                                                MouseLeave="jogright_MouseLeave"/>
                                     </Grid>
                                 </Border>
                             </Grid>
