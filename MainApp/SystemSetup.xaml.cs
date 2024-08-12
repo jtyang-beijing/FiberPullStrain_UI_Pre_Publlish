@@ -120,7 +120,6 @@ namespace FiberPullStrain
                 MessageBox.Show("Calibration was not stored.", "Warning",
                     MessageBoxButton.OK, MessageBoxImage.Warning);
             }
-            this.Close();
         }
 
         private void end_position_TextChanged(object sender, TextChangedEventArgs e)
@@ -190,6 +189,16 @@ namespace FiberPullStrain
                 }
             }
             else { MessageBox.Show("Invalid start potition."); }
+
+        }
+
+        private void exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void exit_Click_1(object sender, RoutedEventArgs e)
+        {
 
         }
 

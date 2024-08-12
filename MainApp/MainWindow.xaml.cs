@@ -293,5 +293,22 @@ namespace FiberPull
             viewModel.IsRunning = false;
             stop_motor();
         }
+
+        private void NewJog_Click(object sender, RoutedEventArgs e)
+        {
+            myMenuItmes.mnNewJog_Click(sender,e);
+        }
+
+        private void jogleft_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            viewModel.IsRunning = false;
+            stop_motor();
+        }
+
+        private void jogright_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            viewModel.IsRunning = false;
+            stop_motor();
+        }
     }
 }

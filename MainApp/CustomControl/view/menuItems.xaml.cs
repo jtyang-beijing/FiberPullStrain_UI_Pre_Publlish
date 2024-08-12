@@ -35,12 +35,16 @@ namespace FiberPullStrain.CustomControl.view
 
         private void mnAboutSupport_Click(object sender, RoutedEventArgs e)
         {
-            About about = new About
-            {
-                Width = 500,
-                Height = 500
-            };
-            about.Show();
+            MessageBox.Show("Please Contact Your Supplier\n" +
+                "To Get Technical Support Information.",
+                "Information",
+                MessageBoxButton.OK,MessageBoxImage.Information);
+            //About about = new About
+            //{
+            //    Width = 500,
+            //    Height = 500
+            //};
+            //about.Show();
         }
 
         private async void mnSearch_Click(object sender, RoutedEventArgs e)
@@ -205,7 +209,7 @@ namespace FiberPullStrain.CustomControl.view
             }
         }
 
-        public void mnNew_Click(object sender, RoutedEventArgs e)
+        public void mnNewJog_Click(object sender, RoutedEventArgs e)
         {
             _mainWindow.jog_button_runonce = false;
             _mainWindow.jogright.Focus();
