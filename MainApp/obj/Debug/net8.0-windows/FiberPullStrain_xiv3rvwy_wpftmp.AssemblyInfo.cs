@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FiberPullStrain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+511fd339432aa1045beec09b065b0fb1875b1817")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cc7825d8839ed6af9108650b1eebe3074be57b15")]
 [assembly: System.Reflection.AssemblyProductAttribute("FiberPullStrain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FiberPullStrain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -171,8 +171,14 @@ namespace FiberPullStrain
         {
             try
             {
-                RegistryKey _key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\QuantumTech\FiberPull\" + keyName);
-                return _key.GetValue(itemName, defaultValue).ToString();
+                using (RegistryKey _key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\QuantumTech\FiberPull\" + keyName, false))
+                {
+                    if (_key == null)
+                    {
+                        return defaultValue;
+                    }
+                    return _key.GetValue(itemName, defaultValue)?.ToString() ?? defaultValue;
+                }
             }
             catch (Exception ex)
             {
