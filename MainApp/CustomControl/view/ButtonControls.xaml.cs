@@ -103,16 +103,28 @@ namespace FiberPullStrain.CustomControl.view
             bool ok = Decimal.TryParse(inBoxDistance.inputBox.Text, out Decimal ss);
             if (ok) 
             {
+                string dd = _mainwindow.viewModel.lb_Current_Distance;
+                bool _ok = Decimal.TryParse(dd, out Decimal _dd);
                 if (cbmm.IsChecked == true)
                 {
+                    _mainwindow.publicVars.UNIT_MM = true;
                     inBoxDistance.MaxValue = _mainwindow.publicVars.MAX_VALUE_DISTANCE;
                     inBoxDistance.inputBox.Text = (ss * _mainwindow.publicVars.DISTANCE_EXCHANGE_RATE).ToString("F2");
+                    if (_ok)
+                    {
+                        _mainwindow.viewModel.lb_Current_Distance = (_dd * _mainwindow.publicVars.DISTANCE_EXCHANGE_RATE).ToString("F2");
+                    }
                 }
                 else
                 {
+                    _mainwindow.publicVars.UNIT_MM = false;
                     inBoxDistance.MaxValue = (Decimal.Parse(_mainwindow.publicVars.MAX_VALUE_DISTANCE) /
                         _mainwindow.publicVars.DISTANCE_EXCHANGE_RATE ).ToString("F2");
                     inBoxDistance.inputBox.Text = (ss / _mainwindow.publicVars.DISTANCE_EXCHANGE_RATE).ToString("F2");
+                    if(_ok)
+                    {
+                        _mainwindow.viewModel.lb_Current_Distance = (_dd / _mainwindow.publicVars.DISTANCE_EXCHANGE_RATE).ToString("F2");
+                    }
                 }
             }
         }
@@ -123,17 +135,28 @@ namespace FiberPullStrain.CustomControl.view
             bool ok = Decimal.TryParse(inBoxDistance.inputBox.Text, out Decimal ss);
             if(ok)
             {
+                string dd = _mainwindow.viewModel.lb_Current_Distance;
+                bool _ok = Decimal.TryParse(dd, out Decimal _dd);
                 if (cbinch.IsChecked == true)
                 {
+                    _mainwindow.publicVars.UNIT_MM = false;
                     inBoxDistance.MaxValue = (Decimal.Parse(_mainwindow.publicVars.MAX_VALUE_DISTANCE) /
                         _mainwindow.publicVars.DISTANCE_EXCHANGE_RATE).ToString("F2");
                     inBoxDistance.inputBox.Text = (ss / _mainwindow.publicVars.DISTANCE_EXCHANGE_RATE).ToString("F2");
-
+                    if (_ok)
+                    {
+                        _mainwindow.viewModel.lb_Current_Distance = (_dd / _mainwindow.publicVars.DISTANCE_EXCHANGE_RATE).ToString("F2");
+                    }
                 }
                 else
                 {
+                    _mainwindow.publicVars.UNIT_MM = true;
                     inBoxDistance.MaxValue = _mainwindow.publicVars.MAX_VALUE_DISTANCE;
                     inBoxDistance.inputBox.Text = (ss * _mainwindow.publicVars.DISTANCE_EXCHANGE_RATE).ToString("F2");
+                    if (_ok)
+                    {
+                        _mainwindow.viewModel.lb_Current_Distance = (_dd * _mainwindow.publicVars.DISTANCE_EXCHANGE_RATE).ToString("F2");
+                    }
                 }
             }
 
@@ -145,16 +168,28 @@ namespace FiberPullStrain.CustomControl.view
             bool ok = Decimal.TryParse(inBoxForce.inputBox.Text, out Decimal ss);
             if(ok)
             {
+                string ff = _mainwindow.viewModel.lb_Current_Force;
+                bool _ok = Decimal.TryParse(ff, out Decimal _ss);
                 if (cbgrams.IsChecked == true)
                 {
+                    _mainwindow.publicVars.UNIT_G = true;
                     inBoxForce.MaxValue = _mainwindow.publicVars.MAX_VALUE_FORCE;
                     inBoxForce.inputBox.Text = (ss * _mainwindow.publicVars.FORCE_EXCHANGE_RATE).ToString("F2");
+                    if (_ok)
+                    {
+                        _mainwindow.viewModel.lb_Current_Force = (_ss * _mainwindow.publicVars.FORCE_EXCHANGE_RATE).ToString("F2");
+                    }
                 }
                 else
                 {
+                    _mainwindow.publicVars.UNIT_G = false;
                     inBoxForce.MaxValue = (Decimal.Parse(_mainwindow.publicVars.MAX_VALUE_FORCE) /
                         _mainwindow.publicVars.FORCE_EXCHANGE_RATE).ToString("F2");
                     inBoxForce.inputBox.Text = (ss / _mainwindow.publicVars.FORCE_EXCHANGE_RATE).ToString("F2");
+                    if(_ok)
+                    {
+                        _mainwindow.viewModel.lb_Current_Force = (_ss / _mainwindow.publicVars.FORCE_EXCHANGE_RATE).ToString("F2");
+                    }
                 }
             }
         }
@@ -165,16 +200,28 @@ namespace FiberPullStrain.CustomControl.view
             bool ok = Decimal.TryParse(inBoxForce.inputBox.Text, out Decimal ss);
             if(ok)
             {
+                string ff = _mainwindow.viewModel.lb_Current_Force;
+                bool _ok = Decimal.TryParse(ff, out Decimal _ss);
                 if (cbnewton.IsChecked == true)
                 {
+                    _mainwindow.publicVars.UNIT_G = false;
                     inBoxForce.MaxValue = (Decimal.Parse(_mainwindow.publicVars.MAX_VALUE_FORCE) /
                         _mainwindow.publicVars.FORCE_EXCHANGE_RATE).ToString("F2");
                     inBoxForce.inputBox.Text = (ss / _mainwindow.publicVars.FORCE_EXCHANGE_RATE).ToString("F2");
+                    if (_ok)
+                    {
+                        _mainwindow.viewModel.lb_Current_Force = (_ss / _mainwindow.publicVars.FORCE_EXCHANGE_RATE).ToString("F2");
+                    }
                 }
                 else
                 {
+                    _mainwindow.publicVars.UNIT_G = true;
                     inBoxForce.MaxValue = _mainwindow.publicVars.MAX_VALUE_FORCE;
                     inBoxForce.inputBox.Text = (ss * _mainwindow.publicVars.FORCE_EXCHANGE_RATE).ToString("F2");
+                    if (_ok)
+                    {
+                        _mainwindow.viewModel.lb_Current_Force = (_ss * _mainwindow.publicVars.FORCE_EXCHANGE_RATE).ToString("F2");
+                    }
                 }
             }
         }

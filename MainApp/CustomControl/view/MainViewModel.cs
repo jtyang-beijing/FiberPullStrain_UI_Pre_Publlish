@@ -43,12 +43,28 @@ namespace FiberPullStrain.CustomControl.view
                     {
                         if (str[0] == "f")
                         {
-                            lb_Current_Force = str[1];
+                            if(_mainWindow.publicVars.UNIT_G)
+                                lb_Current_Force = str[1];
+                            else
+                            {
+                                if (Decimal.TryParse(str[1], out Decimal ff))
+                                {
+                                    lb_current_force = (ff * _mainWindow.publicVars.FORCE_EXCHANGE_RATE).ToString("F2");
+                                }
+                            }
                         }
                         else if (str[0] == "d")
                         {
-                            string dd = (Decimal.Parse(str[1]) / _mainWindow.publicVars.MOTOR_SCALE).ToString("F2");
-                            lb_Current_Distance = dd;
+                            if (Decimal.TryParse(str[1], out Decimal dd))
+                            {
+                                dd = dd / _mainWindow.publicVars.MOTOR_SCALE;
+                                if (_mainWindow.publicVars.UNIT_MM)
+                                    lb_Current_Distance = dd.ToString("F2");
+                                else
+                                {
+                                    lb_current_distance = (dd / _mainWindow.publicVars.DISTANCE_EXCHANGE_RATE).ToString("F2");
+                                }
+                            }
                         }
                         else
                         {

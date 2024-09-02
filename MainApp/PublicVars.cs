@@ -20,6 +20,8 @@ namespace FiberPullStrain
         public Decimal DISTANCE_EXCHANGE_RATE;
         public Decimal FORCE_EXCHANGE_RATE;
         public Decimal MOTOR_SCALE;
+        public bool UNIT_MM;
+        public bool UNIT_G;
 
         public string CURRENT_DISTANCE;
         public string CURRENT_FORCE;
@@ -94,6 +96,8 @@ namespace FiberPullStrain
             SERIES = null;
             CURVE_SERIES = new Dictionary<string, int>();
             LINE_SERIES = true;
+            UNIT_MM = true;
+            UNIT_G = true;
         }
         private string max_value_distance;
 
