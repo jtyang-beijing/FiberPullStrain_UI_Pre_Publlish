@@ -185,10 +185,18 @@ namespace FiberPull
         {
             try
             {
-                string _cmd = publicVars.HOST_CMD_DRIVE_MOTOR +
+                if (publicVars.UNIT_MM)
+                {
+                    string _cmd = publicVars.HOST_CMD_DRIVE_MOTOR +
                         (decimal.Parse(destination) * publicVars.MOTOR_SCALE).ToString() + '\n';
-                serialCommunication.myPort.Write(_cmd);
-
+                    serialCommunication.myPort.Write(_cmd);
+                }
+                else 
+                {
+                    string _cmd = publicVars.HOST_CMD_DRIVE_MOTOR +
+                        (decimal.Parse(destination) * publicVars.MOTOR_SCALE * publicVars.DISTANCE_EXCHANGE_RATE).ToString() + '\n';
+                    serialCommunication.myPort.Write(_cmd);
+                }
             }
             catch(Exception exp)
             {
